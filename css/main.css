@@ -176,11 +176,27 @@ ul,li{
     transform: rotateX(0deg);
 }
 
-@media all and (max-width:600px) {
+@media all and (max-width:800px) {
     .navigation {
       width: 100%;
     }
   }
+
+@media screen and (max-width : 760px){
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+}
 
   /* Portrait and Landscape */
 @media only screen 
