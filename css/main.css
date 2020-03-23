@@ -69,9 +69,6 @@ body{
     z-index: 9999;
 }
 
-
-
-
 .navigation > li {
     display:inline;
     float:left;	
@@ -90,7 +87,6 @@ body{
 	display: block;
 	text-decoration: none;	 
 	font-smoothing: antialiased;
-	overflow: visible;
       line-height: 20px;
       font-weight: 300;
       font-size: 14px;
@@ -178,4 +174,36 @@ ul,li{
 .navigation  > li:hover ul {
   display: block;  
     transform: rotateX(0deg);
+}
+
+@media all and (max-width:600px) {
+    .navigation {
+      width: 100%;
+    }
+  }
+
+  /* Portrait and Landscape */
+@media only screen 
+and (min-device-width: 414px) 
+and (max-device-width: 736px) 
+and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+and (min-device-width: 414px) 
+and (max-device-width: 736px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+and (min-device-width: 414px) 
+and (max-device-width: 736px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) { 
+
 }
