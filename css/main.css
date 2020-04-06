@@ -27,7 +27,7 @@ body{
     padding: 50px;
     background: black;
     color: white;   
-    width: 96%;
+    width: 97%;
 }
 
 .header a{
@@ -74,8 +74,7 @@ body{
     margin: 10px auto 10px;
     width:610px;
     z-index: 9999;
-    
-}
+    }
 
 .navigation > li {
     display:inline;
@@ -187,7 +186,7 @@ ul,li{
 .box {
   background:lightgrey;
   color: black;
-  width: auto;
+  width: 96%;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -197,7 +196,8 @@ ul,li{
   z-index: 1;
   position: absolute;
   border-radius: 1rem;
-  
+  overflow: auto;
+  margin-top: 70px;
   }
 
 
