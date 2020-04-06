@@ -12,7 +12,6 @@ html,body{
     overflow-x: visible;
 }
 
-
 body{
     background: black;
     margin: 0;
@@ -182,72 +181,4 @@ ul,li{
 .navigation  > li:hover ul {
   display: block;  
     transform: rotateX(0deg);
-}
-
-.box {
-  background:lightgrey;
-  color: black;
-  width: auto;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  padding: 1rem;
-  z-index: 1;
-  position: absolute;
-  border-radius: 1rem;
-  
-  }
-
-
-
-
-
-@media all and (max-width:800px) {
-    .navigation {
-      width: 100%;
-    }
-  }
-
-@media screen and (max-width : 760px){
-    /*Make dropdown links appear inline*/
-    ul {
-        position: static;
-        display: none;
-    }
-    /*Create vertical spacing*/
-    li {
-        margin-bottom: 1px;
-    }
-    /*Make all menu links full width*/
-    ul li, li a {
-        width: 100%;
-    }
-}
-
-  /* Portrait and Landscape */
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-width: 736px) 
-and (-webkit-min-device-pixel-ratio: 3) { 
-
-}
-
-/* Portrait */
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-width: 736px) 
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) { 
-
-}
-
-/* Landscape */
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-width: 736px) 
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) { 
-
 }
