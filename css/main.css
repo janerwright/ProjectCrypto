@@ -8,6 +8,14 @@ font-weight: 700;
 font-style: normal;
 }
 
+h5{
+  font-family: fira-mono, monospace;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 22px;
+  text-align: left;
+  }
+
 html,body{
     overflow-x: visible;
 }
@@ -189,8 +197,6 @@ ul,li{
   width: 96%;
   font-size: 20px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   white-space: nowrap;
   padding: 1rem;
   z-index: 1;
@@ -198,10 +204,23 @@ ul,li{
   border-radius: 1rem;
   overflow: auto;
   margin-top: 70px;
+  height: 100%;
+  justify-content: center;
   }
 
-
-
+#text{
+  color: black;
+  justify-content: left;
+  padding: 1rem;
+  z-index: 1;
+  position: absolute;
+  left: 20px;
+  border-radius: 1rem;
+  overflow: auto;
+  margin-top: 70px;
+  height: 100%;
+    }
+  
 
 
 @media all and (max-width:800px) {
