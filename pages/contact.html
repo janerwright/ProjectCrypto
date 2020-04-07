@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
+    <script type="text/javascript" scr="app.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
@@ -61,30 +62,31 @@
   <h1 class="section-header">CONTACT</h1>
   
   <div class="contact-wrapper">
-    
-      <!---------------- 
 
-      CONTACT PAGE LEFT 
     
-      -----------------> 
-    
-    <form class="form-horizontal" role="form" method="post" action="contact.php">
+    <form class="form-horizontal" role="form" method="POST" action="mailto:learn.cyber@outlook.com">
        
-      <div class="form-group">
+        <div class="form-group">
         <div class="col-sm-12">
-          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
+          <input type="text" class="form-name" id="name" placeholder="FORENAME" name="forename" value="" required>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-12">
-          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
+          <input type="text" class="form-name" id="name" placeholder="SURNAME" name="surname" value="" required>
         </div>
       </div>
 
-      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-email" id="email" placeholder="EMAIL" name="email" value="" required>
+        </div>
+      </div>
+
+      <textarea class="form-message" rows="10" placeholder="MESSAGE" name="message" required></textarea>
       
-      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+      <button class="btn btn-primary send-button" id="submit" type="submit" name="send_message" value="SEND">
         <div class="button">
           <i class="fa fa-paper-plane fa-2x"></i><span class="send-text">SEND</span>
         </div>
@@ -92,28 +94,21 @@
       </button>
       
     </form>
-    
-      <!---------------- 
-
-      CONTACT PAGE RIGHT 
-    
-      -----------------> 
-    
-      <div class="direct-contact-container">
+ 
+          <div class="direct-contact-container">
 
         <ul class="contact-list">
           <li class="list-item"><i class="fa fa-map-marker fa-2x"></i><span class="contact-text place"><a href="https://www.google.com/maps/place/Glasgow/@55.8553803,-4.3728811,11z/data=!3m1!4b1!4m5!3m4!1s0x488815562056ceeb:0x71e683b805ef511e!8m2!3d55.864237!4d-4.251806">Glasgow | Scotland</a></span></i></li>
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:cyber.learning@outlook.com" title="Send me an email">cyber.learning@outlook.com</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:learn.cyber@outlook.com" title="Send me an email">learn.cyber@outlook.com</a></span></i></li>
         </ul>
 
         <hr>
-      
-      
+            
           <a href="https://www.github.com/janerwright" class="social-media-list">
                  <i class="fa fa-github fa-stack" aria-hidden="true"></i>
               </a>
           
-          <a href="https://www.facebook.com/janerwright17" class="social-media-list">
+          <a href="https://www.facebook.com/janerwright17/" class="social-media-list">
                 <i class="fa fa-facebook-f fa-stack"></i>
               </a>
           
@@ -139,3 +134,5 @@
   
 </section>  
 </body>
+
+

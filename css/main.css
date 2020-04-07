@@ -29,13 +29,14 @@ body{
 
 .header{
     display: flex;
+    text-align: center;
     justify-content: center;
     position: relative;
     margin: 0;
     padding: 50px;
     background: black;
     color: white;   
-    width: 97%;
+    width: 95%;
 }
 
 .header a{
@@ -258,19 +259,63 @@ ul,li{
   justify-content: center;
   font-family: fira-mono, monospace;
   font-weight: 400;
+  width: 100%;
 }
 
-.form-control, textarea {
+.form-message, textarea {
   background-color: whitesmoke;
-  color:white;
+  color:gray;
   letter-spacing: 1px;
   border-radius: 0.5rem;
+  width: 99%;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-top: 1%;
 }
+
+.form-name, textarea {
+  background-color: whitesmoke;
+  color:gray;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+  width: 49%;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  float: left;
+  margin-right: 1%;
+}
+
+.form-email, textarea {
+  background-color: whitesmoke;
+  color:gray;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+  width: 99%;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-top: 1%;
+}
+
 
 .send-button {
   margin-top: 20px;
   height: 40px;
-  width: 100%;
+  width: 99%;
   overflow: hidden;
   transition: all .4s ease-in-out;
   border-radius: 0.5rem;
@@ -376,6 +421,7 @@ ul,li{
 
 .social-media-list:hover {
   background-color: #fff; 
+  color: #111;
 }
 
 .social-media-list:hover:after {
