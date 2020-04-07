@@ -82,7 +82,7 @@ body{
     margin: 10px auto 10px;
     width:610px;
     z-index: 9999;
-    }
+  }
 
 .navigation > li {
     display:inline;
@@ -91,7 +91,7 @@ body{
     position: relative;
     overflow: visible;
     z-index: 9999;	
-  }
+    }
 
   .navigation > li:last-child {
     border-right: none;
@@ -219,54 +219,212 @@ ul,li{
   overflow: auto;
   margin-top: 70px;
   height: 100%;
-    }
+  }
   
 
+#contact {
+  width: 100%;
+  height: 100vh;
+  background-color: lightgray;
+  overflow: hidden;
+  padding-bottom: 200px;
+  border-radius: 1rem;
+  margin-top: 70px;
+}
 
-@media all and (max-width:800px) {
-    .navigation {
-      width: 100%;
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  margin-bottom: 50px;
+  font-family: fira-mono, monospace;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 6px;
+  color: black;
+  margin-bottom: 25px;
+}
+
+.contact-wrapper {
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+  max-width: 850px;
+}
+
+/* Begin Left Contact Page */
+.form-horizontal {
+  align-items: center;
+  justify-content: center;
+  font-family: fira-mono, monospace;
+  font-weight: 400;
+}
+
+.form-control, textarea {
+  background-color: whitesmoke;
+  color:white;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+}
+
+.send-button {
+  margin-top: 20px;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  transition: all .4s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+.button {
+  width: 100%;
+  height: 20px;
+  transition: all .4s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 15px;
+  font-family: fira-mono, monospace;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.button:hover {
+  transform: translate3d(0px, -35px, 0px);
+}
+
+.list-item {
+  line-height: 4;
+  color: white;
+  text-align: center;
+}
+
+.contact-text {
+  font-family: fira-mono, monospace;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 1.9px;
+  color: white;
+  text-align: center;
+}
+
+.place {
+  margin-left: 60px;
+}
+
+.gmail {
+  margin-left: 47px;
+}
+
+.contact-text a {
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+  position: relative;
+  font-size: 2.3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.social-media-list li a {
+  color: #fff;
+}
+
+.social-media-list li {
+  position: relative; 
+  top: 0;
+  left: -20px;
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  margin: 10px 5px;
+  line-height: 90px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgb(27,27,27);
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  line-height: 70px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 0 1px #fff;
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+  background-color: #fff; 
+}
+
+.social-media-list li:hover:after {
+  opacity: 1;  
+  transform: scale(1.2);
+  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
+
+.social-media-list li:hover a {
+  color: #111;
+}
+
+.copyright {
+  font: 200 14px 'Oswald', sans-serif;
+  color: #555;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+hr {
+  border-color: rgba(255,255,255,.8); ;
+}
+
+/* Begin Media Queries*/
+@media screen and (max-width: 760px) {
+    #contact {
+        height: 1000px;
     }
+  .section-header {
+    font-size: 65px;
   }
-
-@media screen and (max-width : 760px){
-    /*Make dropdown links appear inline*/
-    ul {
-        position: static;
-        display: none;
-    }
-    /*Create vertical spacing*/
-    li {
-        margin-bottom: 1px;
-    }
-    /*Make all menu links full width*/
-    ul li, li a {
-        width: 100%;
-    }
+  .direct-contact-container, .form-horizontal {
+    float: none;
+    margin: 10px auto;
+  }  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 300px;
+  }    
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
 }
 
-  /* Portrait and Landscape */
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-width: 736px) 
-and (-webkit-min-device-pixel-ratio: 3) { 
 
-}
 
-/* Portrait */
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-width: 736px) 
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) { 
 
-}
-
-/* Landscape */
-@media only screen 
-and (min-device-width: 414px) 
-and (max-device-width: 736px) 
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) { 
-
-}
