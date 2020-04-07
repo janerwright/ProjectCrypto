@@ -387,6 +387,7 @@ ul,li{
 }
 
 .copyright {
+  margin-top: 20px;
   font: 200 14px 'Oswald', sans-serif;
   color: #555;
   letter-spacing: 1px;
