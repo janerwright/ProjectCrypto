@@ -285,6 +285,8 @@ ul,li{
 .send-text {
   display: block;
   margin-top: 15px;
+  justify-content: center;
+  align-items: center;
   font-family: fira-mono, monospace;
   font-weight: 300;
   font-size: 15px;
@@ -311,11 +313,11 @@ ul,li{
 }
 
 .place {
-  margin-left: 60px;
+  margin-left: 40px;
 }
 
 .gmail {
-  margin-left: 47px;
+  margin-left: 40px;
 }
 
 .contact-text a {
@@ -338,18 +340,18 @@ ul,li{
   width: 100%;
 }
 
-.social-media-list li a {
+.social-media-list a {
   color: #fff;
 }
 
-.social-media-list li {
+.social-media-list {
   position: relative; 
   top: 0;
-  left: -20px;
+  left: 250;
   display: inline-block;
   height: 75px;
   width: 75px;
-  margin: 10px 5px;
+  margin: 10px 10px;
   line-height: 90px;
   border-radius: 50%;
   color: #fff;
@@ -358,7 +360,7 @@ ul,li{
   transition: all .2s ease-in-out;
 }
 
-.social-media-list li:after {
+.social-media-list:after {
   content: '';
   position: absolute;
   top: 0;
@@ -372,26 +374,26 @@ ul,li{
   transition: all .2s ease-in-out;
 }
 
-.social-media-list li:hover {
+.social-media-list:hover {
   background-color: #fff; 
 }
 
-.social-media-list li:hover:after {
+.social-media-list:hover:after {
   opacity: 1;  
   transform: scale(1.2);
   transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
 }
 
-.social-media-list li:hover a {
+.social-media-list:hover a {
   color: #111;
 }
 
 .copyright {
-  margin-top: 20px;
   font: 200 14px 'Oswald', sans-serif;
   color: #555;
   letter-spacing: 1px;
   text-align: center;
+  margin-top: 20px;
 }
 
 hr {
@@ -425,6 +427,7 @@ hr {
     line-height: 60px;
   }
 }
+
 
 
 
