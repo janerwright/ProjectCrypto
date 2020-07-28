@@ -192,6 +192,12 @@ ul,li{
     transform: rotateX(0deg);
 }
 
+.logo{
+  display: inline;
+  align-items: left;
+  position: absolute;
+}
+
 .box {
   background:lightgrey;
   color: black;
