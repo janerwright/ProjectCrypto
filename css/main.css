@@ -193,9 +193,11 @@ ul,li{
 }
 
 .logo{
-  display: inline;
-  align-items: left;
-  position: absolute;
+ float: left;
+ position: relative;
+ z-index: 2;
+ margin-top: -30px;
+ margin-left: 20px;
 }
 
 .box {
@@ -210,7 +212,7 @@ ul,li{
   position: absolute;
   border-radius: 1rem;
   overflow: auto;
-  margin-top: 70px;
+  margin-top: 80px;
   height: 100%;
   justify-content: center;
   }
