@@ -90,8 +90,9 @@ class QueryPHP(Query):
 
 
 def main():
-
-    db = DB_Connection()
+    #example below
+    """"
+        db = DB_Connection()
     db.address = cluster_address
     db.connect_Client()
 
@@ -102,6 +103,7 @@ def main():
 
     i = q.getOne('testcoll', {'akey': 'avalue'})
     print(i)
+    """
 
 
 main()
