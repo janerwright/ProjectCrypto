@@ -203,7 +203,7 @@ ul,li{
 .box {
   background:lightgrey;
   color: black;
-  width: 96%;
+  width: 95%;
   font-size: 20px;
   display: flex;
   white-space: nowrap;
@@ -211,13 +211,16 @@ ul,li{
   z-index: 1;
   position: absolute;
   border-radius: 1rem;
-  overflow: auto;
+  overflow-x: hidden;
   margin-top: 80px;
+  margin-left: 1%;
   height: 100%;
   justify-content: center;
+  max-width: 100%;
+  word-break: ;
   }
 
-.text{
+.heading{
   color: black;
   justify-content: left;
   padding: 1rem;
@@ -232,17 +235,19 @@ ul,li{
   }
   
   .text-box{
+    word-break: keep-all;
     color: black;
     justify-content: left;
     padding: 1rem;
     z-index: 1;
     position: absolute;
     left: 20px;
-    border-radius: 1rem;
     overflow: auto;
-    margin-top: 70px;
-    height: 100%;
-    width: 100%;
+    flex: auto;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    height: auto;
+    white-space: pre-wrap;
     }
 
 #contact {
@@ -468,6 +473,7 @@ hr {
   border-color: rgba(255,255,255,.8); ;
 }
 
+
 /* Begin Media Queries*/
 @media screen and (max-width: 760px) {
     #contact {
@@ -494,6 +500,133 @@ hr {
     height: 60px;
     line-height: 60px;
   }
+}
+
+footer{
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navigation{
+    justify-content: right;
+    list-style: none;
+    background-color: black;
+    font-family: fira-mono, monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2em;
+    display: block;
+    margin: 100px auto 10px;
+    width:600px;
+    z-index: 9999;
+  }
+
+.navigation > li {
+    float:none;	
+    border-right:0.5px solid black;
+    position: relative;
+    overflow: visible;
+    z-index: 9999;	
+    }
+
+  .navigation > li:last-child {
+    border-right: none;
+  }
+
+  .navigation li a {
+    color: #fff;
+	display: block;
+	text-decoration: none;	 
+	font-smoothing: antialiased;
+      line-height: 20px;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 15px 30px 15px 31px;		
+  }
+
+ul,li{
+    list-style: none outside none;
+}
+
+.three-d {   
+    perspective: 200px;   
+    transition: all .07s linear;
+    position: relative;
+  }
+  
+  .three-d:not(.active):hover {
+    cursor: pointer;
+  }
+  
+  .three-d:not(.active):hover .three, 
+  .three-d:not(.active):focus .three {   
+    transform: translateZ(-25px) rotateX(90deg);
+  }
+  
+  .three {  
+    transition: all .3s ease-out;   
+    transform: translatez(-25px);   
+    transform-style: preserve-3d;   
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .front {  
+    transform: rotatex(0deg) translatez(25px);
+  }
+  
+  .back {   
+    transform: rotatex(-90deg) translatez(25px);
+    color: white;
+  }
+  
+  .front, .back {
+    display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background:black;
+      padding: 15px 30px 15px 31px;	
+      color: white;	 
+      pointer-events: none;   
+      box-sizing: border-box;
+  }
+
+.navigation li .active .front,
+.navigation li .active .back,
+.navigation  li a:hover .front,
+.navigation  li a:hover .back {
+  background-color: white;   
+  background-size: 5px 5px;
+  background-position: 0 0, 30px 30px; 
+    color: black;
+   
+}
+.navigation  ul {
+  position: absolute;
+  left: -40px;
+  text-align: left;
+	line-height: 20px;
+	font-size: 10px;
+	width: 600px; 
+  transition: all 0.3s ease-in;   
+  transform-origin: 0px 0px;  
+  transform: rotateX(-90deg);   
+	backface-visibility: hidden;
+}
+.navigation  > li:hover ul {
+  display: block;  
+    transform: rotateX(0deg);
+}
+
 }
 
 
