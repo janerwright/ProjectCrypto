@@ -217,7 +217,7 @@ ul,li{
   height: 100%;
   justify-content: center;
   max-width: 100%;
-  word-break: ;
+  word-break: keep-all;
   }
 
 .heading{
