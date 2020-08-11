@@ -2,10 +2,13 @@ h1{
     font-family: "bungee", sans-serif;
     font-size: 2em;
 }
+
 h2{
 font-family: fira-mono, monospace;
 font-weight: 700;
 font-style: normal;
+text-align: center;
+
 }
 
 h5{
@@ -235,21 +238,21 @@ ul,li{
   width: 100%;
   }
   
-  .text-box{
-    word-break: keep-all;
-    color: black;
-    justify-content: left;
-    padding: 1rem;
-    z-index: 1;
-    position: absolute;
-    left: 20px;
-    overflow: auto;
-    flex: auto;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    height: auto;
-    white-space: pre-wrap;
-    }
+.text-box{
+  word-break: keep-all;
+  color: black;
+  justify-content: left;
+  padding: 1rem;
+  z-index: 1;
+  position: absolute;
+  left: 20px;
+  overflow: auto;
+  flex: auto;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  height: auto;
+  white-space: pre-wrap;
+}
 
 #contact {
   width: 100%;
@@ -690,14 +693,87 @@ font-smoothing: antialiased;
     transform: rotateX(0deg);
   }
 
-  footer{
+footer{
   position:absolute;
-   bottom:-360px;
- 
-   height:60px;   /* Height of the footer */
-   padding-left: 10px;
-   padding-top: 10px;
-   padding-bottom: 10px;  
-   margin-left: 46%;
-   overflow-x: hidden;
-  }
+  bottom:-360px;
+  height:60px;  
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;  
+  margin-left: 46%;
+  overflow-x: hidden;
+}
+
+.bottomLeft{
+  position:absolute;
+  bottom:-400px;
+  color: ivory;
+  height:60px;  
+  padding-left: 35%;
+  padding-top: 10px;
+  padding-bottom: 10px;  
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+.bottomRight{
+  position:absolute;
+  bottom:-400px;
+  color: ivory;
+  height:60px;   
+  margin-left: 60%;
+  padding-top: 10px;
+  padding-bottom: 10px;  
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+      
+.container1 {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+      
+.box1 {
+  width: 250px;
+  height: 400px;
+  padding: 30px;
+  border: 3px solid ivory;
+  margin: 70px;
+  overflow-x: hidden;
+  border-radius: 5px;
+  font-family: fira-mono, monospace;
+  font-size: 18px;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  white-space: pre-wrap;
+}
+   
+.ourpics {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -60px;
+}
+    
+.names {
+  text-align: center;
+  font-family: fira-mono, monospace;
+  font-weight: 700;
+  font-size: 22px;
+  margin-top: -60px;
+}
+
+.about{
+  margin-top: -60px;
+}
+
+.centre{
+  text-align: center;
+  margin: 0, auto;
+  position: absolute;
+}
