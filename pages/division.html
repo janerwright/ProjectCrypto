@@ -2,6 +2,8 @@
     <title>Division</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/division.css">
+    <script src="../js/division.js"></script>
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +11,7 @@
 
 <div class="header">
     <div class="typewriter">
-    <h1>Division</h1>
+        <h1>Division</h1>
     </div>
 </div>
 
@@ -22,67 +24,121 @@
 <div id="nav">
     <ul class="navigation">
         <li><a href="../index.html" class="three-d">
-            Home
-            <span class="three"><span class="front">Home</span><span class="back">Home</span></span>
-        </a></li>
+                Home
+                <span class="three"><span class="front">Home</span><span class="back">Home</span></span>
+            </a></li>
         <li><a href="about.html" class="three-d">
-            About
-            <span class="three"><span class="front">About</span><span class="back">About</span></span>
-        </a></li>
+                About
+                <span class="three"><span class="front">About</span><span class="back">About</span></span>
+            </a></li>
         <li><a href="#Resources" class="three-d">
-            Resources
-            <span class="three"><span class="front">Resources</span><span class="back">Resources</span></span>
-        </a>
-            <ul class="dropdown">
+                Resources
+                <span class="three"><span class="front">Resources</span><span class="back">Resources</span></span>
+            </a>
+            <ul>
                 <li><a href="history.html" class="three-d">
+                        History
+                        <span class="three"><span class="front">History</span><span class="back">History</span></span>
+                    </a></li>
+                <li><a href="division.html" class="three-d">
+                        Division
+                        <span class="three"><span class="front">Division</span><span class="back">Division</span></span>
+                    </a></li>
+                <li><a href="division.html" class="three-d">
+                        Euclid's Algorithm
+                        <span class="three"><span class="front">Euclid's Algorithm</span><span class="back">Euclid's Algorithm</span></span>
+                    </a></li>
+                <li><a href="rsa.html" class="three-d">
+                        RSA
+                        <span class="three"><span class="front">RSA</span><span class="back">RSA</span></span>
+                    </a></li>
+                <li><a href="cryptowars.html" class="three-d">
+                        CryptoWars
+                        <span class="three"><span class="front">CryptoWars</span><span
+                                class="back">CryptoWars</span></span>
+                    </a></li>
+            </ul>
+        </li>
+        <li><a href="#Quizzes" class="three-d">
+            Quizzes
+            <span class="three"><span class="front">Quizzes</span><span class="back">Quizzes</span></span>
+        </a>
+        <ul>
+            <li><a href="history.html" class="three-d">
                     History
                     <span class="three"><span class="front">History</span><span class="back">History</span></span>
                 </a></li>
-                <li><a href="division.html" class="three-d">
+            <li><a href="division.html" class="three-d">
                     Division
                     <span class="three"><span class="front">Division</span><span class="back">Division</span></span>
                 </a></li>
-                <li><a href="rsa.html" class="three-d">
+            <li><a href="division.html" class="three-d">
+                    Euclid's Algorithm
+                    <span class="three"><span class="front">Euclid's Algorithm</span><span class="back">Euclid's Algorithm</span></span>
+                </a></li>
+            <li><a href="rsa.html" class="three-d">
                     RSA
                     <span class="three"><span class="front">RSA</span><span class="back">RSA</span></span>
                 </a></li>
-                <li><a href="cryptowars.html" class="three-d">
+            <li><a href="cryptowars.html" class="three-d">
                     CryptoWars
-                    <span class="three"><span class="front">CryptoWars</span><span class="back">CryptoWars</span></span>
+                    <span class="three"><span class="front">CryptoWars</span><span
+                            class="back">CryptoWars</span></span>
                 </a></li>
-            </ul>
-        </li>
+        </ul>
+    </li>
         <li><a href="support.html" class="three-d">
-            Support
-            <span class="three"><span class="front">Support</span><span class="back">Support</span></span>
-        </a></li>
+                Support
+                <span class="three"><span class="front">Support</span><span class="back">Support</span></span>
+            </a></li>
         <li><a href="contact.html" class="three-d">
-            Contact
-            <span class="three"><span class="front">Contact</span><span class="back">Contact</span></span>
-        </a></li>
+                Contact
+                <span class="three"><span class="front">Contact</span><span class="back">Contact</span></span>
+            </a></li>
     </ul>
 </div>
 
 <div class="box">
+
     <body>
         <h2>Division Within Cryptography</h2>
-    </body>
+        
+        <div class="text-box">
+            <p>Cryptography requires key ideas from mathematics to be able to generate cryptosystems.  The most important branch of mathematics is known as number theory.  Number theory is the study of the set of positive whole numbers, often called the natural numbers.</p><h5 style="text-decoration: underline;">Greatest Common Divisor</h5><p>There are a couple of mathematical definitions we need to be aware of regarding division to help us with cryptography:</p>Definition 1:<p><i>If a and b are integers, and a = qb for some integer q, then we say that b divides a, b is a factor of a or a is a factor of b.</i></p></p>Definition 2:<p><i>If d divides a and c divides b, we say that d is a common divisor of a and b.  For example, 1 is a common divisor of any pair of integers a and b.  If a and b are not both 0, then no common divisor is greater than max(|a|, |b|).  This value is the <b>greatest common divisor (GCD)</b> of a and b.  It is a unique integer satisfying:
+        
+        1. d divides a and d divides b (d is a common divisor)
+            
+        2. if c divides a and c divides b, then c &#8804 d (no common divisor exceeds d)</i>
+        
+You may have noticed that we have excluded the case where a and b both equal 0. This is because every integer divides 0 so it is therefore a common divisor of a and b, leaving no GCD. We denote the gcd of a and b as gcd(a, b).
 
-   
-   
+The GCD is also known as the highest common divisor or the highest common factor and is often calculated to simplify a fraction of 2 numbers to it's lowest terms. For example, 9/16 can be simplified to 3/4 where 3 is the highest common factor.
+<img src="../img/euclid.jpg" alt="Ancient Greek Mathematician Euclid" class="euclid">
+To calculate the GCD, we use the <a href="euclid.html">Euclidean Algorithm</a>. It is named after the ancient Greek mathematician Euclid and is a very efficient way of calculating the GCD.
+
+Before we move onto learning how to calculate the GCD using the Euclidean Algorithm, there is one last lemma we must note:
+
+<i>If a = qb + r then gcd(a, b) = gcd(b, r).</i>
+
+To prove this we can see that any common divisor of b and r also divides qb + r = a since a is the sum of factors of b and r. Similarly, since r = a - qb, it follows that any common divisor of a and b also divides r. Thus the two pairs a, b and b, r have the same common divisors, so they have the same greatest common divisor.
+</div>
+    </body>
 </div>
 
-<h5 class="bottomLeft">Introduction</h5>
 <footer>
+    <h5 class="bottomLeft">Division</h5>
     <div class="nextButton">
-        <a href="#home" class="three-d">
-            <
-            <span class="three"><span class="front"><</span><span class="back"><</span></span>
+        <a href="division.html" class="three-d">
+            < <span class="three"><span class="front">
+                    < </span><span class="back">
+                            < </span>
+                        </span>
         </a>
-        <a href="#home" class="three-d">
-                >
-                <span class="three"><span class="front">></span><span class="back">></span></span>
-            </a>
-        </div>
-    </footer>
-<h5 class="bottomRight">Next Page</h5>
+        <a href="euclid.html" class="three-d">
+            >
+            <span class="three"><span class="front">></span><span class="back">></span></span>
+        </a>
+    </div>
+    <h5 class="bottomRight">Euclidean Algorithm</h5>
+</footer>
+

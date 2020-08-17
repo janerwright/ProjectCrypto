@@ -17,7 +17,7 @@ h5{
   font-style: normal;
   font-size: 22px;
   text-align: left;
-  }
+}
 
 html,body{
     overflow-x: visible;
@@ -84,7 +84,7 @@ body{
     font-size: 1.2em;
     display: block;
     margin: 10px auto 10px;
-    width:610px;
+    width:750px;
     z-index: 9999;
   }
 
@@ -215,13 +215,13 @@ ul,li{
   position: absolute;
   border-radius: 1rem;
   overflow-x: hidden;
-  overflow-y: hidden;
   margin-top: 80px;
   margin-left: 0.5%;
   height: 95%;
   justify-content: center;
   max-width: 100%;
   word-break: keep-all;
+  
   }
 
 .heading{
@@ -231,14 +231,17 @@ ul,li{
   z-index: 1;
   position: absolute;
   left: 20px;
-  border-radius: 1rem;
   overflow: auto;
   margin-top: 70px;
   height: 100%;
   width: 100%;
+  text-decoration: underline;
   }
   
 .text-box{
+  font-family: ibm-plex-mono, sans-serif;
+  font-weight: 400;
+  font-style: normal; 
   word-break: keep-all;
   color: black;
   justify-content: left;
@@ -246,7 +249,7 @@ ul,li{
   z-index: 1;
   position: absolute;
   left: 20px;
-  overflow: auto;
+  margin-top: 0.5%;
   flex: auto;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -510,7 +513,7 @@ footer{
   text-align: center;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
   .navigation{
     justify-content: right;
     list-style: none;
@@ -521,7 +524,7 @@ footer{
     font-size: 1.2em;
     display: block;
     margin: 100px auto 10px;
-    width:600px;
+    width:800px;
     z-index: 9999;
   }
 
@@ -694,38 +697,34 @@ font-smoothing: antialiased;
   }
 
 footer{
-  position:absolute;
-  bottom:-360px;
-  height:60px;  
+  position: absolute;
+  bottom:-30%;
+  height:5%;  
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;  
   margin-left: 46%;
-  overflow-x: hidden;
+  
 }
 
 .bottomLeft{
   position:absolute;
-  bottom:-400px;
+  bottom: -40%;
   color: ivory;
-  height:60px;  
-  padding-left: 35%;
-  padding-top: 10px;
-  padding-bottom: 10px;  
+  height:65px;  
   font-size: 18px;
-  overflow-x: hidden;
+  margin-left: -28%;
 }
 
 .bottomRight{
   position:absolute;
-  bottom:-400px;
+  bottom:-40%;
   color: ivory;
-  height:60px;   
-  margin-left: 60%;
-  padding-top: 10px;
-  padding-bottom: 10px;  
+  height: 65px;   
+  margin-left: 30%;
   font-size: 18px;
   overflow-x: hidden;
+  margin-top: auto;
 }
 
       
@@ -739,11 +738,11 @@ footer{
 }
       
 .box1 {
-  width: 250px;
-  height: 400px;
+  width: 400px;
+  height: 480px;
   padding: 30px;
   border: 3px solid ivory;
-  margin: 70px;
+  margin: 20px;
   overflow-x: hidden;
   border-radius: 5px;
   font-family: fira-mono, monospace;
@@ -751,6 +750,7 @@ footer{
   flex-flow: row nowrap;
   justify-content: space-evenly;
   white-space: pre-wrap;
+  margin-top: 60px;
 }
    
 .ourpics {
