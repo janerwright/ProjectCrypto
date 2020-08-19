@@ -1,10 +1,10 @@
 <head>
-    <title>Division</title>
+    <title>Bezout's Identity</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/division.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaquery.css">
-    <script src="../js/division.js"></script>
+    <script src="../js/bezout.js"></script>
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +12,7 @@
 
 <div class="header">
     <div class="typewriter">
-        <h1>Division</h1>
+        <h1>Bezout's Identity</h1>
     </div>
 </div>
 
@@ -112,43 +112,91 @@
 </div>
 
 <div class="box">
+
     <body>
-        <h2>Division Within Cryptography</h2>
+        <h2>Bezout's Identity</h2>
         
         <div class="text-box">
-            <p>Cryptography requires key ideas from mathematics to be able to generate cryptosystems.  The most important branch of mathematics is known as number theory.  Number theory is the study of the set of positive whole numbers, often called the natural numbers.</p><h5 style="text-decoration: underline;">Greatest Common Divisor</h5><p>There are a couple of mathematical definitions we need to be aware of regarding division to help us with cryptography:</p>Definition 1:<p><i>If a and b are integers, and a = qb for some integer q, then we say that b divides a, b is a factor of a or a is a factor of b.</i></p></p>Definition 2:<p><i>If d divides a and c divides b, we say that d is a common divisor of a and b.  For example, 1 is a common divisor of any pair of integers a and b.  If a and b are not both 0, then no common divisor is greater than max(|a|, |b|).  This value is the <b>greatest common divisor (GCD)</b> of a and b.  It is a unique integer satisfying:
+            <p>Bezout's identity uses Euclid's algorithm to give an expression for d = gcd(a, b) in terms of a and b.
         
-        1. d divides a and d divides b (d is a common divisor)
-            
-        2. if c divides a and c divides b, then c &#8804 d (no common divisor exceeds d)</i>
-        
-You may have noticed that we have excluded the case where a and b both equal 0. This is because every integer divides 0 so it is therefore a common divisor of a and b, leaving no GCD. We denote the gcd of a and b as gcd(a, b).
+<b>Theorem:</b>
+<i>If a and b are both integers (not equal to zero), then there exists integers x and y such that gcd(a, b) = ax + by.</i>
 
-The GCD is also known as the highest common divisor or the highest common factor and is often calculated to simplify a fraction of 2 numbers to it's lowest terms. For example, 9/16 can be simplified to 3/4 where 3 is the highest common factor.
-<img src="../img/euclid.jpg" alt="Ancient Greek Mathematician Euclid" class="euclid">
-To calculate the GCD, we use the <a href="euclid.html">Euclidean Algorithm</a>. It is named after the ancient Greek mathematician Euclid and is a very efficient way of calculating the GCD.
+We can also call Bezout's Identity the Extended Euclidean Algorithm as we work backwards, from a known value d, to find x and y.
 
-Before we move onto learning how to calculate the GCD using the Euclidean Algorithm, there is one last lemma we must note:
+<b>Example:</b>
+To calculate x and y from d = gcd(102, 38), we first use the Euclidean Algorithm to calculate d:
 
-<i>If a = qb + r then gcd(a, b) = gcd(b, r).</i>
+            102 = (2 x 38) + 26
+             38 = (1 x 26) + 12
+             26 = (2 x 12) + 2
+             12 = (6 x 2) + 0
 
-To prove this we can see that any common divisor of b and r also divides qb + r = a since a is the sum of factors of b and r. Similarly, since r = a - qb, it follows that any common divisor of a and b also divides r. Thus the two pairs a, b and b, r have the same common divisors, so they have the same greatest common divisor.
+The last non-zero remainder is 2, so d = 2. Now work backwards substituting the numbers we have above;
+
+              2 = 26 - (2 x 12)
+                = 26 - (2 x (38 - (1 x 26)))
+                = (3 x 26) - (2 x 38)
+                = (3 x (102 - (2 x 38))) - (2 x 38)
+                = (3 x 102) - (8 x 38)
+
+Therefore, we can see that x = 3 and y = -8.
+
+<b>Corollary:</b>
+<i>If a and b are relatively prime integers, we have gcd(a, b) = 1 and by Bézout's identity, there are integers x and y such that ax + by = 1.</i>
+
+<b>Example:</b>
+Find a pair of integers x and y such that 2014x + 4021y = 1.
+
+           4021 = (1 x 2014) + 2007
+           2014 = (1 x 2007) + 7
+           2007 = (286 x 7) + 5
+              7 = (1 x 5) + 2
+              5 = (2 x 2) + 1
+
+This gives us d = 1. Working backwards;
+
+              1 = 5 - (2 x 2)
+                = 5 - (2 x (7 - (1 x 5)))
+                = (3 x 5) - (2 x 7)
+                = (3 x (2007 - (286 x 7))) - (2 x 7)
+                = (3 x 2007) - (860 x 7)
+                = (3 x 2007) - (860 x (2014 - (1 x 2007)))
+                = (863 x 2007) - (860 x 2014)
+                = (863 x (4021 - (1 x 2014))) - (860 x 2014)
+                = (863 x 4021) - (1723 x 2014)
+
+Therefore, we can see that x = -1723 and y = 863. 
+
+Being able to use and understand Bezout's identity allows us to determine if two numbers are coprime. If you fancy having a go at the calculations yourself, see the <a href="divisionquiz.html">Division Quiz</a> for more examples and you can always come back and check your answers!
+
+<form>
+    <label for="anumber">First Positive Number:</label><br>
+     <input type="number" id="anumber" name="anumber" required><br>
+    <label for="bnumber">Second Positive Number:</label><br>
+    <input type="number" id="bnumber" name="bnumber" required><br>
+</textarea>
+    <div id="msg"></div>
+     <button type="button" id="Submit" class="Submit" onsubmit="extendedEuclid()">Find x and y</button>
+ </form>
+
 </div>
     </body>
 </div>
 
+
 <footer>
+    <h5 class="bottomLeft"></h5>
     <div class="nextButton">
-        <a href="division.html" class="three-d">
-            Division  <<span class="three"><span class="front">
-                Division  <</span><span class="back">
-                    Division  <</span>
+        <a href="euclid.html" class="three-d">
+            Euclid's Algorithm < <span class="three"><span class="front">
+                Euclid's Algorithm  < </span><span class="back">
+                    Euclid's Algorithm  < </span>
                         </span>
         </a>
-        <a href="euclid.html" class="three-d">
-            >  Euclidean Algorithm
-            <span class="three"><span class="front">>  Euclidean Algorithm</span><span class="back">>  Euclidean Algorithm</span></span>
+        <a href="divisionQuiz.html" class="three-d">
+            > Division Quiz
+            <span class="three"><span class="front">> Division Quiz</span><span class="back">> Division Quiz</span></span>
         </a>
     </div>
 </footer>
-

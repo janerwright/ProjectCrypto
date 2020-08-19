@@ -3,6 +3,7 @@ h1{
     font-size: 2em;
 }
 
+
 h2{
 font-family: fira-mono, monospace;
 font-weight: 700;
@@ -27,7 +28,9 @@ html,body{
 body{
     background: black;
     margin: 0;
-    padding: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
@@ -36,10 +39,10 @@ body{
     justify-content: center;
     position: relative;
     margin: 0;
-    padding: 50px;
+    padding: 20px;
     background: black;
     color: white;   
-    width: 96.5%;
+    width: 99%;
 }
 
 .header a{
@@ -73,7 +76,6 @@ body{
     50%{border-color:white;}
 }
 
-
 .navigation{
     justify-content: center;
     list-style: none;
@@ -83,9 +85,11 @@ body{
     font-style: normal;
     font-size: 1.2em;
     display: block;
-    margin: 10px auto 10px;
-    width:750px;
+    margin: 10px auto ;
+    width:800px;
     z-index: 9999;
+    position: relative;
+    flex-shrink: 0;
   }
 
 .navigation > li {
@@ -190,38 +194,55 @@ ul,li{
   transform: rotateX(-90deg);   
 	backface-visibility: hidden;
 }
+
 .navigation  > li:hover ul {
   display: block;  
     transform: rotateX(0deg);
+}
+
+.navigation  ul ul{
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  text-align: left;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.navigation  > li ul li:hover ul{
+  display: inline-block;  
+  visibility: visible;
+  transform: rotateX(0deg);
+  
 }
 
 .logo{
  float: left;
  position: relative;
  z-index: 2;
- margin-top: -30px;
+ margin-top: -100px;
  margin-left: 20px;
 }
 
 .box {
   background:lightgrey;
   color: black;
-  width: 95%;
   font-size: 20px;
   display: flex;
   white-space: nowrap;
   padding: 1rem;
-  z-index: 1;
+  z-index: auto;
   position: absolute;
   border-radius: 1rem;
   overflow-x: hidden;
-  margin-top: 80px;
+  margin-top: 200px;
   margin-left: 0.5%;
-  height: 95%;
+  min-height: 95%;
   justify-content: center;
-  max-width: 100%;
+  min-width: 95%;
   word-break: keep-all;
-  
+  flex: 1 0 auto;
   }
 
 .heading{
@@ -246,15 +267,15 @@ ul,li{
   color: black;
   justify-content: left;
   padding: 1rem;
-  z-index: 1;
   position: absolute;
   left: 20px;
   margin-top: 0.5%;
   flex: auto;
   flex-flow: row nowrap;
   justify-content: space-evenly;
-  height: auto;
   white-space: pre-wrap;
+  height: 60%;
+  flex-grow: 1;
 }
 
 #contact {
@@ -495,7 +516,7 @@ hr {
   }  
   .direct-contact-container {
     margin-top: 60px;
-    max-width: 300px;
+    max-width: 600px;
   }    
   .social-media-list li {
     height: 60px;
@@ -509,131 +530,6 @@ hr {
   }
 }
 
-footer{
-  text-align: center;
-}
-
-@media only screen and (max-width: 1300px) {
-  .navigation{
-    justify-content: right;
-    list-style: none;
-    background-color: black;
-    font-family: fira-mono, monospace;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1.2em;
-    display: block;
-    margin: 100px auto 10px;
-    width:800px;
-    z-index: 9999;
-  }
-
-.navigation > li {
-    float:none;	
-    border-right:0.5px solid black;
-    position: relative;
-    overflow: visible;
-    z-index: 9999;	
-    }
-
-  .navigation > li:last-child {
-    border-right: none;
-  }
-
-  .navigation li a {
-    color: #fff;
-	display: block;
-	text-decoration: none;	 
-	font-smoothing: antialiased;
-      line-height: 20px;
-      font-weight: 300;
-      font-size: 14px;
-      letter-spacing: 1px;
-      padding: 15px 30px 15px 31px;		
-  }
-
-ul,li{
-    list-style: none outside none;
-}
-
-.three-d {   
-    perspective: 200px;   
-    transition: all .07s linear;
-    position: relative;
-  }
-  
-  .three-d:not(.active):hover {
-    cursor: pointer;
-  }
-  
-  .three-d:not(.active):hover .three, 
-  .three-d:not(.active):focus .three {   
-    transform: translateZ(-25px) rotateX(90deg);
-  }
-  
-  .three {  
-    transition: all .3s ease-out;   
-    transform: translatez(-25px);   
-    transform-style: preserve-3d;   
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-  }
-  
-  .front {  
-    transform: rotatex(0deg) translatez(25px);
-  }
-  
-  .back {   
-    transform: rotatex(-90deg) translatez(25px);
-    color: white;
-  }
-  
-  .front, .back {
-    display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background:black;
-      padding: 15px 30px 15px 31px;	
-      color: white;	 
-      pointer-events: none;   
-      box-sizing: border-box;
-  }
-
-.navigation li .active .front,
-.navigation li .active .back,
-.navigation  li a:hover .front,
-.navigation  li a:hover .back {
-  background-color: white;   
-  background-size: 5px 5px;
-  background-position: 0 0, 30px 30px; 
-    color: black;
-   
-}
-.navigation  ul {
-  position: absolute;
-  left: -40px;
-  text-align: left;
-	line-height: 20px;
-	font-size: 10px;
-	width: 600px; 
-  transition: all 0.3s ease-in;   
-  transform-origin: 0px 0px;  
-  transform: rotateX(-90deg);   
-	backface-visibility: hidden;
-}
-.navigation  > li:hover ul {
-  display: block;  
-    transform: rotateX(0deg);
-  }
-}
 
 
 .nextButton{
@@ -698,43 +594,25 @@ font-smoothing: antialiased;
 
 footer{
   position: absolute;
-  bottom:-30%;
+  display: flex;
+  flex-direction: column ;
+  bottom:-22%;
   height:5%;  
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;  
-  margin-left: 46%;
-  
+  padding: 10px; 
+  width: 100%;
+  flex-shrink: 0;
 }
-
-.bottomLeft{
-  position:absolute;
-  bottom: -40%;
-  color: ivory;
-  height:65px;  
-  font-size: 18px;
-  margin-left: -28%;
-}
-
-.bottomRight{
-  position:absolute;
-  bottom:-40%;
-  color: ivory;
-  height: 65px;   
-  margin-left: 30%;
-  font-size: 18px;
-  overflow-x: hidden;
-  margin-top: auto;
-}
-
       
-.container1 {
-  margin-top: 30px;
+form {
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  position: relative;
+  background: white;
+ padding: 20px;
+ border-radius: 15px;
+ margin:10px;
 }
       
 .box1 {
@@ -750,7 +628,7 @@ footer{
   flex-flow: row nowrap;
   justify-content: space-evenly;
   white-space: pre-wrap;
-  margin-top: 60px;
+  margin-top: 60px
 }
    
 .ourpics {

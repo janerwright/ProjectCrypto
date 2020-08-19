@@ -49,5 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     detect.addEventListener('click', greatestDivisor);
 
 
+ 
+
+
 })
 
