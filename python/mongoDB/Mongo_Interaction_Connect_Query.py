@@ -4,15 +4,15 @@ import os
 import bson
 
 #enter address for cluster here:
-cluster_address = ""
+cluster_address = open("C:\\Users\\james\\Desktop\\db_info.txt").read()
 
 class DB_Connection:
     """
     connection object
     """
 
-    def __init__(self):
-        self.address = cluster_address
+    def __init__(self, addr=None):
+        self.address = addr
         self.port = 27017
         #27017 is default port for mongodb
         self.client = None
@@ -26,22 +26,28 @@ class DB_Connection:
 
 
 
+
+
 class Query:
     """"
     query object.
     an instance of DB_connection is passed in upon an instance of Query's creation
     """
     database = 'webpage'
+    collection = None
+    payloadKey = None
 
     def __init__(self, client_in):
         self.client = client_in
 
-    def insert(self, doc):
-        self.client[self.database][self.collection].insert_one(doc)
+    def insert(self, pathToHtml):
+        with open(pathToHtml, 'r') as html:
+            contents = html.read()
+            filename = os.path.basename(pathToHtml)
+            self.client[self.database][self.collection].insert_one({'name': filename, self.payloadKey: contents})
 
-
-    def getOne(self, filter):
-        return self.client[self.database][self.collection].find_one(filter)
+    def getOne(self, filename):
+        return self.client[self.database][self.collection].find_one({'name': filename})[self.payloadKey]
 
 
 class QueryImage(Query):
@@ -58,23 +64,11 @@ class QueryImage(Query):
             filename = os.path.basename(pathToImage)
             self.client[self.database][self.collection].insert_one({'name': filename, self.payloadKey: bson.Binary(contents)})
 
-    def getOne(self, filename):
-        return self.client[self.database][self.collection].find_one({'name': filename})[self.payloadKey]
 
 
 class QueryHTML(Query):
     collection = 'html'
     payLoadKey = 'html'
-
-    def insert(self, pathToHtml):
-        with open(pathToImage, 'r') as html:
-            contents = image.read()
-            filename = os.path.basename(pathToImage)
-            self.client[self.database][self.collection].insert_one({'name': filename, self.payLoadKey: contents})
-
-    def getOne(self, filename):
-        return self.client[self.database][self.collection].find_one({'name': filename})[self.payLoadKey]
-
 
 class QueryCSS(Query):
     collection = 'css'
@@ -92,7 +86,7 @@ class QueryPHP(Query):
 def main():
     #example below
     """"
-        db = DB_Connection()
+    db = DB_Connection()
     db.address = cluster_address
     db.connect_Client()
 
