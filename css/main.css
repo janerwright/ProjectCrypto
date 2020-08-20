@@ -750,11 +750,17 @@ form {
 .imgRight{
   padding: 10px;
   float: right;
-  margin: 0 2%;
+  margin: 2%;
 }
 
 .imgLeft{
   float: left;
-  margin: 0;
+  margin: 2%;
+  padding: 10px;
+}
+.imgCenter{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
 }
