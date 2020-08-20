@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'incorrectResponse': 'Incorrect! The Crypto Wars officially started in 1954.'
       },
       {
-        'q': '',
+        'q': 'Which encryption standard was used to encrypt data on the internet during the crypto wars?',
         'options': [
           'RSA',
           'AES',
