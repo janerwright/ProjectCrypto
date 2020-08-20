@@ -118,30 +118,34 @@
                 </ul>
             </li>
             <li><a href="#" class="three-d">
-                Algorithms
-                <span class="three"><span class="front">Algorithms</span><span class="back">Algorithms</span></span>
-            </a>
-            <ul class="side-dropdown4">
-                <li><a href="diffieHellman.html" class="three-d">
-                        Diffie Hellman
-                        <span class="three"><span class="front">Diffie Hellman</span><span class="back">Diffie Hellman</span></span>
-                    </a></li>
-                <li><a href="shamir.html" class="three-d">
-                        Shamir's Secret
-                        <span class="three"><span class="front">Shamir's Secret</span><span class="back">Shamir's Secret</span></span>
-                    </a></li>
-            </ul>
+                    Algorithms
+                    <span class="three"><span class="front">Algorithms</span><span class="back">Algorithms</span></span>
+                </a>
+                <ul class="side-dropdown4">
+                    <li><a href="diffieHellman.html" class="three-d">
+                            Diffie Hellman
+                            <span class="three"><span class="front">Diffie Hellman</span><span class="back">Diffie
+                                    Hellman</span></span>
+                        </a></li>
+                    <li><a href="shamir.html" class="three-d">
+                            Shamir's Secret
+                            <span class="three"><span class="front">Shamir's Secret</span><span class="back">Shamir's
+                                    Secret</span></span>
+                        </a></li>
+                </ul>
             </li>
             <li><a href="#" class="three-d">
-                Programming
-                <span class="three"><span class="front">Programming</span><span class="back">Programming</span></span>
-            </a>
-            <ul class="side-dropdown5">
-                <li><a href="branchlessProgramming.html" class="three-d">
-                        Branchless Programming
-                        <span class="three"><span class="front">Branchless Programming</span><span class="back">Branchless Programming</span></span>
-                    </a></li>
-            </ul>
+                    Programming
+                    <span class="three"><span class="front">Programming</span><span
+                            class="back">Programming</span></span>
+                </a>
+                <ul class="side-dropdown5">
+                    <li><a href="branchlessProgramming.html" class="three-d">
+                            Branchless Programming
+                            <span class="three"><span class="front">Branchless Programming</span><span
+                                    class="back">Branchless Programming</span></span>
+                        </a></li>
+                </ul>
             </li>
         </ul>
     </li>
@@ -157,7 +161,7 @@
             <li><a href="cryptoWarsQuiz.html" class="three-d">
                     CryptoWars
                     <span class="three"><span class="front">CryptoWars</span><span class="back">CryptoWars</span></span>
-            </a></li>
+                </a></li>
             <li><a href="divisionQuiz.html" class="three-d">
                     Division
                     <span class="three"><span class="front">Division</span><span class="back">Division</span></span>
@@ -165,15 +169,17 @@
             <li><a href="rsaQuiz.html" class="three-d">
                     RSA
                     <span class="three"><span class="front">RSA</span><span class="back">RSA</span></span>
-            </a></li>
+                </a></li>
             <li><a href="ellipticalCurveQuiz.html" class="three-d">
-                Elliptical Curve
-                <span class="three"><span class="front">Elliptical Curve</span><span class="back">Elliptical Curve</span></span>
-        </a></li>
+                    Elliptical Curve
+                    <span class="three"><span class="front">Elliptical Curve</span><span class="back">Elliptical
+                            Curve</span></span>
+                </a></li>
             <li><a href="algorithmsQuiz.html" class="three-d">
-                Other Algorithms
-                <span class="three"><span class="front">Other Algorithms</span><span class="back">Other Algorithms</span></span>
-        </a></li>
+                    Other Algorithms
+                    <span class="three"><span class="front">Other Algorithms</span><span class="back">Other
+                            Algorithms</span></span>
+                </a></li>
         </ul>
     </li>
     <li><a href="support.html" class="three-d">
@@ -190,44 +196,57 @@
 
     <body>
         <h2>The Euclidean Algorithm</h2>
-        
+
         <div class="text-box">
-            <p>One way of finding the greatest common divisor of 2 integers a and b would be to list all the divisors of both a and b, then choose the largest integer that appears in both lists. For example, if a = 12 and b = 18, the divisors of 12 are 1, 2, 3, 4, 6, 12 and the divisors of 18 are 1, 2, 3, 4, 6, 9, 18. We can clearly see that the greatest common divisor is 6. This is a very tedious method of calculation, so following the observation that <i>if a = qb + r then gcd(a, b) = gcd(b, r)</i> we can use Euclid's Algorithm.
-        
-<b>Example:</b>
+            <p>One way of finding the greatest common divisor of 2 integers a and b would be to list all the divisors of
+                both a and b, then choose the largest integer that appears in both lists. For example, if a = 12 and b =
+                18, the divisors of 12 are 1, 2, 3, 4, 6, 12 and the divisors of 18 are 1, 2, 3, 4, 6, 9, 18. We can
+                clearly see that the greatest common divisor is 6. This is a very tedious method of calculation, so
+                following the observation that <i>if a = qb + r then gcd(a, b) = gcd(b, r)</i> we can use Euclid's
+                Algorithm.
 
-To calculate d = gcd(1492, 1066), we write
-<div class="calculation">1492 = (1 x 1066) + 426
-1066 = (2 x 426) + 214
-426 = (1 x 214) + 212
-214 = (1 x 212) + 2
-212 = (106 x 2) + 0 </div>
-The last non-zero remainder is 2, so d = 2. Try out the GCD calculator below to find out the GCD of 2 numbers, if you fancy having a go at the calculations yourself, see the <a href="divisionquiz.html">Division Quiz</a> for more examples and you can always come back and check your answers!
+                <b>Example:</b>
+
+                To calculate d = gcd(1492, 1066), we write
+                <div class="calculation">1492 = (1 x 1066) + 426
+                    1066 = (2 x 426) + 214
+                    426 = (1 x 214) + 212
+                    214 = (1 x 212) + 2
+                    212 = (106 x 2) + 0 </div>
+                The last non-zero remainder is 2, so d = 2. Try out the GCD calculator below to find out the GCD of 2
+                numbers, if you fancy having a go at the calculations yourself, see the <a
+                    href="divisionquiz.html">Division Quiz</a> for more examples and you can always come back and check
+                your answers!
 
 
-Euclid's algorithm can be very useful in a number of applications when it comes to prime numbers. 
+                Euclid's algorithm can be very useful in a number of applications when it comes to prime numbers.
 
-Definition:
-<i>Two integers a and b are coprime (or relatively prime) if gcd(a, b) = 1.</i>
+                Definition:
+                <i>Two integers a and b are coprime (or relatively prime) if gcd(a, b) = 1.</i>
 
-For example, 10 and 7 are relatively prime as they share no factors other than 1. Neither integers need to be prime in order for them to be relatively prime, as both 8 and 15 are not prime, yet they are relatively prime.
+                For example, 10 and 7 are relatively prime as they share no factors other than 1. Neither integers need
+                to be prime in order for them to be relatively prime, as both 8 and 15 are not prime, yet they are
+                relatively prime.
 
-A corollary to this is that;
-<i>Two integers a and b are coprime if and only if there exists integers x and y such that ax + by = 1.</i>
+                A corollary to this is that;
+                <i>Two integers a and b are coprime if and only if there exists integers x and y such that ax + by =
+                    1.</i>
 
-This fact is useful for <a href="bezout.html">Bezout's Identity</a> and using the extended algorithm to compute modular inverses, which are of extreme importance when it comes to encryption schemes such as <a href="rsa.html">RSA</a>. </p>    
-<form>
-    <label for="fnumber">First Positive Number:</label><br>
-     <input type="number" id="fnumber" name="fnumber" required><br>
-    <label for="snumber">Second Positive Number:</label><br>
-    <input type="number" id="snumber" name="snumber" required><br>
-</textarea>
-    <div id="msg"></div>
-     <button type="button" id="Submit" class="Submit" onsubmit="greatestDivisor()">Check GCD</button>
- </form>
- 
+                This fact is useful for <a href="bezout.html">Bezout's Identity</a> and using the extended algorithm to
+                compute modular inverses, which are of extreme importance when it comes to encryption schemes such as <a
+                    href="rsa.html">RSA</a>. </p>
+            <form>
+                <label for="fnumber">First Positive Number:</label><br>
+                <input type="number" id="fnumber" name="fnumber" required><br>
+                <label for="snumber">Second Positive Number:</label><br>
+                <input type="number" id="snumber" name="snumber" required><br>
+                </textarea>
+                <div id="msg"></div>
+                <button type="button" id="Submit" class="Submit" onsubmit="greatestDivisor()">Check GCD</button>
+            </form>
 
-</div>
+
+        </div>
 
 
 
@@ -241,14 +260,12 @@ This fact is useful for <a href="bezout.html">Bezout's Identity</a> and using th
 <footer>
     <div class="nextButton">
         <a href="division.html" class="three-d">
-           Division < <span class="three"><span class="front">
-            Division < </span><span class="back">
-                Division < </span>
-                        </span>
-        </a>
-        <a href="bezout.html" class="three-d">
-            > Bezout's Identity
-            <span class="three"><span class="front">> Bezout's Identity</span><span class="back">> Bezout's Identity</span></span>
+            Division < <span class="three"><span class="front">
+                    Division < </span> <span class="back">
+                        Division < </span> </span> </a> <a href="bezout.html" class="three-d">
+                            > Bezout's Identity
+                            <span class="three"><span class="front">> Bezout's Identity</span><span class="back">>
+                                    Bezout's Identity</span></span>
         </a>
     </div>
 </footer>
