@@ -34,6 +34,7 @@ body{
 }
 
 .header{
+  font-family: fira-mono, monospace;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -291,6 +292,22 @@ ul,li{
 }
 
 .navigation  > li ul li:hover .side-dropdown5{
+  display: inline-block;  
+  visibility: visible;
+  transform: rotateX(0deg);
+}
+
+.navigation  ul .side-dropdown6{
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  text-align: left;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.navigation  > li ul li:hover .side-dropdown6{
   display: inline-block;  
   visibility: visible;
   transform: rotateX(0deg);
@@ -764,3 +781,16 @@ form {
   margin-right: auto;
   padding: 10px;
 }
+
+.calculation{
+  text-align: center;
+}
+
+.box2 {
+  position: absolute;
+  margin-top: 35px;
+  margin-left: -300px;
+  margin-right: 0;
+  z-index: 1;
+  }
+

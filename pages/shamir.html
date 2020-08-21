@@ -1,8 +1,10 @@
 <head>
-    <title>Crypto Wars</title>
+    <title>Shamir's Secret</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/division.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaquery.css">
+    <script src="../js/division.js"></script>
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +12,7 @@
 
 <div class="header">
     <div class="typewriter">
-    <h1>The Crypto Wars</h1>
+        <h1>Shamir's Secret</h1>
     </div>
 </div>
 
@@ -186,79 +188,75 @@
 
 <div class="box">
     <body>
-        <h2>The Ongoing Crypto Wars</h2>
-        <br>
-        <br>
-                <div class="box2">
-                    <audio controls>
-                        <source src="../audio/CryptoWars5.mp3" type="audio/mpeg">
-                      Your browser does not support the audio element.
-                      </audio>
-                    </div>
-        <br>
-<p class = "text-box">
+        <h2>Shamir's Secret</h2>
+        <div class="text-box">
+            <p>Shamir’s Secret Sharing Scheme is a method used to prevent information from being accessed without the knowledge and consent of a specified number of people. The idea is several people have part of the key needed to reveal the secret but it can’t be accessed by just one person. Often this concept is represented in movies where the codes for a weapon have to be input by three people with high profile positions. 
+                
+<u style="font-weight: bold;">Generating shadows</u>
+A “shadow” is part of the key necessary to find the secret. Shamir’s Secret Sharing Scheme can divide the key so that n number of people have a shadow, and k number of shadows are required to find the secret. The shadow is a point on the line which conceals the secret.
+                
+In a (2, 3) scheme, there are 3 shadows, 2 are necessary to decipher the secret.
+In a (3, 7) scheme, there are 7 shadows and 3 are necessary to decipher the secret.
+                
+A polynomial is used where the highest power of x is (k - 1).
+<div class="calculation">If k = 2, y = mx + c
+If k = 3, y = ax<sup>2</sup> + bx + c
+If k = 4, y = ax<sup>3</sup> + bx<sup>2</sup> + cx + d</div>   
+                
+The secret K is always the intercept, the number which is not multiplied by x.
+                
+A modulus is also necessary for the scheme to be secure, a large prime p.
+                
+For example, K = 13 and a (2, 3) scheme is specified.
+                
+The polynomial necessary would be y = mx + 13
+                
+In this example we will use m = 2 and modulus p = 17
+                
+Each of the three entities must have a generated shadow denoted as e<sub>x</sub>.
+<div class="calculation">e<sub>1</sub> chooses x = 5, and calculates y = 2(5) + 13 = 23 (mod 19) = 4
+e<sub>2</sub> chooses x = 2, and calculates y = 2(2) + 13 = 17 (mod 17) = 17
+e<sub>3</sub> chooses x = 8, and calculates y = 2(8) + 13 = 29 (mod 19) = 10
+</div>                 
+Therefore the shadows are e<sub>1</sub>(5, 4), e<sub>2</sub>(2, 17) and e<sub>3</sub>(8, 10)
+                
+<u style="font-weight: bold;">Finding the Secret</u>
+Continuing from the previous example, two shadows are needed to find the secret. We will use (5, 4) and (8, 10).
+                
+As we know two shadows are needed, the polynomial must be in the form of y = mx + c. Therefore we can substitute each point into the equation.
+                
+Using (5, 4), 4 = 5m + c
+Using (8, 10), 10 = 8m + c
+                
+The intercept c can be found using the following formula:
+                
+c = {y<sub>1</sub> - x<sub>1</sub>[(y2 - y<sub>1</sub>)) / (x<sub>2</sub> - x<sub>1</sub>)]} mod p
+                
+c = 4 - 5[(10 - 4) / (8 - 5)]
+  = 4 - 5[6 / 3]
+  = -6 mod 19
+  = 13
+                
+The methods change depending on how many shadows are required. If you want to know more about the method for 3 shadows, look into Cramer’s Rule.
+            </p>
+<i>Written by <b>Chelsea</b></i>
 
-<b style="text-decoration: underline;">Ongoing War</b>
-<a href="https://i2.wp.com/republicbroadcasting.org/wordpress/wp-content/uploads/2019/08/4912.jpg" target="_blank"><img src="../img/Edward_Snowden.jpg" alt="Image of Edward Snowden" class="imgRight" width="400"/></a>
-In 2006 it came to light that the NSA was promoting technologies that they already had a vulnerability for. Utilising this backdoor, they were able to get into any system that relied on this technology. This was revealed by Edward Snowden, who is seen as a saint by most of the security community, while his methods may be debated. It’s a strange topic, as this vulnerability was announced yet RSA Security, who attempted to show the government the right way, was still using this technology in some of their devices for more than 7 years! It is said that they accepted a $10 million award from the NSA to use the default values for generating the keys for these devices. In 2010 the NSA had developed state of the art capabilities against web traffic which GCHQ announced that it was affecting the signals intelligence’s most vulnerable, and spreading these vulnerabilities could lead to devastation. The project was named Bullrun and affected both citizens and targets of the U.S. as they intentionally affected many types of technology with backdoors.
-    
-
-Crypto wars II is a reference to another much smaller Snowden revelation which caused industry-wide change, completely undermining the U.S. Government and made them furious. Edward Snowden revealed that by using warrants, absolutely all smartphones were by-passable as Apple or Google had to provide a way into the phone. This plain horrified everyone, as the strong encryption levels were nothing against a piece of paper that could be issued freely. In the eyes of the American citizens, this is how they saw the whole situation. Apple and Google jumped on this situation pretty much instantly and made it so that only the user’s password would be able to decipher a phone. There was no such data held by the companies in regard to these device passwords. This move causes utter outrage within the government, with Obama’s Attorney General Eric Holder speaking out as if this was an unacceptable act by these technology giants. <a href="https://www.washingtonpost.com/business/technology/2014/09/25/68c4e08e-4344-11e4-9a15-137aa0153527_story.html">A Chicago police chief, John J. Escalante</a>, even turned to derogatory terms while being interviewed, <i>“Apple will become the phone of choice for the paedophile”</i>. The U.S.’s Federal Bureau of Investigations or FBI even cheekily got a court order to force Apple into unlocking an iPhone. Apple said ‘jog on’ to the FBI throughout hundreds of engagements. In 2016 this became a well-documented story in the news. The FBI had to hire a third-party company to crack the iPhone 5c in question finally.
-<a href="https://choosetoencrypt.com/tech/what-is-key-escrow/" target="_blank"><img src="../img/Key-Escrow.jpg" alt="A Digital Key" class="imgLeft" width="400"/></a>
-The hilarious story of front-doors is a comical idea proposed by the current Head of the NSA in 2015, which was unfortunately serious. Key escrow was recommended, with half of the key being held by the government, and half held by an organisation. This meant that neither could access a user’s data without a warrant in place. It just seems to be a common theme where the public tends not to trust their government, even if the government is seen as doing a better job than other countries. The people don’t believe that they should always give up more and more power to those who already hold the country's cards in their hands. This went down terribly, and not a single person was impressed.
-    
-Shortly after the 2015 Charlie Hebdo shooting in France, the current Prime Minister of U.K. David Cameron called for the outlaw of non-backdoored cryptography. David Cameron even had Barack Obama who agreed with his statements of only allowing encryption which government agencies could read. This gladly dissolved as merely a fragment of our memories, with no legislation or acts made from these messages.
-<a href="https://www.kaspersky.co.uk/blog/gpg-strong-encryption-and-digital-signing-made-easy/2619/" target="_blank"><img src="../img/Encryption_Secured.jpg" alt="A padlock that requires two keys, showing off PGP in this scenario" class="imgRight" width="400"/></a>
-So, here’s the end of our top-down crypto wars analysis, this section has covered not everything, but all the main points have been.
-    
-<b>WARNING: 3DES is considered no longer secure due to collision attacks; we at deCrypt Me recommend you use AES or RSA which are much less susceptible to attacks as of August 2020. ECC is also strong; however, as it is newer, some people are hesitant to adopt it. Protect yourself! PGP is a brilliant solution to sending and receiving encrypted data which may play an essential role in your life.</b>
-   
-<i>Written by <b>HarryIsSecured</b></i>
-
-A big shout out to Jack Ryhsider from Darknet Diaries who inspired this section.
-
-</p>
+</div>
     </body>
 </div>
 
-
 <footer>
     <div class="nextButton">
-        <a href="cryptowars4.html" class="three-d">
-            Cracking DES <<span class="three"><span class="front">
-                Cracking DES <</span><span class="back">
-                    Cracking DES <</span>
+        <a href="division.html" class="three-d">
+            Division  <<span class="three"><span class="front">
+                Division  <</span><span class="back">
+                    Division  <</span>
                         </span>
         </a>
-        <a href="cryptoWarsQuiz.html" class="three-d">
-            > CryptoWars Quiz
-            <span class="three"><span class="front">> CryptoWars Quiz</span><span class="back">> CryptoWars Quiz</span></span>
+        <a href="euclid.html" class="three-d">
+            >  Euclidean Algorithm
+            <span class="three"><span class="front">>  Euclidean Algorithm</span><span class="back">>  Euclidean Algorithm</span></span>
         </a>
     </div>
 </footer>
 
-<!--	
-SOURCES:
-Rhysider, J., 2018. Episode 12: Crypto Wars. [podcast] Darknet Diary. Available at: <https://darknetdiaries.com/episode/12/> [Accessed 8 August 2020].
-
-En.wikipedia.org. 2020. Crypto Wars. [online] Available at: <https://en.wikipedia.org/wiki/Crypto_Wars> [Accessed 8 August 2020].
-
-Jenblower, Maguire, L. and L, O., 2006. Crypto Wars - ORG Wiki. [online] Wiki.openrightsgroup.org. Available at: <https://wiki.openrightsgroup.org/wiki/Crypto_Wars> [Accessed 9 August 2020].
-
-Crypto Wars II:
-En.wikipedia.org. n.d. FBI–Apple Encryption Dispute. [online] Available at: <https://en.wikipedia.org/wiki/FBI%E2%80%93Apple_encryption_dispute> [Accessed 14 August 2020].
-
-Timberg, C. and Miller, G., 2014. FBI Blasts Apple, Google For Locking Police Out Of Phones. [online] Washington Post. Available at: <https://www.washingtonpost.com/business/technology/2014/09/25/68c4e08e-4344-11e4-9a15-137aa0153527_story.html> [Accessed 13 August 2020].
-
-
-Edward Snowden:
-Snowden, E., 2013. Revelations | Courage Snowden. [online] Edwardsnowden.com. Available at: <https://edwardsnowden.com/revelations/> [Accessed 14 August 2020].
-
-
-Charlie Hebdo:
-Watt, N. and Wintour, P., 2015. David Cameron Seeks Cooperation Of US President Over Encryption Crackdown. [online] The Guardian. Available at: <https://www.theguardian.com/uk-news/2015/jan/15/david-cameron-ask-us-barack-obama-help-tracking-islamist-extremists-online> [Accessed 14 August 2020].
-
-
-Key Escrow:
-En.wikipedia.org. n.d. Clipper Chip. [online] Available at: <https://en.wikipedia.org/wiki/Clipper_chip> [Accessed 14 August 2020].
--->

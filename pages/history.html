@@ -77,11 +77,30 @@
                         </a></li>
                 </ul>
             </li>
+            <li><a href="cryptosystem.html" class="three-d">
+                Cryptosystem
+                <span class="three"><span class="front">Cryptosystem</span><span class="back">Cryptosystem</span></span>
+            </a>
+            <ul class="side-dropdown2">
+                <li><a href="asymmetricKey.html" class="three-d">
+                        Asymmetric Key
+                        <span class="three"><span class="front">Asymmetric Key</span><span class="back">Asymmetric Key</span></span>
+                    </a></li>
+                <li><a href="symmetricKey.html" class="three-d">
+                        Symmetric Key
+                        <span class="three"><span class="front">Symmetric Key</span><span class="back">Symmetric Key</span></span>
+                    </a></li>
+                <li><a href="principles.html" class="three-d">
+                        Kerchoff & Shannon
+                        <span class="three"><span class="front">Kerchoff & Shannon</span><span class="back">Kerchoff & Shannon</span></span>
+                    </a></li>
+            </ul>
+        </li>
             <li><a href="division.html" class="three-d">
                     Division
                     <span class="three"><span class="front">Division</span><span class="back">Division</span></span>
                 </a>
-                <ul class="side-dropdown2">
+                <ul class="side-dropdown3">
                     <li><a href="euclid.html" class="three-d">
                             Euclid's Algorithm
                             <span class="three"><span class="front">Euclid's Algorithm</span><span class="back">Euclid's
@@ -98,7 +117,7 @@
                     RSA
                     <span class="three"><span class="front">RSA</span><span class="back">RSA</span></span>
                 </a>
-                <ul class="side-dropdown3">
+                <ul class="side-dropdown4">
                     <li><a href="primes.html" class="three-d">
                             Primes
                             <span class="three"><span class="front">Primes</span><span class="back">Primes</span></span>
@@ -119,7 +138,7 @@
                 Algorithms
                 <span class="three"><span class="front">Algorithms</span><span class="back">Algorithms</span></span>
             </a>
-            <ul class="side-dropdown4">
+            <ul class="side-dropdown5">
                 <li><a href="diffieHellman.html" class="three-d">
                         Diffie Hellman
                         <span class="three"><span class="front">Diffie Hellman</span><span class="back">Diffie Hellman</span></span>
@@ -134,7 +153,7 @@
                 Programming
                 <span class="three"><span class="front">Programming</span><span class="back">Programming</span></span>
             </a>
-            <ul class="side-dropdown5">
+            <ul class="side-dropdown6">
                 <li><a href="branchlessProgramming.html" class="three-d">
                         Branchless Programming
                         <span class="three"><span class="front">Branchless Programming</span><span class="back">Branchless Programming</span></span>
@@ -155,6 +174,10 @@
             <li><a href="cryptoWarsQuiz.html" class="three-d">
                     CryptoWars
                     <span class="three"><span class="front">CryptoWars</span><span class="back">CryptoWars</span></span>
+            </a></li>
+            <li><a href="cryptosystemsQuiz.html" class="three-d">
+                Cryptosystems
+                <span class="three"><span class="front">Cryptosystems</span><span class="back">Cryptosystems</span></span>
             </a></li>
             <li><a href="divisionQuiz.html" class="three-d">
                     Division
@@ -188,11 +211,31 @@
     <body>
         <h2>History of Cryptography</h2>
 
-        <h5 class="heading">What is Cryptography?</h5>
-        <br>
-        <br>
+        
         <div class="text-box">
-            <p>The history of cryptology is thought to date back to Egyptian times, almost 4000 years ago, when human beings discovered the art of writing.  Originating from the Greek words kryptós  (meaning ‘hidden’), and lógos (meaning ‘word’), cryptology is the science that studies secure and secret data communication and storage in the form of a cryptosystem. <p>The study of cryptology can be divided into two different branches – cryptography and cryptanalysis.  Cryptography is the art and science of making a cryptosystem that is capable of keeping messages secure.  It employs mechanisms based on mathematical algorithms that provide fundamental information security services.</p>Cryptanalysis is the art and science of breaking ciphertext.  It involves studying the mathematical mechanisms with the intention to break them.  New cryptographic techniques require the study of cryptanalysis to test the strength and security of the cryptography.
+            <p>The history of cryptology is thought to date back to Egyptian times, almost 4000 years ago, when human beings discovered the art of writing.  Originating from the Greek words kryptós  (meaning ‘hidden’), and lógos (meaning ‘word’), cryptology is the science that studies secure and secret data communication and storage in the form of a <a href="cryptosystem.html">cryptosystem</a>. 
+      
+Hidden or secret messaging evolved with civilisations as they formed tribes, groups and kingdoms which required power, politics and battles to be upheld. This resulted in secrecy when passing communications between people and the development of cryptography, particularly from the Romans and Egyptians as the hieroglyph is thought to be the first evidence of cryptography. The intent of the hieroglyphs was not to conceal messages but since it took hundreds of years to solve the meaning of the characters, it can be considered as one of the earliest forms of cryptography.
+<img src="../img/hieroglyphs.png" alt="Egyptian Hieroglyphics" class="imgCenter" width="350"/>
+Moving to Roman times, around 100 BC, Julius Caesar developed his own method of encryption so he could communicate with the generals of his armies on the war front, without enemies knowing. This form of encryption became known as the Caesar Cipher and relied on letter shifting, by an agreed number (3 being a common choice), and substitution so the letters became jumbled up. For example, character was shifted by 3 places, so the character 'A' was replaced by 'D', 'B' was replaced by 'E', and so on. The characters would wrap around at the end, so 'X' would be replaced by 'A'.
+<img src="../img/caesar.png" alt="Caesar Cipher Method of Encryption" class="imgCenter" width="500"/>
+However, this cipher became quite easy to crack. Once the shared number was known, the recipient or interceptor could decode the message.
+
+The 16th century brought a new cipher, known as Vigenère’s cipher, which is thought to be the first cipher that required a key to encrypt and decrypt the message. It used polyalphabetic substitution meaning several alphabets were required to substitute letters, usually in the form of a Vigenère square. The square consists of the alphabet written out 26 times in different rows, each alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar Ciphers.
+<img src="../img/Vigenère_square.png" alt="Vigenère Encyption Square" class="imgCenter" width="500"/>
+The square is useless unless you are aware of the key which helps you to cross-reference letters and then decrypt the encrypted message. For example, if we want to encrypt the message “Meet me at noon” using the key “picture”, using the square we get the cipher text “BMGM GV EI VQHH”.
+<img src="../img/VigenèreExample.png" alt="Vigenère Encyption Square Example" class="imgRight" width="400"/>
+<b>M E E T M E A T N O O N</b>
+<u>P I C T U R E P I C T U</u>
+B M G M G V E I V Q H H
+
+Vigenère ciphers were also easy to crack but the use of a keyword to encrypt the data made it much more secure than the Caesar cipher.
+
+Encryption became much more sophisticated after the 19th century as more machines became electric. Cryptography changed from being ‘makeshift’ ideas to the more scientific process we know and use today. The early 20th century brought along the <a href="enigma.html">Enigma</a> rotor machine with World War I and it became heavily used in German communications in World War II. The rotors within the machine provided more advanced and efficient means of coding the information.
+
+During the period of World War II, both cryptography and cryptanalysis became excessively mathematical and advances in the field led to cryptographic implementation within government organisations, military units, and some large corporate businesses. Now, the arrival of computers and the Internet has brought effective cryptography within the reach of common people and takes us onto the <a href="cryptowars1.html">crypto wars</a>.
+
+<i>Written by <b>JaneW</b></i>
             </p>
            
         </div>
@@ -207,9 +250,9 @@
                     Introduction  < </span>
                         </span>
         </a>
-        <a href="euclid.html" class="three-d">
-            > Euclidean Algorithm
-            <span class="three"><span class="front">> Euclidean Algorithm</span><span class="back">> Euclidean Algorithm</span></span>
+        <a href="enigma.html" class="three-d">
+            > Enigma
+            <span class="three"><span class="front">> Enigma</span><span class="back">> Enigma</span></span>
         </a>
     </div>
 </footer>
