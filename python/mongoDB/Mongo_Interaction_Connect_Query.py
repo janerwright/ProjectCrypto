@@ -35,19 +35,24 @@ class Query:
     """
     database = 'webpage'
     collection = None
-    payloadKey = None
+    payloadKey = "ERROR"
 
     def __init__(self, client_in):
         self.client = client_in
 
     def insert(self, pathToHtml):
         with open(pathToHtml, 'r') as html:
-            contents = html.read()
-            filename = os.path.basename(pathToHtml)
-            self.client[self.database][self.collection].insert_one({'name': filename, self.payloadKey: contents})
+            try:
+                contents = html.read()
+                filename = os.path.basename(pathToHtml)
+                self.client[self.database][self.collection].insert_one({'name': filename, self.payloadKey: contents})
+            except:
+                print("error uploading")
 
     def getOne(self, filename):
-        return self.client[self.database][self.collection].find_one({'name': filename})[self.payloadKey]
+        payload = self.client[self.database][self.collection].find_one({'name': filename})[self.payloadKey]
+        print(f'serving {filename}')
+        return payload
 
 
 class QueryImage(Query):
@@ -63,6 +68,12 @@ class QueryImage(Query):
             contents = image.read()
             filename = os.path.basename(pathToImage)
             self.client[self.database][self.collection].insert_one({'name': filename, self.payloadKey: bson.Binary(contents)})
+
+class QueryMP3(QueryImage):
+    collection = 'audio'
+    payloadKey = 'mp3'
+
+
 
 
 
