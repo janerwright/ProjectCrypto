@@ -1,8 +1,10 @@
 <head>
-    <title>Cryptosystems</title>
+    <title>Shamir's Secret</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/division.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaquery.css">
+    <script src="../js/division.js"></script>
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +12,7 @@
 
 <div class="header">
     <div class="typewriter">
-    <h1>Cryptosystems</h1>
+        <h1>Shamir's Secret</h1>
     </div>
 </div>
 
@@ -77,30 +79,11 @@
                         </a></li>
                 </ul>
             </li>
-            <li><a href="cryptosystem.html" class="three-d">
-                Cryptosystem
-                <span class="three"><span class="front">Cryptosystem</span><span class="back">Cryptosystem</span></span>
-            </a>
-            <ul class="side-dropdown2">
-                <li><a href="asymmetricKey.html" class="three-d">
-                        Asymmetric Key
-                        <span class="three"><span class="front">Asymmetric Key</span><span class="back">Asymmetric Key</span></span>
-                    </a></li>
-                <li><a href="symmetricKey.html" class="three-d">
-                        Symmetric Key
-                        <span class="three"><span class="front">Symmetric Key</span><span class="back">Symmetric Key</span></span>
-                    </a></li>
-                <li><a href="principles.html" class="three-d">
-                        Kerchoff & Shannon
-                        <span class="three"><span class="front">Kerchoff & Shannon</span><span class="back">Kerchoff & Shannon</span></span>
-                    </a></li>
-            </ul>
-        </li>
             <li><a href="division.html" class="three-d">
                     Division
                     <span class="three"><span class="front">Division</span><span class="back">Division</span></span>
                 </a>
-                <ul class="side-dropdown3">
+                <ul class="side-dropdown2">
                     <li><a href="euclid.html" class="three-d">
                             Euclid's Algorithm
                             <span class="three"><span class="front">Euclid's Algorithm</span><span class="back">Euclid's
@@ -117,7 +100,7 @@
                     RSA
                     <span class="three"><span class="front">RSA</span><span class="back">RSA</span></span>
                 </a>
-                <ul class="side-dropdown4">
+                <ul class="side-dropdown3">
                     <li><a href="primes.html" class="three-d">
                             Primes
                             <span class="three"><span class="front">Primes</span><span class="back">Primes</span></span>
@@ -138,7 +121,7 @@
                 Algorithms
                 <span class="three"><span class="front">Algorithms</span><span class="back">Algorithms</span></span>
             </a>
-            <ul class="side-dropdown5">
+            <ul class="side-dropdown4">
                 <li><a href="diffieHellman.html" class="three-d">
                         Diffie Hellman
                         <span class="three"><span class="front">Diffie Hellman</span><span class="back">Diffie Hellman</span></span>
@@ -153,7 +136,7 @@
                 Programming
                 <span class="three"><span class="front">Programming</span><span class="back">Programming</span></span>
             </a>
-            <ul class="side-dropdown6">
+            <ul class="side-dropdown5">
                 <li><a href="branchlessProgramming.html" class="three-d">
                         Branchless Programming
                         <span class="three"><span class="front">Branchless Programming</span><span class="back">Branchless Programming</span></span>
@@ -174,10 +157,6 @@
             <li><a href="cryptoWarsQuiz.html" class="three-d">
                     CryptoWars
                     <span class="three"><span class="front">CryptoWars</span><span class="back">CryptoWars</span></span>
-            </a></li>
-            <li><a href="cryptosystemsQuiz.html" class="three-d">
-                Cryptosystems
-                <span class="three"><span class="front">Cryptosystems</span><span class="back">Cryptosystems</span></span>
             </a></li>
             <li><a href="divisionQuiz.html" class="three-d">
                     Division
@@ -209,70 +188,75 @@
 
 <div class="box">
     <body>
-        <h2>Cryptosystem Model</h2>
-
-        
+        <h2>Shamir's Secret</h2>
         <div class="text-box">
-            <p>A basic cryptosystem model involves the encryption of plaintext, from a sender, using an algorithm, into ciphertext and then the decryption of the ciphertext into plaintext by the receiver. The goal of the cryptosystem is to send a message to a recipient without an interceptor or eavesdropper being able to extract the information.<img src="../img/basicCryptosystem.png" alt="Basic Cryptosystem Model" class="imgRight" width="400"/>        
-       
-In order to ensure secure communication, the cryptosystem has key components including;
-
-&bull; <b>Plaintext</b> - The data to be protected during transmission or storage such as a text file, video message, image file, etc. It is usually denoted by M, for message, or P, for plaintext. The computer views M as binary data, a series of ones and zeros.</li>
-
-&bull; <b>Encryption Algorithm</b> - Mathematical process, denoted by E, that produces a ciphertext for any given plaintext and an encryption key.</li>
-
-&bull; <b>Ciphertext</b> - A scrambled version of the plaintext produced by the encryption algorithm using a specific encryption key. The ciphertext can be intercepted or compromised as it is sent on public communication channels, therefore anyone could access the information. It is denoted by C and stored as binary data on the computer.</li>
-
-The encryption algorithm E operates on M to produce C, which in mathematical notation can be written as:
-<div class="calculation">E(M) = C</div>
-&bull; <b>Decryption Algorithm</b> - Mathematical process, denoted by D, that produces the original, unique plaintext for any given plaintext and a decryption key. 
-
-Hence, in the reverse process, decryption algorithm D operates on C to produce M:
-<div class="calculation">D(C) = M</div>
-
-Since the decryption algorithm reverses the process of the encryption algorithm, the two algorithms are closely related, and the following identity must hold true:
-
-<div class="calculation">D(E(M)) = M</div>
-In order for encryption/decryption algorithms to be widely useable, whilst maintaining secrecy, modern cryptography uses a key for both encryption and decryption denoted by K. For a given cryptosystem, the collection of all possible key values is called the keyspace.
-
-&bull; <b>Encryption Key</b> - A value known to the sender that inserted into the encryption algorithm along with the plaintext to produce the ciphertext.
-
-&bull; <b>Decryption Key</b> - Related to the encryption key but not always identical, it is a value known to the recipient that inserted into the encryption algorithm along with the ciphertext to produce the plaintext.
-
-Using a key, the mathematical functions become:
-<div class="calculation"> E<sub>K</sub>(M) = C
-D<sub>K</sub>(C) = M</div>
-These functions have the property:
-<div class="calculation">D<sub>K</sub>(E<sub>K</sub>(M)) = M</div>
-
-If the algorithms use a different encryption and decryption key, the functions can be written as follows, denoting the separate keys as K1 and K2:
-<div class="calculation">
-E<sub>K1</sub>(M) = C
-D<sub>K2</sub>(C) = M
-D<sub>K2</sub>(E<sub>K1</sub>(M)) = M</div>
-
-One of the main issues regarding a cryptosystem is an interceptor, or attacker. They are an unauthorised entity who attempts to determine the original plaintext from the ciphertext seen in the communication channel. The decryption algorithm may be known to the attacker but for the message to be decrypted, the decryption key must also be known. Keys therefore add another layer of security to a message.
-
-There are two general types of key-based algorithms: symmetric and asymmetric key encryption. The relationship between the encryption and decryption keys is the crucial difference between the two cryptosystems. Whilst the keys do not have to be the same, it is practically impossible to decrypt the ciphertext if an unrelated encryption key is used. Hence the keys must be closely associated.
-
-<i>Written by <b>JaneW</b></i>
+            <p>Shamir’s Secret Sharing Scheme is a method used to prevent information from being accessed without the knowledge and consent of a specified number of people. The idea is several people have part of the key needed to reveal the secret but it can’t be accessed by just one person. Often this concept is represented in movies where the codes for a weapon have to be input by three people with high profile positions. 
+                
+<u style="font-weight: bold;">Generating shadows</u>
+A “shadow” is part of the key necessary to find the secret. Shamir’s Secret Sharing Scheme can divide the key so that n number of people have a shadow, and k number of shadows are required to find the secret. The shadow is a point on the line which conceals the secret.
+                
+In a (2, 3) scheme, there are 3 shadows, 2 are necessary to decipher the secret.
+In a (3, 7) scheme, there are 7 shadows and 3 are necessary to decipher the secret.
+                
+A polynomial is used where the highest power of x is (k - 1).
+<div class="calculation">If k = 2, y = mx + c
+If k = 3, y = ax<sup>2</sup> + bx + c
+If k = 4, y = ax<sup>3</sup> + bx<sup>2</sup> + cx + d</div>   
+                
+The secret K is always the intercept, the number which is not multiplied by x.
+                
+A modulus is also necessary for the scheme to be secure, a large prime p.
+                
+For example, K = 13 and a (2, 3) scheme is specified.
+                
+The polynomial necessary would be y = mx + 13
+                
+In this example we will use m = 2 and modulus p = 17
+                
+Each of the three entities must have a generated shadow denoted as e<sub>x</sub>.
+<div class="calculation">e<sub>1</sub> chooses x = 5, and calculates y = 2(5) + 13 = 23 (mod 19) = 4
+e<sub>2</sub> chooses x = 2, and calculates y = 2(2) + 13 = 17 (mod 17) = 17
+e<sub>3</sub> chooses x = 8, and calculates y = 2(8) + 13 = 29 (mod 19) = 10
+</div>                 
+Therefore the shadows are e<sub>1</sub>(5, 4), e<sub>2</sub>(2, 17) and e<sub>3</sub>(8, 10)
+                
+<u style="font-weight: bold;">Finding the Secret</u>
+Continuing from the previous example, two shadows are needed to find the secret. We will use (5, 4) and (8, 10).
+                
+As we know two shadows are needed, the polynomial must be in the form of y = mx + c. Therefore we can substitute each point into the equation.
+                
+Using (5, 4), 4 = 5m + c
+Using (8, 10), 10 = 8m + c
+                
+The intercept c can be found using the following formula:
+                
+c = {y<sub>1</sub> - x<sub>1</sub>[(y2 - y<sub>1</sub>)) / (x<sub>2</sub> - x<sub>1</sub>)]} mod p
+                
+c = 4 - 5[(10 - 4) / (8 - 5)]
+  = 4 - 5[6 / 3]
+  = -6 mod 19
+  = 13
+                
+The methods change depending on how many shadows are required. If you want to know more about the method for 3 shadows, look into Cramer’s Rule.
             </p>
-           
-        </div>
+<i>Written by <b>Chelsea</b></i>
+
+</div>
     </body>
 </div>
 
 <footer>
     <div class="nextButton">
-        <a href="cryptosystem.html" class="three-d">
-            Cryptosystem < <span class="three"><span class="front">
-                Cryptosystem < </span><span class="back">
-                    Cryptosystem  < </span>
+        <a href="division.html" class="three-d">
+            Division  <<span class="three"><span class="front">
+                Division  <</span><span class="back">
+                    Division  <</span>
                         </span>
         </a>
-        <a href="symmetricKey.html" class="three-d">
-            > Symmetric Key
-            <span class="three"><span class="front">> Symmetric Key</span><span class="back">> Symmetric Key</span></span>
+        <a href="euclid.html" class="three-d">
+            >  Euclidean Algorithm
+            <span class="three"><span class="front">>  Euclidean Algorithm</span><span class="back">>  Euclidean Algorithm</span></span>
         </a>
     </div>
 </footer>
+
