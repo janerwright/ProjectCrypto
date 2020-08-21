@@ -7,46 +7,75 @@ $('#quiz').quiz({
   counterFormat: 'Question %current of %total',
   questions: [
     {
-      'q': 'Is jQuery required for this plugin?',
+      'q': 'How long ago was cryptography invented?',
       'options': [
-        'Yes',
-        'No'
-      ],
-      'correctIndex': 0,
-      'correctResponse': 'Good job, that was obvious.',
-      'incorrectResponse': 'Well, if you don\'t include it, your quiz won\'t work'
-    },
-    {
-      'q': 'How do you use it?',
-      'options': [
-        'Include jQuery, that\'s it!',
-        'Include jQuery and the plugin javascript.',
-        'Include jQuery, the plugin javascript, the optional plugin css, required markup, and the javascript configuration.'
+        '100 years',
+        '400 years',
+        '4000 years',
+        '2000 years'
+
       ],
       'correctIndex': 2,
-      'correctResponse': 'Correct! Sounds more complicated than it really is.',
-      'incorrectResponse': 'Come on, it\'s not that easy!'
+      'correctResponse': 'Good job, the Egyptians started using hieroglyphs around 4000 years ago.',
+      'incorrectResponse': 'Incorrect. Refresh your memory and read our history page again.'
     },
     {
-      'q': 'The plugin can be configured to require a perfect score.',
+      'q': 'Which cipher came first?',
       'options': [
-        'True',
-        'False'
+        'Caesar Cipher',
+        'Vigenere Cipher'
       ],
       'correctIndex': 0,
-      'correctResponse': 'You\'re a genius! You just set allowIncorrect to true.',
-      'incorrectResponse': 'Why you have no faith!? Just set allowIncorrect to true.'
+      'correctResponse': 'Correct! Nice and Easy.',
+      'incorrectResponse': 'Unlucky, that\'s wrong!'
     },
     {
-      'q': 'How do you specify the questions and answers?',
+      'q': 'How did ciphers start becoming more secure?',
       'options': [
-        'MySQL database',
-        'In the HTML',
-        'In the javascript configuration'
+        'Use of Keys',
+        'Use of Rotors',
+        'Use of Letters',
+        'Use of Code books'
+      ],
+      'correctIndex': 0,
+      'correctResponse': 'Excellent work. That is the correct answer.',
+      'incorrectResponse': 'Not quite, try again.'
+    },
+    {
+      'q': 'Who invented the Enigma Machine?',
+      'options': [
+        'Britain',
+        'Poland',
+        'France',
+        'Germany'
+      ],
+      'correctIndex': 3,
+      'correctResponse': 'Well done!',
+      'incorrectResponse': 'Wrong! You need to brush up on your history.'
+    },
+    {
+      'q': 'How many settings does the machine have?',
+      'options': [
+        'Almost 160 million',
+        'Almost 160 trillion',
+        'Almost 160 billion',
+        'Almost 160 quintillion'
+      ],
+      'correctIndex': 3,
+      'correctResponse': 'Wow. That\'s impressive.',
+      'incorrectResponse': 'Hmm, I think you are a tad off there.'
+    },
+    {
+      'q': 'Alan Turing built a machine called the Bombe. What was the improvement that was made from the original Enigma machine?',
+      'options': [
+        'Could calculate keys at a faster speed.',
+        'Fewer settings',
+        'Built to find daily keys.',
+        'More rotors added'
       ],
       'correctIndex': 2,
-      'correctResponse': 'Correct! Refer to the documentation for the structure.',
-      'incorrectResponse': 'Wrong! Do it in the javascript configuration. You might need to read the documentation.'
+      'correctResponse': 'Superb work.',
+      'incorrectResponse': 'Nope. Re-read history on Enigma then come back and try again.'
     }
   ]
 });
