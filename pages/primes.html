@@ -192,7 +192,71 @@
         <h2>Prime Numbers</h2>
         
         <div class="text-box">
+    <p>We are all aware of the prime numbers, 2, 3, 5, 7, 11, etc. It is a concept we learn about very early on in school but what does it actually mean for a number to be prime?
 
+<b>Definition:</b>
+<i>An integer p > 1 is said to be <b>prime</b> if the only positive divisors of p are 1 and p itself.</i>
+                
+We must note that 1 itself is not prime. All of the prime numbers are odd, and the smallest prime is 2. 
+                
+<b>Lemma:</b>
+<i>Let p be prime, and let a and b be any integers. Then
+     a) Either p divides a, or a and p are coprime;
+     b) If p divides ab, then either p divides a or p divides b.</i>
+                
+<b>Proof</b>
+a) By the definition of coprime numbers, gcd(a, p) is a positive divisor of p, so it must take the value 1 or p since p is prime. If gcd(a, p) = p, then since gcd(a, p) divides a we have p divides a; if gcd(a, p) = 1 the a and p are coprime.
+                
+b) Let p divide ab. If p does not divide a then part (a) implies that gcd(a, p) = 1. By <a href="bezout.html">Bezout’s identity</a>, 1 = ax + py for some integers x and y, so b = axb + pyb. By our initial assumption, p divides ab and hence divides both axb and pyb. Therefore, p divides b, as required. &#9632;
+                
+Prime numbers are the building blocks for all possible integers, so they are an extremely important mathematical concept. This can be explained by our next theorem, the <b>Fundamental Theorem of Arithmetic</b>.
+                
+<b>Theorem:</b>
+Each integer n > 1 has a unique prime factorisation as a product of prime numbers            
+<div class="calculation">n = p<sub>1</sub><sup>e1</sup>…p<sub>k</sub><sup>ek</sup>,</div>              
+where p<sub>1</sub>,…,p<sub>k</sub> are distinct primes and e<sub>1</sub>,…,e<sub>k</sub> are positive integers. 
+                
+To prove this theorem, we have to prove both existence and uniqueness:
+1. Existence
+                
+    Using induction on n;
+    n > 1 so n = 2, 3,… and p(n) means n has a prime factorisation.
+
+    Base Case:
+    p(2) = 2 which is prime so true for n = 2.
+                
+    Suppose p(m) is true for all m < n. Consider n;
+    If n = prime, n has the required prime factorisation. If n &ne; prime, we can assume that n is composite, i.e. divisor(n) = {1, d, n} where d &ne; 1 or n. This implies n = d x (n/d).
+                
+    p(d), p(n/d) are true since d, n/d < n.
+                
+    Let d = p<sub>1</sub><sup>e1</sup>…p<sub>r</sub><sup>er</sup> and n/d = q<sub>1</sub><sup>f1</sup>…q<sub>f</sub><sup>fs</sup> so,
+    <div class="calculation">n = d x (n/d)
+            = p<sub>1</sub><sup>e1</sup>…p<sub>r</sub><sup>er</sup> x q<sub>1</sub><sup>f1</sup>…q<sub>f</sub><sup>fs</sup></div>
+    which is a product of primes.
+                
+2. Uniqueness
+    Suppose n = p<sub>1</sub>… p<sub>r</sub> where there could be repetition of primes.
+                
+    Induction on r: p(r)
+    If a product of primes p<sub>1</sub>… p<sub>r</sub>= q<sub>1</sub>… q<sub>s</sub>, then r=s and p<sub>i</sub>, q<sub>i</sub> are the same.
+                
+    Base Case: p(1)
+    If p = q<sub>1</sub>… q<sub>s</sub>, this implies that p divides q<sub>j</sub> for some j. Therefore p = q<sub>j</sub>
+                                                                        1 = q<sub>1</sub>…q̂<sub>i</sub>…q<sub>s</sub> is false is s > 1 so p(1) is true (i.e. not a product of primes.)
+                
+    p(r) : Suppose p<sub>1</sub>…p<sub>r</sub>= q<sub>1</sub>…q<sub>s</sub>. p<sub>r</sub> divides q<sub>1</sub>…q<sub>s</sub> implies that p<sub>r</sub> divides q<sub>j</sub> for some j so p<sub>1</sub>…p<sub>r-1</sub>= q<sub>1</sub>…q̂<sub>i</sub>…q<sub>s</sub>
+                
+    By induction, p(r – 1) is true, implying s – 1 = r – 1 and the powers are unique. &#9632;
+
+    
+For example, 200 has the prime factorisation 2<sup>3</sup> x 5<sup>2</sup>.
+<div class="calculation">200 = 2 x 2 x 2 x 5 x 5
+= 2<sup>3</sup> x 5<sup>2</sup></div>
+                
+A way of finding all the prime numbers is to use the <b>Sieve of Eratosthenes</b>. This is a systematic way to eliminate numbers that are not prime. For example, if we write out all number 1-100, start by circling the prime number 2 then score out all numbers that are factors of 2. 3 is our next prime number so we circle it and score out all numbers that are a multiple of 3. This process continues until we are only left with the prime numbers.
+                
+However, we have made your life easier by creating this prime number calculator.</p>
 <form>
     <label for="number">Positive Number:</label><br>
      <input type="number" id="number" name="number" required><br>
@@ -201,6 +265,8 @@
      <button type="button" id="Submit" class="Submit" onsubmit="primeNumber()">Check if number is Prime</button>
  </form>
 
+ <i>Written by <b>JaneW</b></i>
+
 </div>
     </body>
 </div>
@@ -208,15 +274,15 @@
 
 <footer>
     <div class="nextButton">
-        <a href="euclid.html" class="three-d">
-            Euclid's Algorithm < <span class="three"><span class="front">
-                Euclid's Algorithm  < </span><span class="back">
-                    Euclid's Algorithm  < </span>
+        <a href="rsa.html" class="three-d">
+            RSA < <span class="three"><span class="front">
+                RSA  < </span><span class="back">
+                    RSA  < </span>
                         </span>
         </a>
-        <a href="divisionQuiz.html" class="three-d">
-            > Division Quiz
-            <span class="three"><span class="front">> Division Quiz</span><span class="back">> Division Quiz</span></span>
+        <a href="modularArithmetic.html" class="three-d">
+            > Modular Arithmetic
+            <span class="three"><span class="front">> Modular Arithmetic</span><span class="back">> Modular Arithmetic</span></span>
         </a>
     </div>
 </footer>

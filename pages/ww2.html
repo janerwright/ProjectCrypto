@@ -1,7 +1,8 @@
 <head>
-    <title>Principles of Cryptography</title>
+    <title>World War II</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/division.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaquery.css">
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +11,7 @@
 
 <div class="header">
     <div class="typewriter">
-    <h1>Cryptographic Principles</h1>
+    <h1>World War II</h1>
     </div>
 </div>
 
@@ -42,6 +43,12 @@
                     <li><a href="enigma.html" class="three-d">
                             Enigma
                             <span class="three"><span class="front">Enigma</span><span class="back">Enigma</span></span>
+                        </a></li>
+                </ul>
+                <ul class="side-dropdown">
+                    <li><a href="ww2.html" class="three-d">
+                            WWII
+                            <span class="three"><span class="front">WWII</span><span class="back">WWII</span></span>
                         </a></li>
                 </ul>
             </li>
@@ -77,30 +84,11 @@
                         </a></li>
                 </ul>
             </li>
-            <li><a href="cryptosystem.html" class="three-d">
-                Cryptosystem
-                <span class="three"><span class="front">Cryptosystem</span><span class="back">Cryptosystem</span></span>
-            </a>
-            <ul class="side-dropdown2">
-                <li><a href="asymmetricKey.html" class="three-d">
-                        Asymmetric Key
-                        <span class="three"><span class="front">Asymmetric Key</span><span class="back">Asymmetric Key</span></span>
-                    </a></li>
-                <li><a href="symmetricKey.html" class="three-d">
-                        Symmetric Key
-                        <span class="three"><span class="front">Symmetric Key</span><span class="back">Symmetric Key</span></span>
-                    </a></li>
-                <li><a href="principles.html" class="three-d">
-                        Kerchoff & Shannon
-                        <span class="three"><span class="front">Kerchoff & Shannon</span><span class="back">Kerchoff & Shannon</span></span>
-                    </a></li>
-            </ul>
-        </li>
             <li><a href="division.html" class="three-d">
                     Division
                     <span class="three"><span class="front">Division</span><span class="back">Division</span></span>
                 </a>
-                <ul class="side-dropdown3">
+                <ul class="side-dropdown2">
                     <li><a href="euclid.html" class="three-d">
                             Euclid's Algorithm
                             <span class="three"><span class="front">Euclid's Algorithm</span><span class="back">Euclid's
@@ -117,7 +105,7 @@
                     RSA
                     <span class="three"><span class="front">RSA</span><span class="back">RSA</span></span>
                 </a>
-                <ul class="side-dropdown4">
+                <ul class="side-dropdown3">
                     <li><a href="primes.html" class="three-d">
                             Primes
                             <span class="three"><span class="front">Primes</span><span class="back">Primes</span></span>
@@ -138,7 +126,7 @@
                 Algorithms
                 <span class="three"><span class="front">Algorithms</span><span class="back">Algorithms</span></span>
             </a>
-            <ul class="side-dropdown5">
+            <ul class="side-dropdown4">
                 <li><a href="diffieHellman.html" class="three-d">
                         Diffie Hellman
                         <span class="three"><span class="front">Diffie Hellman</span><span class="back">Diffie Hellman</span></span>
@@ -153,7 +141,7 @@
                 Programming
                 <span class="three"><span class="front">Programming</span><span class="back">Programming</span></span>
             </a>
-            <ul class="side-dropdown6">
+            <ul class="side-dropdown5">
                 <li><a href="branchlessProgramming.html" class="three-d">
                         Branchless Programming
                         <span class="three"><span class="front">Branchless Programming</span><span class="back">Branchless Programming</span></span>
@@ -174,10 +162,6 @@
             <li><a href="cryptoWarsQuiz.html" class="three-d">
                     CryptoWars
                     <span class="three"><span class="front">CryptoWars</span><span class="back">CryptoWars</span></span>
-            </a></li>
-            <li><a href="cryptosystemsQuiz.html" class="three-d">
-                Cryptosystems
-                <span class="three"><span class="front">Cryptosystems</span><span class="back">Cryptosystems</span></span>
             </a></li>
             <li><a href="divisionQuiz.html" class="three-d">
                     Division
@@ -209,58 +193,78 @@
 
 <div class="box">
     <body>
-        <h2>Principles of Cryptography</h2>
+        <h2>World War 2</h2>
+        <br>
 
-        
-        <div class="text-box">
-            <p>This section will serve the key laws that have been associated with creating strong and safe encryption standards. Some of the laws given by Kerckhoff aren’t as relevant now or require more clarification which Shannon aims to do with their refresh of the ruleset. deCrypt Me wants you to appreciate the reason why these laws are used and allow you to truly understand why certain steps have been taken to create standards in such a way. If you become famous for creating laws that strengthen these principles then be sure to give us a shout out!
-<a href="https://en.wikipedia.org/wiki/Auguste_Kerckhoffs#/media/File:Auguste_Kerckhoffs.jpg" target="_blank"><img src="../img/Auguste_Kerckhoffs.jpg" alt="Portrait of Auguste Kerckhoff" class="imgRight" width="400"/></a>
-                
-We’ll get onto the title of this section in a while, first let’s start with the genius behind these cryptography laws. Meet Auguste Kerckhoff 1835 - 1903! He was a professor in the late 19th century who specialised in linguistics and cryptography. A fun fact is that his father was the mayor of the village he lived in! So, what was so special about Auguste Kerckhoff and what did he bring to the world?
-                
-Kerckhoff’s claim to fame began in 1883 when two reports he had written were featured in ‘le Journal des Sciences Militaires’ or ‘journal of military sciences’ if you will. The reports were titled Military Cryptography and highlighted the desired characteristics of cryptography standards. These characteristics would go on to be used by militaries to enhance their encryption capabilities at the time. They were given many names due to different translations or how people viewed these principles, they ranged from being called principles, desideratum, assumptions, laws, doctrine, and axiom.  Moving on from this there were 6 different ideologies presented in the report.
-    
-    1. The system must be practically, if not mathematically, indecipherable.
-    2. It should not require secrecy, and it should not be a problem if it falls into enemy hands.
-    3. It must be possible to communicate and remember the key without using written notes, and correspondents must be able to change or modify it at will.
-    4. It must be applicable to telegraph communications.
-    5. It must be portable, and should not require several persons to handle or operate.
-    6. Lastly, given the circumstances in which it is to be used, the system must be easy to use and should not be stressful to use or require its users to know and comply with a long list of rules.</li>
-        
-As you can see there are some principles listed here which just aren’t as relevant today so it is okay to not take these principles as the be-all and end-all of how to develop strong encryption- or else this would be a short section and we wouldn’t need Shannon's principles! The second principle “It should not require secrecy, and it should not be a problem if it falls into enemy hands”’ is the law that is considered to be Kerckhoff’s principle.
-<img src="../img/Auguste_Kerckhoffs.jpg" alt="Portrait of Auguste Kerckhoff" class="imgLeft" width="400"/>
-Wait, but deCrypt Me isn’t that obvious? Well yes but actually no. Sorry, but the low-quality meme had to be done. See, “it should not be a problem if it falls into enemy hands”, doesn’t just refer to if the encrypted message is intercepted, but if the entire encryption system is revealed. We will build upon this during Shannon’s principles later. This is a hard concept, if technologies such as Caesar’s Cipher had their inner workings divulged, the message would be cracked in a matter of hours (as these messages did have to be decrypted by hand during Caesar’s reign). Then doesn’t this apply to everything? No, it doesn’t! Newer encryptions such as RSA, AES, PGP, ECC, etc.. have all had their techniques revealed; however, it’s still (as far as we know) impossible to reliably crack messages without brute-forcing them. Parties who you don’t intend on viewing the message can have the algorithm used for encryption and decryption but still never be able to decrypt the encrypted messages you send. In other words, a standard should rely on the key to be secure, not any other part of it.
-                
-This goes against the idea of security through obscurity which is where the technology behind a standard is also hidden. Now while this may seem like a desirable characteristic for a standard, it is commonly thought to be the opposite. Now, where something is known it can be critiqued. In this sense errors, vulnerabilities and backdoors can be found in public standards, wherein obscured encryption technologies these have an extremely lower chance of being found. By working using Kerckhoff’s principle, we are able to ensure that the world is cryptographically stronger!
-<a href="https://en.wikipedia.org/wiki/Claude_Shannon#/media/File:ClaudeShannon_MFO3807.jpg" target="_blank"><img src="../img/Claude_Shannon.jpg" alt="Photograph of Claude Shannon" class="imgRight" width="400"/></a>
-“The father of information security”, Claude Elwood Shannon is a well recognised electrical engineer, mathematician and cryptographer, 1916 - 2001. Like Kerckhoff he published a paper in the mid 20th century ‘A Mathematical Theory of Communication’; however, this wasn’t what made him famous, while still very important.
-                
-Shannon updated Kerckhoff’s principle to ensure that it was easy to understand and updated to reflect well on the advancements of technology. This has also been a stage where people have increasingly linked the principle to be better than security through ob,curity. The principle has been simplified to “the enemy knows the system”. Well that’s concise. But it’s meaning is extremely powerful, assuming that the second a standard is used for the first time the enemy already knows exactly how the system works ensures that unnecessary risks aren’t taken and every step is taken to ensure strong encryption. Shannon didn’t build upon this much more as making this simpler meant that more people would be willing to abide by such laws.
-                
-This is why you will find many current and future standards released with their algorithms public as anyone across the world can critique it which makes it easier to improve the quality of the standard. While some do disagree and prefer to keep everything secret as to ensure that it is so called ‘more secure’ we at deCrypt Me appreciate work to be critiqued by many people in order to ensure correctness and the implementation of better ideas! This is a personal choice; however, so you are not wrong if you would prefer to keep everything secret.
-                
-That’s the end of Kerckhoff and Shannon’s principles, a quick and easy look back to see why we make so many cryptographic items public, which is rather contrary to what cryptography should do!
+<p class = "text-box">
+Here we will discuss some of the types of cryptography used by different countries during World War II.
 
-<i>Written by <b>HarryIsSecured</b></i>
+<b>United Kingdom</b>
+<u>TypeX</u><img src="../img/typex.jpg" alt="Typex Cipher Machine" class="imgRight" width="200"/>
+The TypeX machine was a British cipher machine used from 1937 until the 1950s when it was replaced by more advanced methods of improvements. It was based on the commercial Enigma machine but with improvements that made it more secure, such as having five rotors. The first two rotors were stationary and would not be changed daily, which made it more secure without increasing the complexity of the machine. The main improvement the TypeX had over the Enigma was that the rotors had notches that would turn the adjacent rotor. This removed a weakness that was present in the Enigma as its fixed notches caused patterns to appear that would be noticeable under certain conditions.
+ 
+<u>Poem Code</u>
+The poem code was a cryptographic method used by the Special Operations Executive to communicate across Europe. This was done by having an agreed upon poem known to both the sender and receiver. The sender would pick words from the poem as the key and the words had letters that indicated that they are a keyword (the first word corresponds to A, the second is B and so on).
 
-            </p>
-           
+Example:
+The poem is;
+I compare thee to a summer’s day?
+Thou art more lovely and more temperate
+ 
+The keywords are:
+I, to, day, art, temperate
+ 
+The indicator group:
+BEHJO
+ 
+The keywords would be written out and numbered alphabetically to form a transposition key. The plaintext would then be written in the columns and the plaintext would be rewritten with the letters in each column in order with the indicator group written at the beginning.
+ 
+Example continued:
+<img src="../img/poemCode.png" alt="Poem Code Example" class="imgCenter" width="600"/>
+Ciphertext:
+behjo entdw iiont dseac hlhre raay 
+ 
+This could be repeated multiple times to increase security and sometimes errors would be added to the poem so that, if the poem were revealed to the enemy, it would prevent the code from being broken. This method of encryption did not rely on a codebook unlike many other ciphers. The decryption was simply the reverse of the encryption process.
 
-        </div>
+However, poem code did have its disadvantages. It was easily susceptible to human error and messages could not be shorter than 200 words, otherwise the encryption would not be secure enough. Poems were reused so, once a message was broken and the poem and intentional errors revealed, all messages past and present could be read, and this also led the code to be weak to cryptoanalysis. The use of famous poems also meant the code would be more likely to be broken.
+
+<b>United States of America</b>
+<u>SIGABA</u><img src="../img/sigaba.jpg" alt="SIGABA Cipher Machine" class="imgRight" width="300"/>
+SIGABA (also called ECM Mark II) was a cipher machine used by the United States from 1944 until the 1950s. It had an electromechanical system of rotors with significant improvements made on previous rotor machines such as Enigma. The SIGABA’s main difference from other rotor machines was that it had three banks of five rotors (fifteen in total) and the first two banks affected the stepping of the third. The stepping of the rotors being more complex meant that attacks which broke similar rotor machines with more simple stepping were not as effective. 
+
+One of the problems with SIGABA was that it was heavy, expensive and complex. As it was not easily transportable, it was commonly used in radio rooms of US Navy ships but could not be used in the field and was deemed excessive for tactical communications and so the M-209 was often used instead. However, evidence has emerged recently that the M-209 code was broken by the Germans in World War II whereas SIGABA has yet to be broken (at least publicly).
+ 
+<u>Code Talkers</u>
+Code talkers used languages that were used by an exceedingly small population of people as a way to communicate secretly. The United States service had roughly 500 Native American code talkers who used Native American languages to send secret communications during World War II. Code talkers used military telephone or radio communications nets with codes that were based on their native languages. As the encryption was based on a natural language, the secret communications were dealt with speeds that were significantly faster than when other methods of cryptography were used.
+
+During World War II, there were two code types. Type one codes were developed from languages of the Hopi, Comanche, Navajo and Meskwaki peoples. It used a simple substitution cipher where each letter corresponded to a word from their languages. Type two code was a translation from English into the native language. Any words that would not translate directly would be described instead.
+
+<b>JAPAN</b>
+<u>Type B Cipher Machine</u><img src="../img/typeB.jpg" alt="Type B Cipher Machine" class="imgRight" width="300"/>
+The Type B Cipher machine (named “Purple” by the United States) was an encryption machine, with three stages of stepping switches and a plugboard, that was used during World War II by the Japanese Foreign Office. It superseded the Type A Cipher machine “Red” and, due to their similarities and “Red” having been broken by the U.S. Army, there already was significant progress in breaking “Purple” by the start of the war. In September 1940, cryptographers were able to construct a machine that replicated the Japanese machines.
+
+While the “Purple” machine was more secure than “Red”, the Japanese Navy rejected the idea that “Red” had been broken and so continued using “Red” alongside “Purple”. The “Purple” machine had the same flaw as the “Red” machine where six letters of the alphabet were encrypted separately to the rest but these letters were changed every nine days (Red’s six letters were fixed at 'a', 'e', 'i', 'o', 'u' and 'y'). It had two typewriters, one that was used for encryption and the other for decryption, as the ciphertext only had to go through the machine in reverse in order for it to be decrypted back into its plaintext.
+
+<i>Written by <b>Kendal</b></i>
+
+</p>
     </body>
 </div>
 
+
 <footer>
     <div class="nextButton">
-        <a href="asymmetricKey.html" class="three-d">
-            Asymmetric Key < <span class="three"><span class="front">
-                Asymmetric Key < </span><span class="back">
-                    Asymmetric Key  < </span>
+        <a href="cryptowars1.html" class="three-d">
+            Enigma <<span class="three"><span class="front">
+                Enigma <</span><span class="back">
+                    Enigma <</span>
                         </span>
         </a>
-        <a href="cryptosystemsQuiz.html" class="three-d">
-            > Cryptosystem Quiz
-            <span class="three"><span class="front">> Cryptosystem Quiz</span><span class="back">> Cryptosystem Quiz</span></span>
+        <a href="historyQuiz.html" class="three-d">
+            > History Quiz
+            <span class="three"><span class="front">> History Quiz</span><span class="back">> History Quiz</span></span>
         </a>
     </div>
 </footer>
+
+

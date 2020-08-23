@@ -76,6 +76,38 @@ $('#quiz').quiz({
       'correctIndex': 2,
       'correctResponse': 'Superb work.',
       'incorrectResponse': 'Nope. Re-read history on Enigma then come back and try again.'
+    },
+    {
+      'q': 'How did the Special Operations Executive communicate across Europe?',
+      'options': [
+        'Song Code',
+        'Poem Code',
+        'Book Code'
+      ],
+      'correctIndex': 1,
+      'correctResponse': 'Well done :)',
+      'incorrectResponse': 'Incorrect. The SOE preferred to use poems - which poem would you choose?'
+    },
+    {
+      'q': 'What was the main issue with the American SIGABA machine?',
+      'options': [
+        'Not very transportable.',
+        'Too slow to compute ciphers',
+        'Hard to use'
+      ],
+      'correctIndex': 0,
+      'correctResponse': 'You\'re right. This machine tended to stick to the radio rooms of the U.S. Navy ships.',
+      'incorrectResponse': 'Nope. Re-read history on WWII then come back and try again.'
+    },
+    {
+      'q': 'The Japanese Type B Cipher Machine was nicknamed "Red". True or False?',
+      'options': [
+        'True',
+        'False'
+      ],
+      'correctIndex': 1,
+      'correctResponse': 'Bingo! It was nicknamed "Purple".',
+      'incorrectResponse': 'Nope. The Type A cipher machine was nicknamed "Red".'
     }
   ]
 });
