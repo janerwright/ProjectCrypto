@@ -1,7 +1,8 @@
 <head>
-    <title>Cryptosystems</title>
+    <title>Diffie Hellman</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/division.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaquery.css">
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +11,7 @@
 
 <div class="header">
     <div class="typewriter">
-    <h1>Cryptosystems</h1>
+    <h1>Diffie Hellman</h1>
     </div>
 </div>
 
@@ -233,70 +234,80 @@
 
 <div class="box">
     <body>
-        <h2>Cryptosystem Model</h2>
+        <h2>Diffie Hellman</h2>
 
-        
         <div class="text-box">
-            <p>A basic cryptosystem model involves the encryption of plaintext, from a sender, using an algorithm, into ciphertext and then the decryption of the ciphertext into plaintext by the receiver. The goal of the cryptosystem is to send a message to a recipient without an interceptor or eavesdropper being able to extract the information.<img src="../img/basicCryptosystem.png" alt="Basic Cryptosystem Model" class="imgRight" width="400"/>        
-       
-In order to ensure secure communication, the cryptosystem has key components including;
+            <p>The Diffie Hellman Key Exchange resolves the issue surrounding secure key transmission; using this method the key is never in the public domain. This method is used in conjunction with RSA and ECC, as well as other encryption methods. 
 
-&bull; <b>Plaintext</b> - The data to be protected during transmission or storage such as a text file, video message, image file, etc. It is usually denoted by M, for message, or P, for plaintext. The computer views M as binary data, a series of ones and zeros.</li>
+Alice and Bob agree on a Generator G in the public domain. They can then separately choose their private keys, which are not shared at all. Their private keys and the generator can then be used to find their public keys, which can be shared publicly.
+                
+This concept is commonly explained using a colour metaphor, which we have used here to help visualise the operations performed to find the key.
+<img src="../img/diffie.png" alt="Diffie Hellman Colour Concept" class="imgCenter" width="600"/>                
+In the image above you can see that Alice and Bob have shared their public keys aG and bG respectively. An interceptor would not be able to work out their private keys from their public keys as the mathematics are easy one way but extremely difficult to reverse. The key abG is then found with a private key and the public key of the person you are communicating with. A private key is <b>required</b> to find the key so nobody in the public domain can find the key from any of the public parameters of the encryption.
 
-&bull; <b>Encryption Algorithm</b> - Mathematical process, denoted by E, that produces a ciphertext for any given plaintext and an encryption key.</li>
+<b>Example:</b>
+In public Alice and Bob agree on a large prime p and a primitive root of p, g. In this example we will use p = 7 and g = 3.
 
-&bull; <b>Ciphertext</b> - A scrambled version of the plaintext produced by the encryption algorithm using a specific encryption key. The ciphertext can be intercepted or compromised as it is sent on public communication channels, therefore anyone could access the information. It is denoted by C and stored as binary data on the computer.</li>
+Private keys are chosen such that a, b < p. In this example we will use, a = 2 and b = 4.
 
-The encryption algorithm E operates on M to produce C, which in mathematical notation can be written as:
-<div class="calculation">E(M) = C</div>
-&bull; <b>Decryption Algorithm</b> - Mathematical process, denoted by D, that produces the original, unique plaintext for any given plaintext and a decryption key. 
+The following formula is used to calculate a public key where x is the private key:
+<div class="calculation">g<sup>x</sup> mod p </div>
+Alice’s public key: A = g<sup>a</sup> mod p
+                    A = 3&sup2; mod 7
+                    A = 9 mod 7
+                    A = 2
 
-Hence, in the reverse process, decryption algorithm D operates on C to produce M:
-<div class="calculation">D(C) = M</div>
+Bob’s public key: B = g<sup>b</sup> mod p
+                  B = 3<sup>5</sup> mod 7
+                  B = 243 mod 7
+                  B = 5
 
-Since the decryption algorithm reverses the process of the encryption algorithm, the two algorithms are closely related, and the following identity must hold true:
+The shared key can then be calculated using the following formulae:
+<div class="calculation">K = B<sup>a</sup> mod p
+K = A<sup>b</sup> mod p</div>
+Alice calculates:
+K = B<sup>a</sup> mod p
+K = 5&sup2; mod 7
+K = 25 mod 7
+K = 4
 
-<div class="calculation">D(E(M)) = M</div>
-In order for encryption/decryption algorithms to be widely useable, whilst maintaining secrecy, modern cryptography uses a key for both encryption and decryption denoted by K. For a given cryptosystem, the collection of all possible key values is called the keyspace.
+Bob calculates:
+K = A<sup>b</sup> mod p
+K = 2<sup>5</sup> mod 7
+K = 32 mod 7
+K = 4
 
-&bull; <b>Encryption Key</b> - A value known to the sender that inserted into the encryption algorithm along with the plaintext to produce the ciphertext.
+It is important to note that this method is vulnerable to a man-in-the-middle attack.
 
-&bull; <b>Decryption Key</b> - Related to the encryption key but not always identical, it is a value known to the recipient that inserted into the encryption algorithm along with the ciphertext to produce the plaintext.
+If an interceptor, Eve, calculates her own public key and is able to intercept the exchange of Alice and Bob’s private keys she can establish two different keys with Alice and Bob none the wiser.
 
-Using a key, the mathematical functions become:
-<div class="calculation"> E<sub>K</sub>(M) = C
-D<sub>K</sub>(C) = M</div>
-These functions have the property:
-<div class="calculation">D<sub>K</sub>(E<sub>K</sub>(M)) = M</div>
+Alice will calculate a key with the public key provided by Eve, thinking it is Bob’s public key and Bob will do the same but they will now end up with different keys and will be unable to decrypt each other’s messages.
 
-If the algorithms use a different encryption and decryption key, the functions can be written as follows, denoting the separate keys as K1 and K2:
-<div class="calculation">
-E<sub>K1</sub>(M) = C
-D<sub>K2</sub>(C) = M
-D<sub>K2</sub>(E<sub>K1</sub>(M)) = M</div>
+Eve however has the capability to decrypt messages from either party and then re-encrypt the message with the key shared with the recipient. This way the message still reaches its destination but it has been viewed by Eve without the knowledge of either party. The integrity of the message is now in question also, as Eve can change the message before sending it on if she so decides.
 
-One of the main issues regarding a cryptosystem is an interceptor, or attacker. They are an unauthorised entity who attempts to determine the original plaintext from the ciphertext seen in the communication channel. The decryption algorithm may be known to the attacker but for the message to be decrypted, the decryption key must also be known. Keys therefore add another layer of security to a message.
+In the image below we use the colour metaphor again to help you visualise the man in the middle attack.
+<img src="../img/diffieMITM.png" alt="Diffie Hellman Man-in-the-Middle Attack" class="imgCenter" width="600"/> 
 
-There are two general types of key-based algorithms: symmetric and asymmetric key encryption. The relationship between the encryption and decryption keys is the crucial difference between the two cryptosystems. Whilst the keys do not have to be the same, it is practically impossible to decrypt the ciphertext if an unrelated encryption key is used. Hence the keys must be closely associated.
+<i>Written by <b>Chelsea</b></i>
 
-<i>Written by <b>JaneW</b></i>
             </p>
            
+
         </div>
     </body>
 </div>
 
 <footer>
     <div class="nextButton">
-        <a href="cryptosystem.html" class="three-d">
-            Cryptosystem < <span class="three"><span class="front">
-                Cryptosystem < </span><span class="back">
-                    Cryptosystem  < </span>
+        <a href="chineseRemainder.html" class="three-d">
+          Chinese Remainder Theorem < <span class="three"><span class="front">
+            Chinese Remainder Theorem < </span><span class="back">
+                Chinese Remainder Theorem < </span>
                         </span>
         </a>
-        <a href="symmetricKey.html" class="three-d">
-            > Symmetric Key
-            <span class="three"><span class="front">> Symmetric Key</span><span class="back">> Symmetric Key</span></span>
+        <a href="rsaQuiz.html" class="three-d">
+            > RSA Quiz
+            <span class="three"><span class="front">> RSA Quiz</span><span class="back">> RSA Quiz</span></span>
         </a>
     </div>
 </footer>

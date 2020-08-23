@@ -1,7 +1,8 @@
 <head>
-    <title>Cryptosystems</title>
+    <title>Elliptic-Curve Cryptography</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/division.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaquery.css">
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +11,7 @@
 
 <div class="header">
     <div class="typewriter">
-    <h1>Cryptosystems</h1>
+    <h1>Elliptic-Curve</h1>
     </div>
 </div>
 
@@ -233,70 +234,114 @@
 
 <div class="box">
     <body>
-        <h2>Cryptosystem Model</h2>
+        <h2>Elliptic-Curve Cryptography</h2>
 
-        
         <div class="text-box">
-            <p>A basic cryptosystem model involves the encryption of plaintext, from a sender, using an algorithm, into ciphertext and then the decryption of the ciphertext into plaintext by the receiver. The goal of the cryptosystem is to send a message to a recipient without an interceptor or eavesdropper being able to extract the information.<img src="../img/basicCryptosystem.png" alt="Basic Cryptosystem Model" class="imgRight" width="400"/>        
-       
-In order to ensure secure communication, the cryptosystem has key components including;
+            <p>In mathematics, an elliptic curve is a plane algebraic curve defined by an equation of the form. which is non-singular; that is, the curve has no cusps or self-intersections. Elliptical curve cryptography (ECC) is a public key encryption technique based on elliptic curve theory that can be used to create faster, smaller, and more efficient cryptographic keys. ECC generates keys through the properties of the elliptic curve equation instead of the traditional method of generation as the product of very large prime numbers.
+<img src="../img/elliptic-curve.png" alt="Elliptic Curve Graph" class="imgRight" width="400"/>   
+<u>Point Addition</u>
+A straight line on the elliptic curve y&sup2; = x&sup3; + ax + b  intersects three times,  each point of intersection is called P, Q and -R. P and Q can be used to find R, which is a reflection of point -R over the x axis.
+                
+First the gradient (m) of the line is needed. 
+<div class="calculation">m = (y<sub>P</sub> - y<sub>Q</sub>) / (x<sub>P</sub> - x<sub>Q</sub>)</div> 
+ 
+The gradient can then be used to find the x and y coordinates for R.
+                
+<div class="calculation">x<sub>R</sub> = m&sup2; - (x<sub>P</sub> + x<sub>Q</sub>)
+y<sub>R</sub> = m(x<sub>P</sub> - x<sub>Q</sub>) - y<sub>p</sub></div>
 
-&bull; <b>Plaintext</b> - The data to be protected during transmission or storage such as a text file, video message, image file, etc. It is usually denoted by M, for message, or P, for plaintext. The computer views M as binary data, a series of ones and zeros.</li>
+<u>Scalar Multiplication</u>
+However when R = 2P, the formulae change, and m is now the gradient of the tangent of P.
+                
+<div class="calculation">m = (3x<sub>P</sub>&sup2; + a) / 2y<sub>P</sub>
+x<sub>2P</sub> = m&sup2; - 2x<sub>P</sub>
+y<sub>2P</sub> = m(x<sub>P</sub> - x<sub>2P</sub>) - y<sub>p</sub></div>
+                
+To find 3P you would need to first calculate 2P and then point addition for P + 2P.
+To find 4P you would calculate 2P, and the 4P which is 2(2P).
+To find 5P you would need to first calculate 2P, then 4P and then 5P = 4P + P.
+                
+You must remember these concepts to understand the Elliptic Curve Diffie Hellman Key Exchange.
+                
+<b>Key Generation</b>
+Alice and Bob will agree on a, b and p (the modulus) to define their curve; note 4a&sup3; + 27b ≠ 0.
+Alice and Bob then agree on the Generator point G which they will use to find their private keys.
+                
+n is identified, where nG = (∞,∞), this is where x<sub>(n-1)G</sub> = x<sub>G</sub>. If for example 10G = G and 10 < n, then there are only 10 points on the curve. h is defined as h = number of points on the curve / n.
+                
+All of the previously mentioned values are public and any interceptor can view these without knowing Alice and Bob’s secret key.
+                
+Alice and Bob pick private keys α and β only accessible to themselves. Alice and Bob do not know each other's private keys. Alice and Bob can then exchange their public keys on an insecure channel, which are found using the following formulae:
+<div class="calculation">Alice’s: A = αG
+Bob’s: B = βG</div>
+                
+Alice and Bob can then find their shared secret key without knowing each other’s private keys using this formula:
+<div class="calculation">Alice calculates: K = αB
+Bob calculates: K = βA
+K = (αβ mod n)G</div>
+                
+<b>Example:</b>
+Let a = 2, b = 2, p = 17, G = (5, 1) n = 19, h = 1. Alice chooses her private key α = 3 and calculates her private key A which equals 3G.
+                
+<u>Step 1:</u>
+    m = (3x<sub>G</sub>2 + a) / 2y<sub>G</sub>  mod p
+      = (3(5)2 + 2)/(2 * 1) mod 17
+      = 77 / 2 mod 17               [Use the <a href="bezout.html">Extended Euclidean Algorithm</a> here]
+      = 77 * 9 mod 17
+      = 13
+                
+    x<sub>2G</sub> = m2 - 2x<sub>G</sub>  mod p
+        = 132 - 2*5 mod 17
+        = 159 mod 17
+        = 6
+                
+    y<sub>2G</sub> = m(x<sub>G</sub> - x<sub>2G</sub> ) - y<sub>G</sub> mod p
+        = 13(5 - 6) - 1 mod 17
+        = -14 mod 17
+        = 3
+                
+    2G = (6, 3)
+                
+<u>Step 2:</u>
+    P = 2G, Q = G
+    m = (y<sub>2G</sub> - y<sub>G</sub>) / (x<sub>2G</sub> - x<sub>G</sub>) mod p
+      = (3 - 1) / (6 - 5) mod 17
+      = 2 * 1
+      = 2
+                
+    x<sub>3G</sub> = m2 - (x<sub>2G</sub> + x<sub>G</sub>) mod p
+        = 22 - (6 + 5) mod 17
+        = 4 - 11 mod 17
+        = 10
+                
+    y<sub>3G</sub>  = m(x<sub>2G</sub> - x<sub>G</sub>) - y<sub>2G</sub> mod p
+        = 2(6 - 5) - 3 mod 17
+        = 2 - 3 mod 17
+        = 16
+                
+    3G = (10, 6)
+                
 
-&bull; <b>Encryption Algorithm</b> - Mathematical process, denoted by E, that produces a ciphertext for any given plaintext and an encryption key.</li>
+<i>Written by <b>Chelsea</b></i>
 
-&bull; <b>Ciphertext</b> - A scrambled version of the plaintext produced by the encryption algorithm using a specific encryption key. The ciphertext can be intercepted or compromised as it is sent on public communication channels, therefore anyone could access the information. It is denoted by C and stored as binary data on the computer.</li>
-
-The encryption algorithm E operates on M to produce C, which in mathematical notation can be written as:
-<div class="calculation">E(M) = C</div>
-&bull; <b>Decryption Algorithm</b> - Mathematical process, denoted by D, that produces the original, unique plaintext for any given plaintext and a decryption key. 
-
-Hence, in the reverse process, decryption algorithm D operates on C to produce M:
-<div class="calculation">D(C) = M</div>
-
-Since the decryption algorithm reverses the process of the encryption algorithm, the two algorithms are closely related, and the following identity must hold true:
-
-<div class="calculation">D(E(M)) = M</div>
-In order for encryption/decryption algorithms to be widely useable, whilst maintaining secrecy, modern cryptography uses a key for both encryption and decryption denoted by K. For a given cryptosystem, the collection of all possible key values is called the keyspace.
-
-&bull; <b>Encryption Key</b> - A value known to the sender that inserted into the encryption algorithm along with the plaintext to produce the ciphertext.
-
-&bull; <b>Decryption Key</b> - Related to the encryption key but not always identical, it is a value known to the recipient that inserted into the encryption algorithm along with the ciphertext to produce the plaintext.
-
-Using a key, the mathematical functions become:
-<div class="calculation"> E<sub>K</sub>(M) = C
-D<sub>K</sub>(C) = M</div>
-These functions have the property:
-<div class="calculation">D<sub>K</sub>(E<sub>K</sub>(M)) = M</div>
-
-If the algorithms use a different encryption and decryption key, the functions can be written as follows, denoting the separate keys as K1 and K2:
-<div class="calculation">
-E<sub>K1</sub>(M) = C
-D<sub>K2</sub>(C) = M
-D<sub>K2</sub>(E<sub>K1</sub>(M)) = M</div>
-
-One of the main issues regarding a cryptosystem is an interceptor, or attacker. They are an unauthorised entity who attempts to determine the original plaintext from the ciphertext seen in the communication channel. The decryption algorithm may be known to the attacker but for the message to be decrypted, the decryption key must also be known. Keys therefore add another layer of security to a message.
-
-There are two general types of key-based algorithms: symmetric and asymmetric key encryption. The relationship between the encryption and decryption keys is the crucial difference between the two cryptosystems. Whilst the keys do not have to be the same, it is practically impossible to decrypt the ciphertext if an unrelated encryption key is used. Hence the keys must be closely associated.
-
-<i>Written by <b>JaneW</b></i>
             </p>
            
+
         </div>
     </body>
 </div>
 
 <footer>
     <div class="nextButton">
-        <a href="cryptosystem.html" class="three-d">
-            Cryptosystem < <span class="three"><span class="front">
-                Cryptosystem < </span><span class="back">
-                    Cryptosystem  < </span>
+        <a href="rsa.html" class="three-d">
+          RSA < <span class="three"><span class="front">
+            RSA < </span><span class="back">
+                RSA < </span>
                         </span>
         </a>
-        <a href="symmetricKey.html" class="three-d">
-            > Symmetric Key
-            <span class="three"><span class="front">> Symmetric Key</span><span class="back">> Symmetric Key</span></span>
+        <a href="ellipticCurveQuiz.html" class="three-d">
+            > Elliptic-Curve Quiz
+            <span class="three"><span class="front">> Elliptic-Curve Quiz</span><span class="back">> Elliptic-Curve Quiz</span></span>
         </a>
     </div>
 </footer>

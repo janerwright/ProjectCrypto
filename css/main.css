@@ -313,6 +313,22 @@ ul,li{
   transform: rotateX(0deg);
 }
 
+.navigation  ul .side-dropdown7{
+  position: absolute;
+  left: 200px;
+  top: 350px;
+  text-align: left;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transition: all 0.3s ease-in;
+}
+
+.navigation  > li ul li:hover .side-dropdown7{
+  display: inline-block;  
+  visibility: visible;
+  transform: rotateX(0deg);
+}
+
 .logo{
  float: left;
  position: relative;
@@ -794,3 +810,40 @@ form {
   z-index: 1;
   }
 
+  .imgRight1{
+    float: right;
+  }
+
+  .matrix {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.matrix:before, .matrix:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 1px solid #000;
+    width: 6px;
+    height: 100%;
+}
+.matrix:before {
+    left: -6px;
+    border-right: 0px;
+}
+.matrix:after {
+    right: -6px;
+    border-left: 0px;
+}
+.matrix td {
+    padding: 5px;    
+    text-align: center;
+}
+
+.inlineMatrix{
+  justify-content: center;
+  display: inline-block;
+
+}
