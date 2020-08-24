@@ -7,46 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
     counterFormat: 'Question %current of %total',
     questions: [
       {
-        'q': 'Is jQuery required for this plugin?',
-        'options': [
-          'Yes',
-          'No'
-        ],
-        'correctIndex': 0,
-        'correctResponse': 'Good job, that was obvious.',
-        'incorrectResponse': 'Well, if you don\'t include it, your quiz won\'t work'
-      },
-      {
-        'q': 'How do you use it?',
-        'options': [
-          'Include jQuery, that\'s it!',
-          'Include jQuery and the plugin javascript.',
-          'Include jQuery, the plugin javascript, the optional plugin css, required markup, and the javascript configuration.'
-        ],
-        'correctIndex': 2,
-        'correctResponse': 'Correct! Sounds more complicated than it really is.',
-        'incorrectResponse': 'Come on, it\'s not that easy!'
-      },
-      {
-        'q': 'The plugin can be configured to require a perfect score.',
+        'q': 'True or false, the result of P + Q is a reflection of a point on the line PQ?',
         'options': [
           'True',
           'False'
         ],
         'correctIndex': 0,
-        'correctResponse': 'You\'re a genius! You just set allowIncorrect to true.',
-        'incorrectResponse': 'Why you have no faith!? Just set allowIncorrect to true.'
+        'correctResponse': 'Good job, that was obvious.',
+        'incorrectResponse': 'Hmm, I don\'t think so.'
       },
       {
-        'q': 'How do you specify the questions and answers?',
+        'q': 'True or false, the fastest way to calculate 100P is 1P, 2P, 3P, 6P, 12P, 24P, 25P, 50P, 100P?',
         'options': [
-          'MySQL database',
-          'In the HTML',
-          'In the javascript configuration'
+          'True',
+          'False'
         ],
-        'correctIndex': 2,
-        'correctResponse': 'Correct! Refer to the documentation for the structure.',
-        'incorrectResponse': 'Wrong! Do it in the javascript configuration. You might need to read the documentation.'
+        'correctIndex': 0,
+        'correctResponse': 'Correct! Sounds more complicated than it really is.',
+        'incorrectResponse': 'Next time.'
+      },
+      {
+        'q': 'What is the fastest way to calculate 36P (Hint: 7 steps, comma separate)?',
+        'options': [
+          '1P, 2P, 4P, 8P, 12P, 18P, 36P',
+          '1P, 2P, 4P, 8P, 9P, 18P, 36P',
+          '2P, 3P, 8P, 9P, 18P, 19, 36P'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'You\'re a genius!',
+        'incorrectResponse': 'Sorry, that\'s not quite right.'
+      },
+      {
+        'q': 'How many steps are needed to calculate the fastest way to 47P?',
+        'options': [
+          '2',
+          '4',
+          '8',
+          '10'
+        ],
+        'correctIndex': 3,
+        'correctResponse': 'Brilliant.',
+        'incorrectResponse': 'Bit off there.'
       }
     ]
   });

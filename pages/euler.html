@@ -1,5 +1,5 @@
 <head>
-    <title>Modular Arithmetic</title>
+    <title>Euler's Theorem</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/division.css">
@@ -12,7 +12,7 @@
 
 <div class="header">
     <div class="typewriter">
-        <h1>Modular Arithmetic</h1>
+        <h1>Euler's Theorem</h1>
     </div>
 </div>
 
@@ -138,7 +138,7 @@
                             <span class="three"><span class="front">Chinese Remainder Theorem</span><span
                                     class="back">Chinese Remainder Theorem</span></span>
                         </a></li>
-                        <li><a href="euler.html" class="three-d">
+                    <li><a href="euler.html" class="three-d">
                             Euler's Theorem
                             <span class="three"><span class="front">Euler's Theorem</span><span
                                     class="back">Euler's Theorem</span></span>
@@ -241,77 +241,87 @@
 <div class="box">
 
     <body>
-        <h2>Modular Arithmetic</h2>
+        <h2>Euler’s Totient Function and Theorem</h2>
         
         <div class="text-box">
-    <p>Problems that involve large integers can be simplified by a technique called <i>modular arithmetic</i>.  This technique uses the arithmetic of congruences in place of traditional equations. The basic idea involves choosing an integer n, which is called the <i>modulus</i>, and replace every integer with its remainder when divided by n. 
+    <p>To complete the theory required to understand RSA, the final mathematics we are going to look at is Euler’s Totient Function and Euler’s Theorem.
 
-To illustrate this, let’s look at an example:
-<i>What day of the week will it be 100 days from now?</i>
+<b>Euler’s Totient Function</b>
+Euler’s totient function, also known as the phi function, counts the number of positive integers less than n that are coprime to n. Mathematically,  ϕ(n) is the number of m ∈ N such that 1 ≤ m < n and gcd(m, n) = 1. We can also define ϕ(n) = |U<sub>n</sub>| where U<sub>n</sub> denotes the set of units in Z<sub>n</sub>.  To understand units, basic group theory knowledge may be required but we won’t be going into detail here.
 
-Most of us would solve this by getting out a diary and counting up 100 days until we found the answer. However, we can solve this using modular arithmetic. We know that the week repeats the same 7-day cycle and 100 = 14 x 7 + 2, so the day of the week in 100 days’ time will be the day of the week it is today plus 2. E.g. if today is Monday, the answer is Wednesday. Here, we chose n = 7, and replaced 100 with its remainder on division by 7 which is 2.
+<b>Example:</b>
+1. Find ϕ(6).
+   ϕ(6) is made up of units {[0]<sub>6</sub>, [1]<sub>6</sub>, [2]<sub>6</sub>, [3]<sub>6</sub>, [4]<sub>6</sub>, [5]<sub>6</sub>}. First, we cross off elements that are not relatively prime.
 
-<b>Definition</b>
-<i>Let n be a positive integer, and let a and b be any integers. We say that a is <i>congruent</i> to b mod (n), or a is a <i>residue</i> of b mod (n), written
-<div class="calculation">a &equiv; b mod (n)</div>
-If a and b leave the same remainder when divided by n.</i>
+   ϕ(6) = |U<sub>6</sub>|
+	= {[1]<sub>6</sub>, [5]<sub>6</sub>}
+	= 2
 
-To be more precise, we use the <a href="division.html">division algorithm<a> to put a = qn +r with 0 &le; r < n, and b = q'n + r' with 0 &le; r' < n. We can then say a &equiv; b mod (n) if and only if r = r'.
+2. Find ϕ(15)
+   Eliminate the multiples of 3 or 5, {3,5,6,9,10,12}. The remaining numbers are {1,2,4,7,8,11,13,14}, so ϕ(15) = 8.
 
-<b>Lemma</b>
-<i>For any fixed n &ge; 1, we have a &equiv; b mod (n) if and only if n divides (a – b).</i>
+<b>Lemma:</b>
+<i>If n = p<sup>e</sup> where p is prime, then 
+<div class="calculation"> ϕ(n) = p<sup>e</sup> - p<sup>e-1</sup>
+= p<sup>e-1</sup>(p – 1)
+= n(1 – 1/p)</div></i>
 
 <b>Proof:</b>
-From above, let a = qn +r and b = q'n + r' which gives a – b = (q - q')n + (r – r') with -n < r – r' < n. If a &equiv; b mod (n) then r = r', so r – r’ = 0 and a – b = (q – q')n, which is divisible by n. Conversly, if n divides a – b then it divides (a – b) – (q – q')n = r – r'. The only integer strictly between -n and n which is divisible by n is 0, so r – r' = 0, giving r = r' and hence a &equiv; b mod (n). &#9632;
+ϕ(p<sup>e</sup>) is the numbers of integers in {1,…,p<sup>e</sup>} which are coprime to p<sup>e</sup>, i.e. not divisible by p. This set has p<sup>e</sup> members, of which p<sup>e</sup>/p = p<sup>e-1</sup> are multiples of p, so ϕ(p<sup>e</sup>/) = p<sup>e</sup> - p<sup>e-1</sup>
+= p<sup>e-1</sup>(p – 1). &#9632;
 
-<b>Example:</b>
-<div class="calculation">52 &equiv; 24 (mod 7)</div>
-As we can see, 52 and 24 are congruent (mod 7) because 52 (mod 7) = 3 and 24 (mod 7) = 3.
-
-Modular arithmetic has several important properties regarding addition, multiplication, exponentiation and division. We will walk through each of the properties and an example of each to help your understanding. Division is a little bit tricky so we will leave this out but please feel free to do your own research regarding modular division.
-
-Properties of addition in modular arithmetic:
-    1. If a + b = c, then a (mod n) + b (mod n) &equiv; c (mod n).
-    2. If a &equiv; b (mod n), then a + k &equiv; b + k (nod n) for any integer k.
-    3. If a &equiv; b (mod n) and c &equiv; d (mod n), then a + c &equiv; b + d (mod n).
-    4. If a &equiv; b (mod n), then -a &equiv; -b (mod n).
-
-<b>Example:</b>
-Find the sum of 31 and 148 in modulo 24.
-31 in modulo 24 is equivalent to 7. If we use the first addition property, 
-<div class="calculation">31 + 148 &equiv; 7 + 148 (mod 24)
-&equiv; 155 (mod 24)</div>
-155 in modulo 24 is 11. 
-
-Properties of multiplication in modular arithmetic:
-    1. If a . b = c, then a (mod n) . b (mod n) &equiv; c (mod n).
-    2. If a &equiv; b (mod n), then ka &equiv; (mod n) for any integer k.
-    3. If a &equiv; b (mod n) and c &equiv; d (mod n), then ac &equiv bd (mod n).
-
-<b>Example:</b>
-What is (8 x 16) (mod 7)?
-Since 8 &equiv; 1 (mod 7) and 16 &equiv; 2 (mod 7), we have 
-
-<div class="calculation">(8 x 16) &equiv; (1 x 2) (mod 7)
-&equiv; 2 (mod 7)</div>
-
-
-Properties of exponentation in modular arithmetic:
-If a &equiv; b (mod n), then a<sup>k</sup> &equiv; b<sup>k</sup> (mod n) for any positive integer k.
-
-<b>Example:</b>
-What is 3<sup>16</sup> (mod 4)?
-By observation, 
-<div class="calculation">3&sup2; &equiv; 9 &equiv; 1 (mod 4)</div>
-Using the property of exponentiation,
-<div class="calculation">3<sup>16</sup> (mod 4) &equiv; (3&sup2)<sup>8</sup> (mod 4)   
-&equiv; (1)<sup>8</sup> (mod 4)
-&equiv; 1<sup>8</sup> (mod 4)
+<b>Corollary:</b>
+<i>If n has prime-power factorisation n = p<sub>1</sub><sup>e1</sup>…p<sub>k</sub><sup>ek</sup>, where p<sub>i</sub> and e<sub>i</sub> > 0, then
+<div class="calculation"> ϕ(n) = n(1 – 1/ p<sup>1</sup>)(1 – 1/ p<sup>2</sup>)…(1 – 1/ p<sup>k</sup>)
 </div>
+</i>
 
-These properties help us calculate values that are used in RSA.
-        </p>
- <i>Written by <b>JaneW</b></i>
+<b>Example:</b>
+Find ϕ(60).
+
+The primes dividing 60 are 2, 3 and 5, so
+ϕ(60) = 60(1 – 1/2)(1 – 1/3)(1 – 1/5)
+= 60 * 1/2 * 2/3 * 4/5
+= 16.
+
+<b>Theorem:</b>
+<i>If a and b are coprime, gcd(a, b) = 1, then ϕ(ab) = ϕ(a)ϕ(b).</i>
+
+<b>Example:</b>
+1. Find ϕ(12). 
+   12 can be split into the integers a = 3 and b = 2, which are coprime with ϕ(3) = ϕ(4) = 2. Hence ϕ(12) = 2*2 = 4.
+
+2. Find ϕ(15). 
+   ϕ(p) can be written as p – 1 so;
+   ϕ(15) = ϕ(3)ϕ(5)
+	 = (3 – 1)(5 – 1)
+	 = 2 * 4
+	 = 8
+
+
+<b>Euler’s Theorem</b>
+In 1760, Euler proved the following generalisation of Fermat’s Little Theorem.
+
+<b>Theorem:</b>
+<i>If gcd(a, n) = 1, then a<sup>ϕ(n) </sup> &equiv; 1 mod (n).</i>
+
+<b>Example:</b>
+Find ϕ(14), and verify that a<sup>ϕ(14) </sup> &equiv; 1 mod (n) for each a coprime to 14.
+
+ϕ(14) = ϕ(2)ϕ(7)
+ = (2 – 1)(7 – 1)
+ = 1 * 6
+ = 6
+
+U<sub>14</sub> = {[&plusmn;1], [&plusmn;3], [&plusmn;5]}
+
+(&plusmn;1)<sup>6</sup> = 1 (mod 14)
+(&plusmn;3)<sup>6</sup> = 729 &equiv; 1 (mod 14)
+(&plusmn;3)<sup>6</sup> = 15625 &equiv; 1 (mod 14)
+
+RSA relies heavily of the above theorems so make sure you understand them before moving on to computing RSA algorithms.
+    </p>
+<i>Written by <b>JaneW</b></i>
 
 </div>
     </body>
@@ -320,15 +330,15 @@ These properties help us calculate values that are used in RSA.
 
 <footer>
     <div class="nextButton">
-        <a href="primes.html" class="three-d">
-            Primes < <span class="three"><span class="front">
-                Primes  < </span><span class="back">
-                    Primes  < </span>
+        <a href="chineseRemainder.html" class="three-d">
+            Chinese Remainder < <span class="three"><span class="front">
+                Chinese Remainder  < </span><span class="back">
+                    Chinese Remainder  < </span>
                         </span>
         </a>
-        <a href="chineseRemainder.html" class="three-d">
-            > Chinese Remainder Theorem
-            <span class="three"><span class="front">> Chinese Remainder Theorem</span><span class="back">> Chinese Remainder Theorem</span></span>
+        <a href="rsa.html" class="three-d">
+            > RSA
+            <span class="three"><span class="front">> RSA</span><span class="back">> RSA</span></span>
         </a>
     </div>
 </footer>

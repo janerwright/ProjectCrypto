@@ -136,6 +136,11 @@
                             <span class="three"><span class="front">Chinese Remainder Theorem</span><span
                                     class="back">Chinese Remainder Theorem</span></span>
                         </a></li>
+                        <li><a href="euler.html" class="three-d">
+                            Euler's Theorem
+                            <span class="three"><span class="front">Euler's Theorem</span><span
+                                    class="back">Euler's Theorem</span></span>
+                        </a></li>
                 </ul>
             </li>
             <li><a href="ellipticCurve.html" class="three-d">
@@ -197,7 +202,7 @@
             </a></li>
             <li><a href="cryptosystemsQuiz.html" class="three-d">
                 Cryptosystems
-                <span class="three"><span class="front">CryptoWars</span><span class="back">CryptoWars</span></span>
+                <span class="three"><span class="front">Cryptosystems</span><span class="back">Cryptosystems</span></span>
         </a></li>
             <li><a href="divisionQuiz.html" class="three-d">
                     Division
@@ -234,15 +239,164 @@
 <div class="box">
     <body>
         <h2>RSA Algorithm</h2>
+    
+        <div class="text-box">
+        <p>RSA (Rivest–Shamir–Adleman) was one of the first <a href="asymmetricKey.html">public key</a> cryptosystems and is widely used to securely send messages over the internet. The implementation of RSA makes heavy use of <a href="modularArithmetic.html">modular arithmetic</a>, <a href="euler.html">Euler's theorem, and Euler's totient function</a> that we have explained on the previous pages.
+<img src="../img/rsa.png" class="imgRight" width="450">
+The idea is that we choose n = pq, choose e with gcd(e, 𝜙(n)) = 1, and find d with ed &equiv; 1 (mod 𝜙(n)).
+            
+To encipher: P &rarr; E(P) &equiv; P<sup>e</sup> (mod n), where P denotes the plaintext and E denotes encrypt.
+To decipher: Q &rarr; D(Q) &equiv; Q<sup>d</sup> (mod n), where Q denotes the ciphertext and D denotes decrypt.
+            
+To encode we need to know (n, e) and to decode, we need to know (n, d).
+            
+<b>Key Generation</b>
+First, the receiver chooses two large primes p and q. The product n = pq forms half of the public key. We then use the totient function on n, denoted 𝜙(n),
+            
+<div class="calculation">𝜙(n) = 𝜙(pq) 
+= 𝜙(p)𝜙(q) 
+= (p - 1)(q - 1)
+= pq - p - q + 1</div> 
+If we know n and 𝜙(n), we can determine p and q. Rearranging the above equation, we get 
+<div class="calculation">p + q = pq + 1 - 𝜙(n)</div>
+            
+This can be written in the form of a polynomial:
+<div class="calculation">x&sup2; - (p + q)x + pq = (x - q)(x - p)</div>
+            
+<b>Example:</b>
+Let n = 187 and 𝜙(n) = 160. Determine p and q. 
+From the question we know, pq = 187 so p + q = 187 + 1 -160 = 28. Rewriting this as a polynomial,  
+<div class="calculation">x&sup2; - 28x + 187 = 0</div>
+
+Using the quadratic function, we obtain the roots; 
+x = (28 &plusmn; &radic;28&sup2; - 4(1)(187)) / 2
+  = (28 &plusmn; &radic;784; - 748) / 2
+  = (28 &plusmn; &radic;36) / 2
+  = (28 &plusmn; 6) / 2
+  = 17, 11
+So p = 11, q = 17.
+
+<b>Finding the Decryption Key</b>
+For the purpose of this example we’ve chosen very small primes but for encryption to be secure, remember you must choose large primes.
+
+Let
+<div class="calculation">p = 17 and q = 19</div>
+
+And multiply to find n, the modulus
+<div class="calculation">n = pq = 17 x 19 = 323
+𝜙(323) = (17 - 1)(19 -1) = 16 x 18 = 288</div>
+We then choose e, which must be between 1 and 𝜙(n), and coprime to 𝜙(n), i.e. gcd(e, 𝜙(n)) = 1. Let;
+<div class="calculation">e = 61</div>
+
+The decryption key, d, is such that
+<div class="calculation">ed &equiv; 1 mod 𝜙(n)</div>
+This can be calculated using the <a href="bezout.html">extended Euclidean algorithm</a>.
+
+288 = (61 x 4) + 44
+61 = (44 x 1) + 17
+44 = (17 x 2) + 10
+17 = 10 + 7 
+10 = 7 + 3
+7 = (3 x 2) + 1
+
+1 = 7 - 2(3) 
+  = 7 - 2(10 - 7)
+  = 3(7) - 2(10)
+  = 3(17 - 10) - 2(10)
+  = 3(17) - 5(10)
+  = 3(17) - 5[44 - 2(17)]
+  = 13(17) - 5(44)
+  = 13(61 - 44) - 5(44)
+  = 13(61) - 18(44)
+  = 13(61) - 18[288 - 4(61)]
+  = 85(61) - 18(288)
+
+When compared to the earlier formula de ≡ 1 mod 𝜙(n), you can see that the coefficient of e = 61 is 85, the decryption key.
+
+Now we understand how to find the decryption key, let’s try to decrypt a secret message. We will assume that each letter of the alphabet has been given a number, i.e. A = 01, B = 02,..., Z = 26.
+
+<b>Example:</b>
+Your public key is (n,e) = (2173, 3) where n = 2173. You receive the message
+1865 0183 1955 0308 0034 2130 0530
+What does it say and what decryption exponent did you use?
+
+(n, e) = (2173, 3) where n = 2173 = 41*53 (p*q)
+
+P &rarr; E(P) &equiv; P<sup>e</sup> (mod n)
+&equiv; P<sup>3</sup> (mod 2173)
+
+To decode, we need (n, d) = (2173, d) where ed &equiv; 1 mod 𝜙(n), 3d &equiv; 1 (mod 𝜙(2173)).
+
+𝜙(n) = (p - 1)(q - 1)
+𝜙(2173) = (41 - 1)(53 - 1)
+        = (40)(52)
+        = 2080
+
+3d &equiv; 1 (mod 2080)
+3d &equiv; 1 + 2080k
+1 = 3d - 2080k
+
+gcd(2080, 3)
+2080 = 3(693) + 1
+1 = 2080 + (-693)3
+
+Therefore, d = -693
+= -693 + 2080 (to make d positive add the modulus to the negative number)
+= 1387 
+
+D(E(P)) = 1865<sup>1387</sup> 0183<sup>1387</sup> 1955<sup>1387</sup> 0308<sup>1387</sup> 0034<sup>1387</sup> 2130<sup>1387</sup> 0530<sup>1387</sup> (mod 2173)
+
+P = 2015 1815 1420 1509 1903 1512 0424
+  = T O  R O  N T  O I  S C   O L  D X
+<u> = Toronto is cold</u> 
+
+
+<b>Encryption</b>
+The formula you need for encryption in RSA is
+<div class="calculation">C = M<sup>e</sup> (mod n)</div>
+
+Where C is the ciphertext, M is the plaintext message, e is a number coprime to  (which must be between one and 𝜙(n), non-inclusive) and n is the modulus.
+
+If you are working out an RSA encryption by hand, you will find that you can’t calculate on your calculator x<sup>61</sup>, therefore, you have to expand your expression using several laws of indices. As 61 is a prime number, this cannot be simplified into factors. However,
+
+<div class="calculation">𝑥<sup>61</sup> = 𝑥<sup>60</sup> * 𝑥</div>
+
+𝑥<sup>60</sup> can be simplified by finding its factors. 60 = 10 x 6 = 5 x 2 x 6 = 5 x 3 x 2 x 2 using <a href="primes.html">prime factorisation</a>
+
+<div class="calculation">𝑥<sup>60</sup> = {[(𝑥<sup>5</sup>)<sup>3</sup>]<sup>2</sup>}<sup>2</sup></div>
+
+By inserting the expression for 𝑥<sup>60</sup> into the expression for 𝑥<sup>61</sup> you have the following:
+
+<div class="calculation">𝑥<sup>61</sup> = {[(𝑥<sup>5</sup>)<sup>3</sup>]<sup>2</sup>}<sup>2</sup> * 𝑥</div>
+
+NOTES
+After each step you should be applying the modulus, as shown in the image below. 
+𝑥<sup>mn</sup> = (𝑥<sup>m</sup>)<sup>n</sup>  [Solve 𝑥<sup>m</sup> first, then multiply the result by itself n times]
+𝑥<sup>m+n</sup> = 𝑥<sup>m</sup>*𝑥<sup>n</sup> [Solve 𝑥<sup>m</sup> and 𝑥<sup>n</sup> individually and multiply the results together]
+In the image below [(M<sup>5</sup>)<sup>4</sup>]<sup>3</sup> was possible to calculate and quicker than {[(M<sup>5</sup>)<sup>3</sup>]<sup>2</sup>}<sup>2</sup>
+
+<img src="../img/RSA-ENC.PNG" class="imgCenter" width="900">
+<b>Decryption</b>
+The decryption formula is
+<div class="calculation">M = C<sup>d</sup> (mod n)</div>
+
+The decryption can be worked out using the same method as before, but using d, the decryption key and not e. d is the multiplicative inverse of e mod 𝜙(n).
+
+Where d = 85, 85 = [(5 + 2) x 4 x 3] + 1, therefore
+<div class="calculation">𝑥<sup>85</sup> = [(𝑥<sup>5</sup> * 𝑥<sup>2</sup>)<sup>4</sup>]<sup>3</sup> * 𝑥</div>
+<img src="../img/RSA-DEC.PNG" class="imgCenter" width="900">
+        </p>
+<i>Written by <b>Chelsea and JaneW</b></i>
+        </div>
     </body>
 </div>
 
 <footer>
     <div class="nextButton">
-        <a href="chineseRemainder.html" class="three-d">
-          Chinese Remainder Theorem < <span class="three"><span class="front">
-            Chinese Remainder Theorem < </span><span class="back">
-                Chinese Remainder Theorem < </span>
+        <a href="euler.html" class="three-d">
+          Euler's Theorem < <span class="three"><span class="front">
+            Euler's Theorem < </span><span class="back">
+                Euler's Theorem < </span>
                         </span>
         </a>
         <a href="rsaQuiz.html" class="three-d">

@@ -136,6 +136,11 @@
                             <span class="three"><span class="front">Chinese Remainder Theorem</span><span
                                     class="back">Chinese Remainder Theorem</span></span>
                         </a></li>
+                        <li><a href="euler.html" class="three-d">
+                            Euler's Theorem
+                            <span class="three"><span class="front">Euler's Theorem</span><span
+                                    class="back">Euler's Theorem</span></span>
+                        </a></li>
                 </ul>
             </li>
             <li><a href="ellipticCurve.html" class="three-d">
@@ -197,7 +202,7 @@
             </a></li>
             <li><a href="cryptosystemsQuiz.html" class="three-d">
                 Cryptosystems
-                <span class="three"><span class="front">CryptoWars</span><span class="back">CryptoWars</span></span>
+                <span class="three"><span class="front">Cryptosystems</span><span class="back">Cryptosystems</span></span>
         </a></li>
             <li><a href="divisionQuiz.html" class="three-d">
                     Division
@@ -252,7 +257,7 @@ Kerckhoff’s claim to fame began in 1883 when two reports he had written were f
     6. Lastly, given the circumstances in which it is to be used, the system must be easy to use and should not be stressful to use or require its users to know and comply with a long list of rules.</li>
         
 As you can see there are some principles listed here which just aren’t as relevant today so it is okay to not take these principles as the be-all and end-all of how to develop strong encryption- or else this would be a short section and we wouldn’t need Shannon's principles! The second principle “It should not require secrecy, and it should not be a problem if it falls into enemy hands”’ is the law that is considered to be Kerckhoff’s principle.
-
+<img src="../img/Kerckhoff_Meme.png" alt="Kerckoff Joke" class="imgLeft" width="400"/>
 Wait, but deCrypt Me isn’t that obvious? Well yes but actually no. Sorry, but the low-quality meme had to be done. See, “it should not be a problem if it falls into enemy hands”, doesn’t just refer to if the encrypted message is intercepted, but if the entire encryption system is revealed. We will build upon this during Shannon’s principles later. This is a hard concept, if technologies such as Caesar’s Cipher had their inner workings divulged, the message would be cracked in a matter of hours (as these messages did have to be decrypted by hand during Caesar’s reign). Then doesn’t this apply to everything? No, it doesn’t! Newer encryptions such as RSA, AES, PGP, ECC, etc.. have all had their techniques revealed; however, it’s still (as far as we know) impossible to reliably crack messages without brute-forcing them. Parties who you don’t intend on viewing the message can have the algorithm used for encryption and decryption but still never be able to decrypt the encrypted messages you send. In other words, a standard should rely on the key to be secure, not any other part of it.
                 
 This goes against the idea of security through obscurity which is where the technology behind a standard is also hidden. Now while this may seem like a desirable characteristic for a standard, it is commonly thought to be the opposite. Now, where something is known it can be critiqued. In this sense errors, vulnerabilities and backdoors can be found in public standards, wherein obscured encryption technologies these have an extremely lower chance of being found. By working using Kerckhoff’s principle, we are able to ensure that the world is cryptographically stronger!
