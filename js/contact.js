@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    function openWin() {
+        window.open("submit.html");
+      }
+
 var fields = {}
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -41,16 +46,13 @@ function isValid(){
     return valid;
 }
 
-  
-  
-  
-function sendMail() {
-    var link = "mailto:learn.cyber@outlook.com"
-             + "&subject=" + escape("This is my subject")
-             + "&body=" + escape(document.getElementById('myText').value)
-    ;
+    
 
-    window.location.href = link;
-}
+
+});
+
+
+
+
   
  

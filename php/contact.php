@@ -63,7 +63,7 @@ if(isset($_POST['email'])) {
       return str_replace($bad,"",$string);
     }
  
-     
+  
  
     $email_message .= "First Name: ".clean_string($forename)."\n";
     $email_message .= "Last Name: ".clean_string($surname)."\n";
@@ -75,8 +75,5 @@ $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
 @mail($email_to, $email_subject, $email_message, $headers);  
+
 ?>
- 
-<!-- include your own success html here -->
- 
-Thank you for contacting us. We will be in touch with you very soon.

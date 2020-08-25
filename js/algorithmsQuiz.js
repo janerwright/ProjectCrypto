@@ -129,6 +129,50 @@ document.addEventListener('DOMContentLoaded', () => {
         'correctIndex': 2,
         'correctResponse': 'Marvelous Work',
         'incorrectResponse': 'Re-read the article on Shamir\'s algorithm again.'
+      },
+      {
+        'q': 'The equation g<sup>r</sup> = tN+1 can be rearranged to give:',
+        'options': [
+          '(g<sup>r/2</sup> + 1)(g<sup>r/2</sup> + 1) = tN',
+          '(g<sup>r/2</sup> + 1)(g<sup>r/2</sup> - 1) = tN',
+          '(g<sup>r/2</sup> - 1)(g<sup>r/2</sup> - 1) = tN'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'Genius!',
+        'incorrectResponse': 'Re-read the article on Shor\'s algorithm again.'
+      },
+      {
+        'q': 'Which of the following is a linear transformation used by the quantum computer?',
+        'options': [
+          'Quantum Fourier',
+          'Quantum Sixier',
+          'Quantum Eightier'
+        ],
+        'correctIndex': 0,
+        'correctResponse': 'Well Done',
+        'incorrectResponse': 'Not quite.'
+      },
+      {
+        'q': 'Which of the following properties must the value of r have for the algorithm to work?',
+        'options': [
+          'It must be a factor of N ',
+          'It must be greater than g',
+          'It must be even'
+        ],
+        'correctIndex': 2,
+        'correctResponse': 'Super',
+        'incorrectResponse': 'I\'m afraid you\'ll have to try again.'
+      },
+      {
+        'q': 'For any initial guess, g, we make, what is the probability that Shor’s algorithm will work? ',
+        'options': [
+          '0.125',
+          '0.375',
+          '0.625'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'Brilliant',
+        'incorrectResponse': 'Hmm I dont\'t think so.'
       }
     ]
   });
