@@ -805,9 +805,17 @@ form {
 .box2 {
   position: absolute;
   margin-top: 35px;
-  margin-left: -340px;
+  margin-left: -345px;
   margin-right: 0;
   z-index: 1;
+  }
+
+  .left {
+    margin-left: 0px;
+  }
+
+  .crypSpace {
+    margin-top: 0px;
   }
 
   .imgRight1{
@@ -863,6 +871,10 @@ form {
   white-space: pre-wrap;
   margin-top: 60px;
   display: block;
+}
+
+.indexBox::-webkit-scrollbar{
+  display: none;
 }
   
 .indexContainer {
