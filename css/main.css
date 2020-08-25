@@ -884,6 +884,7 @@ form {
  border-radius: 15px;
  margin-left: 6%;
  margin-right: auto;
+ overflow: hidden;
 }
 
 .pics {

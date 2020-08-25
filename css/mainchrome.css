@@ -906,6 +906,7 @@ form {
 }
 
 .about{
-  margin-top: -40px;
+  position: relative;
+  margin-top: -20px;
 }
 
