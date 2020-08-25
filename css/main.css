@@ -1,18 +1,18 @@
-h1{
-    font-family: "bungee", sans-serif;
-    font-size: 2em;
+h1 {
+  font-family: "bungee", sans-serif;
+  font-size: 2em;
 }
 
 
-h2{
-font-family: fira-mono, monospace;
-font-weight: 700;
-font-style: normal;
-text-align: center;
+h2 {
+  font-family: fira-mono, monospace;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
 }
 
 
-h5{
+h5 {
   font-family: fira-mono, monospace;
   font-weight: 500;
   font-style: normal;
@@ -20,188 +20,204 @@ h5{
   text-align: left;
 }
 
-html,body{
-    overflow-x: visible;
+html,
+body {
+  overflow-x: visible;
 }
 
 
-body{
-    background: black;
-    margin: 0;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+body {
+  background: black;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.header{
+.header {
   font-family: fira-mono, monospace;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    position: relative;
-    margin: 0;
-    padding: 20px;
-    background: black;
-    color: white;   
-    width: 99%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  background: black;
+  color: white;
+  width: 99%;
 }
 
-.header a{
-    text-decoration: none;
-    display: block;
-    padding: 1em;
-    color: white;
+.header a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
 }
 
-.typewriter h1{
-    overflow: hidden;
-    border-right: .10em solid white;
-    width: auto;
-    display: inline-block;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .20em;
-    animation:
-        typing 4s steps(40, end),
-        blink-caret .75s step-end infinite;
+.typewriter h1 {
+  overflow: hidden;
+  border-right: .10em solid white;
+  width: auto;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .20em;
+  animation:
+    typing 4s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
-@keyframes typing{
-    from {max-width: 0}
-    to {max-width: 100%}
+@keyframes typing {
+  from {
+    max-width: 0
+  }
+
+  to {
+    max-width: 100%
+  }
 
 }
 
-@keyframes blink-caret{
-    from, to{border-color: transparent}
-    50%{border-color:white;}
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: white;
+  }
 }
 
-.navigation{
-    justify-content: center;
-    list-style: none;
-    background-color: black;
-    font-family: fira-mono, monospace;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1.2em;
-    display: block;
-    margin: 10px auto ;
-    width:800px;
-    z-index: 9999;
-    position: relative;
-    flex-shrink: 0;
-  }
-
-.navigation > li {
-    display:inline;
-    float:left;	
-    border-right:1px solid black;
-    position: relative;
-    overflow: visible;
-    z-index: 9999;	
-    }
-
-  .navigation > li:last-child {
-    border-right: none;
-  }
-
-  .navigation li a {
-    color: #fff;
-	display: block;
-	text-decoration: none;	 
-	font-smoothing: antialiased;
-      line-height: 20px;
-      font-weight: 300;
-      font-size: 14px;
-      letter-spacing: 1px;
-      padding: 15px 30px 15px 31px;		
-  }
-
-ul,li{
-    list-style: none outside none;
+.navigation {
+  justify-content: center;
+  list-style: none;
+  background-color: black;
+  font-family: fira-mono, monospace;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2em;
+  display: block;
+  margin: 10px auto;
+  width: 800px;
+  z-index: 9999;
+  position: relative;
+  flex-shrink: 0;
 }
 
-.three-d {   
-    perspective: 200px;   
-    transition: all .07s linear;
-    position: relative;
-  }
-  
-  .three-d:not(.active):hover {
-    cursor: pointer;
-  }
-  
-  .three-d:not(.active):hover .three, 
-  .three-d:not(.active):focus .three {   
-    transform: translateZ(-25px) rotateX(90deg);
-  }
-  
-  .three {  
-    transition: all .3s ease-out;   
-    transform: translatez(-25px);   
-    transform-style: preserve-3d;   
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-  }
-  
-  .front {  
-    transform: rotatex(0deg) translatez(25px);
-  }
-  
-  .back {   
-    transform: rotatex(-90deg) translatez(25px);
-    color: white;
-  }
-  
-  .front, .back {
-    display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background:black;
-      padding: 15px 30px 15px 31px;	
-      color: white;	 
-      pointer-events: none;   
-      box-sizing: border-box;
-  }
+.navigation>li {
+  display: inline;
+  float: left;
+  border-right: 1px solid black;
+  position: relative;
+  overflow: visible;
+  z-index: 9999;
+}
+
+.navigation>li:last-child {
+  border-right: none;
+}
+
+.navigation li a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  font-smoothing: antialiased;
+  line-height: 20px;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 15px 30px 15px 31px;
+}
+
+ul,
+li {
+  list-style: none outside none;
+}
+
+.three-d {
+  perspective: 200px;
+  transition: all .07s linear;
+  position: relative;
+}
+
+.three-d:not(.active):hover {
+  cursor: pointer;
+}
+
+.three-d:not(.active):hover .three,
+.three-d:not(.active):focus .three {
+  transform: translateZ(-25px) rotateX(90deg);
+}
+
+.three {
+  transition: all .3s ease-out;
+  transform: translatez(-25px);
+  transform-style: preserve-3d;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.front {
+  transform: rotatex(0deg) translatez(25px);
+}
+
+.back {
+  transform: rotatex(-90deg) translatez(25px);
+  color: white;
+}
+
+.front,
+.back {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  padding: 15px 30px 15px 31px;
+  color: white;
+  pointer-events: none;
+  box-sizing: border-box;
+}
 
 .navigation li .active .front,
 .navigation li .active .back,
-.navigation  li a:hover .front,
-.navigation  li a:hover .back {
-  background-color: white;   
+.navigation li a:hover .front,
+.navigation li a:hover .back {
+  background-color: white;
   background-size: 5px 5px;
-  background-position: 0 0, 30px 30px; 
-    color: black;
-   
+  background-position: 0 0, 30px 30px;
+  color: black;
+
 }
-.navigation  ul {
+
+.navigation ul {
   position: absolute;
   left: -40px;
-    text-align: left;
-	line-height: 40px;
-	font-size: 10px;
-	width: 200px; 
-  transition: all 0.3s ease-in;   
-  transform-origin: 0px 0px;  
-  transform: rotateX(-90deg);   
-	backface-visibility: hidden;
+  text-align: left;
+  line-height: 40px;
+  font-size: 10px;
+  width: 200px;
+  transition: all 0.3s ease-in;
+  transform-origin: 0px 0px;
+  transform: rotateX(-90deg);
+  backface-visibility: hidden;
 }
 
-.navigation  > li:hover ul {
-  display: block;  
-    transform: rotateX(0deg);
+.navigation>li:hover ul {
+  display: block;
+  transform: rotateX(0deg);
 }
 
-.navigation  ul .side-dropdown{
+.navigation ul .side-dropdown {
   position: absolute;
   left: 200px;
   top: 0;
@@ -211,13 +227,13 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown {
+  display: inline-block;
   visibility: visible;
   transform: rotateY(0deg);
 }
 
-.navigation  ul .side-dropdown1{
+.navigation ul .side-dropdown1 {
   position: absolute;
   left: 200px;
   top: 50px;
@@ -227,13 +243,13 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown1{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown1 {
+  display: inline-block;
   visibility: visible;
   transform: rotateY(0deg);
 }
 
-.navigation  ul .side-dropdown2{
+.navigation ul .side-dropdown2 {
   position: absolute;
   left: 200px;
   top: 100px;
@@ -243,13 +259,13 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown2{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown2 {
+  display: inline-block;
   visibility: visible;
   transform: rotateX(0deg);
 }
 
-.navigation  ul .side-dropdown3{
+.navigation ul .side-dropdown3 {
   position: absolute;
   left: 200px;
   top: 150px;
@@ -259,13 +275,13 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown3{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown3 {
+  display: inline-block;
   visibility: visible;
   transform: rotateX(0deg);
 }
 
-.navigation  ul .side-dropdown4{
+.navigation ul .side-dropdown4 {
   position: absolute;
   left: 200px;
   top: 200px;
@@ -275,13 +291,13 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown4{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown4 {
+  display: inline-block;
   visibility: visible;
   transform: rotateX(0deg);
 }
 
-.navigation  ul .side-dropdown5{
+.navigation ul .side-dropdown5 {
   position: absolute;
   left: 200px;
   top: 250px;
@@ -291,13 +307,13 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown5{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown5 {
+  display: inline-block;
   visibility: visible;
   transform: rotateX(0deg);
 }
 
-.navigation  ul .side-dropdown6{
+.navigation ul .side-dropdown6 {
   position: absolute;
   left: 200px;
   top: 300px;
@@ -307,13 +323,13 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown6{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown6 {
+  display: inline-block;
   visibility: visible;
   transform: rotateX(0deg);
 }
 
-.navigation  ul .side-dropdown7{
+.navigation ul .side-dropdown7 {
   position: absolute;
   left: 200px;
   top: 350px;
@@ -323,22 +339,22 @@ ul,li{
   transition: all 0.3s ease-in;
 }
 
-.navigation  > li ul li:hover .side-dropdown7{
-  display: inline-block;  
+.navigation>li ul li:hover .side-dropdown7 {
+  display: inline-block;
   visibility: visible;
   transform: rotateX(0deg);
 }
 
-.logo{
- float: left;
- position: relative;
- z-index: 2;
- margin-top: -100px;
- margin-left: 20px;
+.logo {
+  float: left;
+  position: relative;
+  z-index: 2;
+  margin-top: -100px;
+  margin-left: 20px;
 }
 
 .box {
-  background:lightgrey;
+  background: lightgrey;
   color: black;
   font-size: 20px;
   display: flex;
@@ -355,9 +371,9 @@ ul,li{
   min-width: 95%;
   word-break: keep-all;
   flex: 1 0 auto;
-  }
+}
 
-.heading{
+.heading {
   color: black;
   justify-content: left;
   padding: 1rem;
@@ -369,12 +385,12 @@ ul,li{
   height: 100%;
   width: 100%;
   text-decoration: underline;
-  }
-  
-.text-box{
+}
+
+.text-box {
   font-family: ibm-plex-mono, sans-serif;
   font-weight: 400;
-  font-style: normal; 
+  font-style: normal;
   word-break: keep-all;
   color: black;
   justify-content: left;
@@ -429,9 +445,10 @@ ul,li{
   width: 100%;
 }
 
-.form-message, textarea {
+.form-message,
+textarea {
   background-color: whitesmoke;
-  color:gray;
+  color: gray;
   letter-spacing: 1px;
   border-radius: 0.5rem;
   width: 100%;
@@ -445,9 +462,10 @@ ul,li{
   margin-top: 1%;
 }
 
-.form-name, textarea {
+.form-name,
+textarea {
   background-color: whitesmoke;
-  color:gray;
+  color: gray;
   letter-spacing: 1px;
   border-radius: 0.5rem;
   width: 100%;
@@ -462,9 +480,10 @@ ul,li{
   margin-right: 1%;
 }
 
-.form-email, textarea {
+.form-email,
+textarea {
   background-color: whitesmoke;
-  color:gray;
+  color: gray;
   letter-spacing: 1px;
   border-radius: 0.5rem;
   width: 100%;
@@ -557,7 +576,7 @@ ul,li{
 }
 
 .social-media-list {
-  position: relative; 
+  position: relative;
   top: 0;
   left: 250;
   display: inline-block;
@@ -567,8 +586,8 @@ ul,li{
   line-height: 90px;
   border-radius: 50%;
   color: #fff;
-  background-color: rgb(27,27,27);
-  cursor: pointer; 
+  background-color: rgb(27, 27, 27);
+  cursor: pointer;
   transition: all .2s ease-in-out;
 }
 
@@ -587,14 +606,14 @@ ul,li{
 }
 
 .social-media-list:hover {
-  background-color: #fff; 
+  background-color: #fff;
   color: #111;
 }
 
 .social-media-list:hover:after {
-  opacity: 1;  
+  opacity: 1;
   transform: scale(1.2);
-  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
 }
 
 .social-media-list:hover a {
@@ -610,31 +629,38 @@ ul,li{
 }
 
 hr {
-  border-color: rgba(255,255,255,.8); ;
+  border-color: rgba(255, 255, 255, .8);
+  ;
 }
 
 
 /* Begin Media Queries*/
 @media screen and (max-width: 760px) {
-    #contact {
-        height: 1000px;
-    }
+  #contact {
+    height: 1000px;
+  }
+
   .section-header {
     font-size: 65px;
   }
-  .direct-contact-container, .form-horizontal {
+
+  .direct-contact-container,
+  .form-horizontal {
     float: none;
     margin: 10px auto;
-  }  
+  }
+
   .direct-contact-container {
     margin-top: 60px;
     max-width: 600px;
-  }    
+  }
+
   .social-media-list li {
     height: 60px;
     width: 60px;
     line-height: 60px;
   }
+
   .social-media-list li:after {
     width: 60px;
     height: 60px;
@@ -644,77 +670,79 @@ hr {
 
 
 
-.nextButton{
+.nextButton {
   background-color: black;
   font-family: fira-mono, monospace;
   font-weight: 500;
   font-style: normal;
   font-size: 1.2em;
   display: block;
-  width:600px;
-  z-index: 9999; 
+  width: 600px;
+  z-index: 9999;
 }
 
-.nextButton > a {
-  float:left;	
-  border-right:1px solid black;
-  overflow: visible; 
-  }
+.nextButton>a {
+  float: left;
+  border-right: 1px solid black;
+  overflow: visible;
+}
 
-.nextButton > a:last-child {
+.nextButton>a:last-child {
   border-right: none;
 }
 
-.nextButton a{
+.nextButton a {
   color: #fff;
-display: block;
-text-decoration: none;	 
-font-smoothing: antialiased;
-    line-height: 20px;
-    font-weight: 300;
-    font-size: 14px;
-    letter-spacing: 1px;
-    padding: 15px 30px 15px 31px;		
+  display: block;
+  text-decoration: none;
+  font-smoothing: antialiased;
+  line-height: 20px;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 15px 30px 15px 31px;
 }
 
 .nextButton a .active .front,
 .nextButton a .active .back,
-.nextButton  a:hover .front,
-.nextButton  a:hover .back {
-  background-color: white;   
+.nextButton a:hover .front,
+.nextButton a:hover .back {
+  background-color: white;
   background-size: 5px 5px;
-  background-position: 0 0, 30px 30px; 
-    color: black;
-   
+  background-position: 0 0, 30px 30px;
+  color: black;
+
 }
+
 .nextButton div {
   position: absolute;
   left: -40px;
   text-align: left;
-	line-height: 20px;
-	font-size: 10px;
-	width: 600px; 
-  transition: all 0.3s ease-in;   
-  transform-origin: 0px 0px;  
-  transform: rotateX(-90deg);   
+  line-height: 20px;
+  font-size: 10px;
+  width: 600px;
+  transition: all 0.3s ease-in;
+  transform-origin: 0px 0px;
+  transform: rotateX(-90deg);
   backface-visibility: hidden;
 }
-.nextButton  > a:hover div {
-  display: block;  
-    transform: rotateX(0deg);
-  }
 
-footer{
+.nextButton>a:hover div {
+  display: block;
+  transform: rotateX(0deg);
+}
+
+footer {
   position: absolute;
   display: flex;
-  flex-direction: column ;
-  bottom:-22%;
-  height:5%;  
-  padding: 10px; 
+  flex-direction: column;
+  bottom: -22%;
+  height: 5%;
+  padding: 10px;
   width: 100%;
   flex-shrink: 0;
 }
-    
+
 .container1 {
   flex-shrink: 0;
   display: flex;
@@ -722,9 +750,10 @@ footer{
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
- padding: 20px;
- border-radius: 15px;
- margin:10px;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 10px;
 }
 
 form {
@@ -734,11 +763,11 @@ form {
   justify-content: center;
   flex-wrap: wrap;
   background: white;
- padding: 20px;
- border-radius: 15px;
- margin:10px;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 10px;
 }
-      
+
 .box1 {
   width: 400px;
   height: 480px;
@@ -754,14 +783,15 @@ form {
   white-space: pre-wrap;
   margin-top: 60px
 }
-   
+
 .ourpics {
+  position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -60px;
+  margin-top: -70px;
 }
-    
+
 .names {
   text-align: center;
   font-family: fira-mono, monospace;
@@ -770,35 +800,36 @@ form {
   margin-top: -45px;
 }
 
-.about{
+.about {
   margin-top: -40px;
 }
 
-.centre{
+.centre {
   text-align: center;
   margin: 0, auto;
   position: absolute;
 }
 
-.imgRight{
+.imgRight {
   padding: 10px;
   float: right;
   margin: 2%;
 }
 
-.imgLeft{
+.imgLeft {
   float: left;
   margin: 2%;
   padding: 10px;
 }
-.imgCenter{
+
+.imgCenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
 }
 
-.calculation{
+.calculation {
   text-align: center;
 }
 
@@ -808,55 +839,59 @@ form {
   margin-left: 0%;
   margin-right: 0%;
   z-index: 1;
-  }
+}
 
-  .left {
-    margin-left: 0px;
-  }
+.left {
+  margin-left: 0px;
+}
 
-  .crypSpace {
-    margin-top: 30px;
-  }
+.crypSpace {
+  margin-top: 30px;
+}
 
-  .imgRight1{
-    float: right;
-  }
+.imgRight1 {
+  float: right;
+}
 
-  .matrix {
+.matrix {
   position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.matrix:before, .matrix:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    border: 1px solid #000;
-    width: 6px;
-    height: 100%;
-}
-.matrix:before {
-    left: -6px;
-    border-right: 0px;
-}
+.matrix:before,
 .matrix:after {
-    right: -6px;
-    border-left: 0px;
-}
-.matrix td {
-    padding: 5px;    
-    text-align: center;
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 1px solid #000;
+  width: 6px;
+  height: 100%;
 }
 
-.inlineMatrix{
+.matrix:before {
+  left: -6px;
+  border-right: 0px;
+}
+
+.matrix:after {
+  right: -6px;
+  border-left: 0px;
+}
+
+.matrix td {
+  padding: 5px;
+  text-align: center;
+}
+
+.inlineMatrix {
   justify-content: center;
   display: inline-block;
 
 }
 
-.indexBox{
+.indexBox {
   width: 400px;
   height: 350px;
   padding: 30px;
@@ -872,7 +907,7 @@ form {
   margin-top: 60px;
   display: block;
 }
-  
+
 .indexContainer {
   flex-shrink: 0;
   display: flex;
@@ -880,11 +915,11 @@ form {
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
- padding: 20px;
- border-radius: 15px;
- margin-left: 6%;
- margin-right: auto;
- overflow: hidden;
+  padding: 20px;
+  border-radius: 15px;
+  margin-left: 6%;
+  margin-right: auto;
+  overflow: hidden;
 }
 
 .pics {
@@ -893,7 +928,7 @@ form {
   margin-right: auto;
   margin-top: -60px;
 }
-    
+
 .topic {
   text-align: center;
   font-family: fira-mono, monospace;
@@ -903,7 +938,6 @@ form {
   z-index: 9999;
 }
 
-.about{
+.about {
   margin-top: -10px;
 }
-
