@@ -854,7 +854,7 @@ form {
   padding: 30px;
   border: 3px solid ivory;
   margin: 20px;
-  overflow-x: hidden;
+  overflow: hidden;
   border-radius: 5px;
   font-family: fira-mono, monospace;
   font-size: 18px;
@@ -872,10 +872,11 @@ form {
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
- padding: 20px;
- border-radius: 15px;
- margin-left: 6%;
- margin-right: auto;
+  padding: 20px;
+  border-radius: 15px;
+  margin-left: 6%;
+  margin-right: auto;
+  position: relative;
 }
 
 .pics {
