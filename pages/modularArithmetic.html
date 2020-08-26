@@ -1,13 +1,14 @@
 <head>
     <title>Modular Arithmetic</title>
     <link rel="stylesheet" href="https://use.typekit.net/yhe5mma.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" id="stylesheet" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/division.css">
     <link rel="stylesheet" type="text/css" href="../css/mediaquery.css">
     <script src="../js/prime.js"></script>
     <meta charSet="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/browsers.js"></script>
 </head>
 
 <div class="header">
@@ -97,8 +98,8 @@
                         <span class="three"><span class="front">Asymmetric Key</span><span class="back">Asymmetric Key</span></span>
                     </a></li>
                 <li><a href="principles.html" class="three-d">
-                        Klaude & Shannon
-                        <span class="three"><span class="front">Klaude & Shannon</span><span class="back">Klaude & Shannon</span></span>
+                        Kerckhoff & Shannon
+                        <span class="three"><span class="front">Kerckhoff & Shannon</span><span class="back">Kerckhoff & Shannon</span></span>
                     </a></li>
             </ul>
         </li>
@@ -256,7 +257,7 @@ Most of us would solve this by getting out a diary and counting up 100 days unti
 <div class="calculation">a &equiv; b mod (n)</div>
 If a and b leave the same remainder when divided by n.</i>
 
-To be more precise, we use the <a href="division.html">division algorithm<a> to put a = qn +r with 0 &le; r < n, and b = q'n + r' with 0 &le; r' < n. We can then say a &equiv; b mod (n) if and only if r = r'.
+To be more precise, we use the <a href="division.html">division algorithm</a> to put a = qn +r with 0 &le; r < n, and b = q'n + r' with 0 &le; r' < n. We can then say a &equiv; b mod (n) if and only if r = r'.
 
 <b>Lemma</b>
 <i>For any fixed n &ge; 1, we have a &equiv; b mod (n) if and only if n divides (a – b).</i>
@@ -310,9 +311,10 @@ Using the property of exponentiation,
 </div>
 
 These properties help us calculate values that are used in RSA.
-        </p>
- <i>Written by <b>JaneW</b></i>
 
+<i>Written by <b>JaneW</b></i>
+
+</p>
 </div>
     </body>
 </div>

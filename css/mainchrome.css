@@ -750,7 +750,6 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
   position: absolute;
-  overflow: hidden;
   padding: 20px;
   border-radius: 15px;
   margin: 10px;
@@ -770,11 +769,11 @@ form {
 
 .box1 {
   width: 400px;
-  height: 480px;
+  height: 520px;
   padding: 30px;
   border: 3px solid ivory;
   margin: 20px;
-  overflow-x: hidden;
+  overflow: hidden;
   border-radius: 5px;
   font-family: fira-mono, monospace;
   font-size: 18px;
@@ -782,6 +781,10 @@ form {
   justify-content: space-evenly;
   white-space: pre-wrap;
   margin-top: 60px
+}
+
+.box1::-webkit-scrollbar {
+  display: none;
 }
 
 .ourpics {
@@ -834,19 +837,21 @@ form {
 }
 
 .box2 {
-  position: absolute;
+  position: relative;
   margin-top: 80px;
-  margin-left: 0%;
+  margin-left: -370px;
   margin-right: 0%;
+  padding-bottom: 60px;
   z-index: 1;
 }
 
 .left {
-  margin-left: 0px;
+  position: relative;
+  margin-left: -60px;
 }
 
 .crypSpace {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .imgRight1 {
@@ -897,7 +902,7 @@ form {
   padding: 30px;
   border: 3px solid ivory;
   margin: 20px;
-  overflow-x: hidden;
+  overflow: hidden;
   border-radius: 5px;
   font-family: fira-mono, monospace;
   font-size: 18px;
@@ -919,7 +924,7 @@ form {
   border-radius: 15px;
   margin-left: 6%;
   margin-right: auto;
-  overflow: hidden;
+  position: relative;
 }
 
 .pics {
@@ -934,10 +939,11 @@ form {
   font-family: fira-mono, monospace;
   font-weight: 700;
   font-size: 22px;
-  margin-top: -30px;
+  margin-top: -45px;
   z-index: 9999;
 }
 
 .about {
-  margin-top: -10px;
+  position: relative;
+  margin-top: -20px;
 }
