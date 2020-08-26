@@ -20,8 +20,7 @@ h5 {
   text-align: left;
 }
 
-html,
-body {
+html, body {
   overflow-x: visible;
 }
 
@@ -905,6 +904,7 @@ form {
   white-space: pre-wrap;
   margin-top: 60px;
   display: block;
+  z-index: -1;
 }
 
 .indexContainer {
@@ -919,6 +919,7 @@ form {
   margin-left: 6%;
   margin-right: auto;
   overflow: hidden;
+  z-index: -1;
 }
 
 .pics {
@@ -926,6 +927,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   margin-top: -60px;
+  z-index: -1;
 }
 
 .topic {
@@ -939,4 +941,16 @@ form {
 
 .about {
   margin-top: -10px;
+  z-index: 9999;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
