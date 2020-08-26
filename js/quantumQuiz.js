@@ -15,7 +15,7 @@ $('#quiz').quiz({
         '[0 0 0 0 0 0 1 0]'
       ],
       'correctIndex': 3,
-      'correctResponse': 'Good job!.',
+      'correctResponse': 'Good job!',
       'incorrectResponse': 'Not quite. Try again.'
     },
     {

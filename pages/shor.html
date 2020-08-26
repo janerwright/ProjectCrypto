@@ -158,6 +158,10 @@
                 <span class="three"><span class="front">Algorithms</span><span class="back">Algorithms</span></span>
             </a>
             <ul class="side-dropdown6">
+                <li><a href="aes.html" class="three-d">
+                    AES
+                    <span class="three"><span class="front">AES</span><span class="back">AES</span></span>
+                </a></li>
                 <li><a href="diffieHellman.html" class="three-d">
                         Diffie Hellman
                         <span class="three"><span class="front">Diffie Hellman</span><span class="back">Diffie Hellman</span></span>
@@ -180,6 +184,18 @@
                 <li><a href="branchlessProgramming.html" class="three-d">
                         Branchless Programming
                         <span class="three"><span class="front">Branchless Programming</span><span class="back">Branchless Programming</span></span>
+                    </a></li>
+                    <li><a href="programRsa.html" class="three-d">
+                        RSA in Python
+                        <span class="three"><span class="front">RSA in Python</span><span class="back">RSA in Python</span></span>
+                    </a></li>
+                    <li><a href="programAES.html" class="three-d">
+                        AES in Python
+                        <span class="three"><span class="front">AES in Python</span><span class="back">AES in Python</span></span>
+                    </a></li>
+                    <li><a href="programEnigma.html" class="three-d">
+                        Enigma in Python
+                        <span class="three"><span class="front">Enigma in Python</span><span class="back">Enigma in Python</span></span>
                     </a></li>
                     <li><a href="quantum.html" class="three-d">
                         Quantum
@@ -260,8 +276,7 @@ For example, if A = 3 and B = 5 then we can write 3<sup>4</sup> = 81 = 16(5) + 1
 Consider if A<sup>r</sup> = tB + 1 and A<sup>x</sup> = t<sub>1</sub>B + m (where x ≠ r and B > m > 1) then 
 <div class="calculation">A<sup>r+x</sup> = (tB + 1)(t<sub>1</sub>B + m) 
     = (tt<sub>1</sub>B + t<sub>1</sub> + mt)B + m 
-    = t<sub>2</sub>B + m (where t<sub>2</sub> 
-    = tt<sub>1</sub>B + t<sub>1</sub> + mt ∈ ℕ). </div>
+    = t<sub>2</sub>B + m (where t<sub>2</sub> = tt<sub>1</sub>B + t<sub>1</sub> + m  t ∈ ℕ). </div>
 Similarly, A<sup>2r+x</sup> = t<sub>2</sub>B + m and so on such that A<sup>nr+x</sup> = t<sub>2</sub>B + m for n ∈ ℕ. This means that values of x which repeat periodically with a period of r will have the same value for m.
 
 For example, if A = 3, B = 5 and m = 3 such that 3<sup>4</sup> = 16(5) + 1 and 3<sup>5</sup> = 48(5) + 3 then 3<sup>4+5</sup> = 3<sup>9</sup> = 3936(5) + 3 and 3<sup>2(4)+5</sup> = 3<sup>13</sup>= 318864(5) + 3 and so on. 

@@ -157,6 +157,10 @@
                 <span class="three"><span class="front">Algorithms</span><span class="back">Algorithms</span></span>
             </a>
             <ul class="side-dropdown6">
+                <li><a href="aes.html" class="three-d">
+                    AES
+                    <span class="three"><span class="front">AES</span><span class="back">AES</span></span>
+                </a></li>
                 <li><a href="diffieHellman.html" class="three-d">
                         Diffie Hellman
                         <span class="three"><span class="front">Diffie Hellman</span><span class="back">Diffie Hellman</span></span>
@@ -179,6 +183,18 @@
                 <li><a href="branchlessProgramming.html" class="three-d">
                         Branchless Programming
                         <span class="three"><span class="front">Branchless Programming</span><span class="back">Branchless Programming</span></span>
+                    </a></li>
+                    <li><a href="programRsa.html" class="three-d">
+                        RSA in Python
+                        <span class="three"><span class="front">RSA in Python</span><span class="back">RSA in Python</span></span>
+                    </a></li>
+                    <li><a href="programAES.html" class="three-d">
+                        AES in Python
+                        <span class="three"><span class="front">AES in Python</span><span class="back">AES in Python</span></span>
+                    </a></li>
+                    <li><a href="programEnigma.html" class="three-d">
+                        Enigma in Python
+                        <span class="three"><span class="front">Enigma in Python</span><span class="back">Enigma in Python</span></span>
                     </a></li>
                     <li><a href="quantum.html" class="three-d">
                         Quantum
@@ -276,7 +292,7 @@ For example:
 <img src="../img/tensorproduct.png" alt="Tensor Product Example" class="imgCenter">
 The way we present bits is as follows:
 <img src="../img/bits.png" alt="Tensor Product Presenting Bits" class="imgCenter">
-The rows in the <i>product state</i> vector start from the 0<sup>th</sup> row at the top such that the 1 lies in the 4th row, corresponding to the value of 4. Here we can factor the product state back into the <i>individual state</i>. Also note, it's easy to see that if we had a length of bits of size n, this will produce a product state vector of size n. (In this example, we had a string of 3-bits which produced a vector of size 23 = 8.)
+The rows in the <i>product state</i> vector start from the 0<sup>th</sup> row at the top such that the 1 lies in the 4th row, corresponding to the value of 4. Here we can factor the product state back into the <i>individual state</i>. Also note, it's easy to see that if we had a length of bits of size n, this will produce a product state vector of size n. (In this example, we had a string of 3-bits which produced a vector of size 2<sup>3</sup> = 8.)
 
 Representing cbits in this way allows a computer to carry out operations through the use of matrix multiplication. Although we won't go too much into that here, it is important to understand the relevance of these vectors when describing cbits.
 
@@ -326,7 +342,7 @@ where ||a||&sup2; + ||b||&sup2; = ||c||&sup2; + ||d||&sup2; = 1, then:<img src="
 [Note: ||ac||&sup2; + ||ad||&sup2; + ||bc||&sup2; + ||bd||&sup2; = 1]
 
 For example, <img src="../img/qbitsTensorExample.png" width="200" class="imgCenter">
-so there’s a ||-1/&radic;2|| = 1/2chance of the bits collapsing to |00⟩ or |10⟩ and 0 chance of collapsing to |01⟩ or |11⟩.     
+so there’s a ||-1/&radic;2|| = 1/2 chance of the bits collapsing to |00⟩ or |10⟩ and 0 chance of collapsing to |01⟩ or |11⟩.     
 
 You may have heard statements about qubits being in superposition, where they are both 1 and 0 at the same time, this gives a clearer idea of why this is. Before being measured, a qubit can be in both states meaning the probabilities of measuring a 0 or 1 for a qubit are not just 0% or 100% chance but somewhere in between and measuring qubits in identical states may not give the same result.
 
@@ -343,7 +359,7 @@ QKD uses 4 different types of filters, separated into 2 groups. The first group 
 
 When a photon passes through a filter, as long as it is not perpendicular to the slit, it will spin in the direction of the filter. E.g. if a vertically spinning photon passes through a +45° filter, it will now spin in the +45° direction. However, if it tries to pass through a horizontal filter, it won't get through. 
 
-Photons that spin in the vertical or +45° direction will measure as a 1 bit. Photons that spin in a horizontal of -45° direction will measure as a 0 bit. This means each bit has 2 different possible photon directional spins and for an <i>n</i>> bit long string, there are 2<sup>n</sup> different photon combinations. <img src="../img/Diagram2A.png" width="600" class="imgRight1">
+Photons that spin in the vertical or +45° direction will measure as a 1 bit. Photons that spin in a horizontal of -45° direction will measure as a 0 bit. This means each bit has 2 different possible photon directional spins and for an <i>n</i> bit long string, there are 2<sup>n</sup> different photon combinations. <img src="../img/Diagram2A.png" width="600" class="imgRight1">
 
 In QKD, only 2 filters are used which combines the 4 filters mentioned above. The first one contains both horizontal and vertical slits and the second one contains +45° and -45° slits.
 
@@ -377,14 +393,14 @@ From this table we can see that out of the 8 photons Alice sends to Bob:
 As we can see, QKD in theory provides an amazing new solution to encrypting data in a totally secure way, by producing a key which is completely random and hence impossible to guess. 
 The problem is that at the moment, quantum channels can only work over a limited distance, definitely not large enough to use mainstream in the real world. Furthermore, the 2 recipients involved in QKD need a pre-authenticated classical channel of communication before beginning QKD (so that Alice and Bob can communicate what filters and corresponding bits they have for each photon). This means there would already have had to have been a symmetric key of sufficient length and security set up between the 2 users, almost rendering the whole point of QKD useless.
 
-Either way it is still an interesting concept that is in the early stages of development and will perhaps lead to an even greater discovery for quantum cryptography, and cryptography as a whole,  in the future! 
+Either way it is still an interesting concept that is in the early stages of development and will perhaps lead to an even greater discovery for quantum cryptography, and cryptography as a whole, in the future! 
 
 <b>Quantum Random Number Generators</b>
 Most keys used in modern day encryption are produced using sequences of random numbers generated from software, this algorithm is called a pseudo random number generator (PRNG). However, these numbers can never be truly random because any number generated by an algorithm will always have some kind of pattern in it, no matter how subtle.
 
 Consider, for example, a slot machine which uses a PRNG to randomly output symbols on 3 (or sometimes 5) reels. If these symbols match, you win big. Usually this is seen as a game of chance but by recording the results of the slot machine over a long period of time and analysing the results, you could potentially reverse-engineer the PRNG to predict (to a high degree of accuracy) what the slot machine will output.
 
-Similarly, this could be applied to encryption keys, making them vulnerable to being discovered. What we need is a true random number generator. The problem is it's extremely hard to mimic randomness as it requires a non-deterministic algorithm (i.e. an algorithm that, even for the same input, returns different outputs on different runs). This is where quantum computers come into use. Unlike our world, the quantum world is truly random. We can utilize the intrinsic randomness of subatomic particles’ behaviour at the quantum level to produce a truly random number.
+Similarly, this could be applied to encryption keys, making them vulnerable to being discovered. What we need is a true random number generator. The problem is it's extremely hard to mimic randomness as it requires a non-deterministic algorithm (i.e. an algorithm that, even for the same input, returns different outputs on different runs). This is where quantum computers come into use. Unlike our world, the quantum world is truly random and we can utilize the intrinsic randomness of subatomic particles’ behaviour at the quantum level to produce a truly random number.
 
 The first quantum random number generators (QRNG’s) were based on the observation of the radioactive decay of some element. Although effective, these generators were bulky and raised health concerns by using radioactive materials. A safer method that can be used for generating random bits is by firing photons at a semi-transparent mirror and recording whether they reflect or transmit. The process in which a photon either reflects or is transmitted is intrinsically random and cannot be influenced by external parameters, meaning there's a 50% chance either possibility can occur.
 <img src="../img/QRNG.png" width="700" class="imgCenter">
@@ -408,10 +424,10 @@ Once the barriers to quantum computers have been overcome, this will open up a w
 
 <footer>
     <div class="nextButton">
-        <a href="branchlessProgramming.html" class="three-d">
-            Branchless Programming < <span class="three"><span class="front">
-                Branchless Programming < </span><span class="back">
-                    Branchless Programming  < </span>
+        <a href="programRsa.html" class="three-d">
+            RSA Python < <span class="three"><span class="front">
+                RSA Python < </span><span class="back">
+                    RSA Python  < </span>
                         </span>
         </a>
         <a href="quantumQuiz.html" class="three-d">
