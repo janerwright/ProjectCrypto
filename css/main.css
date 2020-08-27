@@ -20,7 +20,7 @@ h5 {
   text-align: left;
 }
 
-html,
+html, 
 body {
   overflow-x: visible;
 }
@@ -937,14 +937,15 @@ form {
   font-weight: 700;
   font-size: 22px;
   margin-top: -30px;
-  z-index: 9999;
 }
 
 .about {
   margin-top: -10px;
 }
 
+
 #smallbox {
   cursor: pointer;
   z-index: 9999;
 }
+
