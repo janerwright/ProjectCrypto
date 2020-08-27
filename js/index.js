@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  var heading = document.getElementById("change");
+  var heading = document.getElementById("text");
 
   heading.addEventListener('mouseover', function(event){
     event.target.style.color='white';
