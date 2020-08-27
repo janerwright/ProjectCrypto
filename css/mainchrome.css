@@ -898,7 +898,7 @@ form {
 
 .indexBox {
   width: 400px;
-  height: 350px;
+  height: 380px;
   padding: 30px;
   border: 3px solid ivory;
   margin: 20px;
@@ -925,13 +925,15 @@ form {
   margin-left: 6%;
   margin-right: auto;
   position: relative;
+  margin-top: -100px;
 }
 
 .pics {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -60px;
+  margin-top: -65px;
+  padding-bottom: 15px;
 }
 
 .topic {
@@ -939,11 +941,16 @@ form {
   font-family: fira-mono, monospace;
   font-weight: 700;
   font-size: 22px;
-  margin-top: -45px;
+  margin-top: -40px;
   z-index: 9999;
 }
 
 .about {
   position: relative;
   margin-top: -20px;
+}
+
+#smallbox {
+  cursor: pointer;
+  z-index: 9999;
 }
