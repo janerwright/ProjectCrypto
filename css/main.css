@@ -20,7 +20,8 @@ h5 {
   text-align: left;
 }
 
-html, body {
+html, 
+body {
   overflow-x: visible;
 }
 
@@ -919,7 +920,6 @@ form {
   margin-left: 6%;
   margin-right: auto;
   overflow: hidden;
-  z-index: -1;
 }
 
 .pics {
@@ -927,7 +927,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   margin-top: -60px;
-  z-index: -1;
+
 }
 
 .topic {
@@ -936,21 +936,9 @@ form {
   font-weight: 700;
   font-size: 22px;
   margin-top: -30px;
-  z-index: 9999;
 }
 
 .about {
   margin-top: -10px;
-  z-index: 9999;
 }
 
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
