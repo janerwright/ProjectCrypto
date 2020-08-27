@@ -892,7 +892,7 @@ form {
 
 .indexBox {
   width: 400px;
-  height: 350px;
+  height: 380px;
   padding: 30px;
   border: 3px solid ivory;
   margin: 20px;
@@ -905,6 +905,7 @@ form {
   white-space: pre-wrap;
   margin-top: 60px;
   display: block;
+  z-index: 9999;
 }
 
 .indexContainer {
@@ -918,6 +919,7 @@ form {
   border-radius: 15px;
   margin-left: 6%;
   margin-right: auto;
+  margin-top: -100px;
   overflow: hidden;
 }
 
@@ -926,7 +928,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   margin-top: -60px;
-  z-index: -1;
+  z-index: 9999;
 }
 
 .topic {
@@ -940,4 +942,9 @@ form {
 
 .about {
   margin-top: -10px;
+}
+
+#smallbox {
+  cursor: pointer;
+  z-index: 9999;
 }
